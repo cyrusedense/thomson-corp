@@ -1,9 +1,14 @@
-import React from 'react'
+import Link from "next/link";
 
-function Button({color,text}) {
+function Button({ color, text, clickFunction }) {
   return (
-    <button className={`rounded-full ${color === 'yellow' ? 'bg-tsyellow' : 'bg-white'} py-2 px-3 `}  >{text}</button>
-  )
+    <button
+      onClick={clickFunction}
+      className={`rounded-full ${color === "yellow" ? "bg-tsyellow" : "bg-white"} px-3 py-2`}
+    >
+      {text}
+    </button>
+  );
 }
 
-export default Button
+export default Button;

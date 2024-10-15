@@ -1,14 +1,13 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import { Lato } from 'next/font/google';
-
+import { Lato } from "next/font/google";
+import Footer from "./components/Footer";
 
 const lato = Lato({
-  weight: '400',
-  subsets: ['latin'],
-})
-
+  weight: "400",
+  subsets: ["latin"],
+});
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -29,14 +28,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-
- 
-
-      <body
-        className={lato.className}
-      >
-         <Navbar/>
+      <body className={`${lato.className} overflow-x-hidden`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

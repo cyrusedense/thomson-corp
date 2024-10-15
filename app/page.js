@@ -4,6 +4,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 import Button from "./components/Button";
 import BlogCard from "./components/BlogCard";
@@ -11,18 +12,29 @@ import BlogCard from "./components/BlogCard";
 gsap.registerPlugin(useGSAP);
 
 export default function Home() {
+  const router = useRouter();
   //animations
 
   //wave animation
   const waveAnimation = useRef();
 
+  //contact animations
+  const contactForm = useRef();
+
   //container for scoping
   const container = useRef();
+
+  //GSAP
 
   useGSAP(() => {
     gsap.to(waveAnimation.current, {
       width: "100vw",
       duration: 2,
+    });
+
+    gsap.from(contactForm.current, {
+      translateX: "100%",
+      duration: 1,
     });
   });
 
@@ -52,10 +64,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about-us mt-[-40px] flex min-h-[90vh] justify-end bg-about-us-pattern bg-cover py-10 lg:py-20">
-        <div className="about-us-content m-20 flex max-w-[50%] flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10">
-          <h1 className="text-4xl text-tsdarkgreen">ABOUT US</h1>
-          <p>
+      <section className="about-us mt-[-40px] flex min-h-[90vh] justify-end bg-about-us-pattern bg-cover px-5 py-10 lg:py-20">
+        <div className="about-us-content my-20 flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10 sm:w-[50%] sm:max-w-[500px]">
+          <h1 className="text-3xl text-tsdarkgreen md:text-4xl">ABOUT US</h1>
+          <p className="text-sm">
             At Thomson, we are dedicated to improving the health and well-being
             of our customers through natural solutions. For over 30 years, we
             have been a trusted name, helping customers to enhance their overall
@@ -65,7 +77,11 @@ export default function Home() {
             countless journeys toward better health, offering reliable, natural
             support for everyday wellness.
           </p>
-          <Button color={"yellow"} text={"Read More"} />
+          <Button
+            clickFunction={() => router.push("/about-us")}
+            color={"yellow"}
+            text={"Read More"}
+          />
 
           <Image
             width={157}
@@ -76,8 +92,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-7 bg-home-bottom-bg bg-cover py-14 text-white">
-        <h1 className="text-center text-4xl text-tsdarkgreen">RESOURCES</h1>
+      <section className="flex flex-col gap-5 bg-home-bottom-bg bg-cover px-5 py-14 text-white">
+        <h1 className="text-center text-3xl text-tsdarkgreen md:text-4xl">
+          RESOURCES
+        </h1>
         <p className="text-center text-tsdarkgreen">
           Read Articles from our panel of experts on health topics
         </p>
@@ -102,28 +120,39 @@ export default function Home() {
           />
         </div>
 
-        <div className="w-fit self-center">
+        <div className="mb-10 w-fit self-center md:mb-14 lg:mb-20">
           {" "}
           <Button color={"yellow"} text={"See More"} />
         </div>
 
-        <h1 className="text-center text-4xl text-tsdarkgreen">Contact Us</h1>
+        <h1 className="mb-4 text-center text-3xl text-tsdarkgreen md:text-4xl">
+          Contact Us
+        </h1>
 
-        <div className="flex w-screen flex-row flex-wrap items-center justify-between px-5">
-          <div className="grid-left mb-6 flex w-full flex-col items-center gap-6 md:basis-[40%] md:items-start md:px-20">
-            <h1 className="text-4xl text-tsdarkgreen">Ask Us Questions</h1>
+        <div className="flex flex-row flex-wrap items-center justify-between">
+          <div className="grid-left mb-6 flex flex-col items-center gap-6 sm:basis-[40%] md:items-start md:px-20">
+            <h1 className="hidden text-4xl text-tsdarkgreen md:block">
+              Ask Us Questions
+            </h1>
             <p className="text-center text-tsdarkgreen md:text-left">
               For further inquiries, please visit our {"Contact Us"} page and
               complete the full form. Our team will assist you promptly.
             </p>
-            <Button color={"yellow"} text={"See More"} />
+            <Button
+              clickFunction={() => router.push("/about-us")}
+              color={"yellow"}
+              text={"See More"}
+            />
           </div>
-          <div className="grid-right basis-[60%]">
+          <div
+            ref={contactForm}
+            className="grid-right w-full translate-x-[8%] sm:basis-[55%] sm:translate-x-[10%]"
+          >
             <div className="outer-div h-full w-full rounded-l-[56px] bg-tsdarkgreen p-2">
-              <div className="inner-div h-full w-full rounded-l-[48px] border-[1px] border-white p-14">
+              <div className="inner-div h-full w-full rounded-l-[48px] border-[1px] border-white py-10 pl-10 pr-5 sm:pl-14 sm:pr-10">
                 <div className="flex flex-col gap-6">
                   <div className="flex items-center">
-                    <h1 className="text-4xl text-tsyellow">
+                    <h1 className="text-3xl text-tsyellow md:text-4xl">
                       Stay Updated with Thomson Health
                     </h1>
                     <Image
@@ -137,7 +166,7 @@ export default function Home() {
 
                   <h3>Subscribe to Our Newsletter</h3>
 
-                  <p>
+                  <p className="text-sm md:text-lg">
                     Be the first to know about new promotions, exclusive events,
                     and product launches. Get health tips, wellness insights,
                     and special offers delivered straight to your inbox. Stay
@@ -145,13 +174,16 @@ export default function Home() {
                   </p>
 
                   <form action="">
-                    <div className="flex max-w-[70%] justify-between rounded-[10px] bg-white p-2">
+                    <div className="flex justify-between rounded-[10px] bg-white p-2">
                       <input
                         type="text"
-                        className="grow p-2 text-tsdarkgreen"
+                        className="w-[70%] p-2 text-tsdarkgreen"
                       />
                       <label htmlFor="email"></label>
-                      <Button color="yellow" text={"Subscribe"} />
+                      <div className="">
+                        {" "}
+                        <Button color="yellow" text={"Subscribe"} />
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -162,12 +194,14 @@ export default function Home() {
 
         {/* Location and Contact begins */}
 
-        <div className="max-w-screen-xl">
+        <div className="m-auto w-screen">
           <div className="contact-inner-section flex flex-wrap justify-between px-3 py-10 lg:py-20">
-            <div className="contact-inner-left basis-1/2">
-              <h1 className="text-4xl text-tsdarkgreen">LOCATION</h1>
+            <div className="contact-inner-left flex w-full flex-col justify-center gap-5 sm:basis-1/2">
+              <h1 className="text-center text-3xl text-tsdarkgreen sm:text-left md:text-4xl">
+                LOCATION
+              </h1>
 
-              <div className="contact-section">
+              <div className="contact-section flex flex-col gap-5 text-center sm:text-left">
                 <h4 className="text-tsdarkgreen">
                   Malaysia Sales and Marketing Office
                 </h4>
@@ -189,18 +223,18 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="contact-inner-right h-[500px] max-w-[300px] basis-1/2">
-              <div className="relative h-full w-full">
+            <div className="contact-inner-right w-full sm:basis-1/2">
+              <div className="relative aspect-square w-full">
                 <Image
                   fill
-                  className="cover"
+                  className="object-cover object-center"
                   alt="health-professionals"
                   src="/images/contact-bottom-right.png"
                 />
 
                 <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-white via-transparent via-70% to-transparent"></div>
 
-                <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-white via-transparent via-70% to-transparent"></div>
+                <div className="absolute inset-0 h-full w-full from-white via-transparent via-70% to-transparent md:bg-gradient-to-r"></div>
               </div>
             </div>
           </div>
