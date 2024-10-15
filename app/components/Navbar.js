@@ -51,7 +51,9 @@ function Navbar() {
         <ul className="flex items-center gap-5 text-white">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <Link href={link.href}>{link.label}</Link>
+              <Link href={link.href} className="hover:text-tsyellow">
+                {link.label}
+              </Link>
             </li>
           ))}
           <Button
@@ -83,7 +85,9 @@ function Navbar() {
         <ul className="space-y-6 text-center text-white">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <Link href={link.href}>{link.label}</Link>
+              <Link href={link.href} className="hover:text-tsyellow">
+                {link.label}
+              </Link>
             </li>
           ))}
           <li>

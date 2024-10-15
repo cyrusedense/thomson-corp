@@ -129,7 +129,7 @@ export default function Home() {
           Contact Us
         </h1>
 
-        <div className="flex flex-row flex-wrap items-center justify-between">
+        <div className="m-auto flex max-w-screen-xl flex-row flex-wrap items-center justify-between">
           <div className="grid-left mb-6 flex flex-col items-center gap-6 sm:basis-[40%] md:items-start md:px-20">
             <h1 className="hidden text-4xl text-tsdarkgreen md:block">
               Ask Us Questions
@@ -144,12 +144,9 @@ export default function Home() {
               text={"See More"}
             />
           </div>
-          <div
-            ref={contactForm}
-            className="grid-right w-full translate-x-[8%] sm:basis-[55%] sm:translate-x-[10%]"
-          >
-            <div className="outer-div h-full w-full rounded-l-[56px] bg-tsdarkgreen p-2">
-              <div className="inner-div h-full w-full rounded-l-[48px] border-[1px] border-white py-10 pl-10 pr-5 sm:pl-14 sm:pr-10">
+          <div ref={contactForm} className="grid-right w-full sm:basis-[55%]">
+            <div className="outer-div h-full rounded-l-[56px] rounded-tr-[56px] bg-tsdarkgreen p-2">
+              <div className="inner-div h-full w-full rounded-l-[48px] rounded-tr-[48px] border-[1px] border-white py-10 pl-10 pr-5 sm:pl-14 sm:pr-10">
                 <div className="flex flex-col gap-6">
                   <div className="flex items-center">
                     <h1 className="text-3xl text-tsyellow md:text-4xl">
@@ -193,48 +190,36 @@ export default function Home() {
         </div>
 
         {/* Location and Contact begins */}
+        <div className="m-auto max-w-screen-xl py-10 md:py-14 lg:py-20">
+          <h1 className="mb-5 text-center text-4xl text-tsdarkgreen">
+            Location
+          </h1>
 
-        <div className="m-auto w-screen">
-          <div className="contact-inner-section flex flex-wrap justify-between px-3 py-10 lg:py-20">
-            <div className="contact-inner-left flex w-full flex-col justify-center gap-5 sm:basis-1/2">
-              <h1 className="text-center text-3xl text-tsdarkgreen sm:text-left md:text-4xl">
-                LOCATION
-              </h1>
-
-              <div className="contact-section flex flex-col gap-5 text-center sm:text-left">
-                <h4 className="text-tsdarkgreen">
-                  Malaysia Sales and Marketing Office
-                </h4>
-
-                <address className="text-tsdarkgreen">
-                  C-06-07, Sunway Nexis,No. 1, <br />
-                  Jalan PJU 5/1,Kota Damansara,
-                  <br />
-                  47810 Petaling Jaya, Malaysia
-                </address>
-
-                <address className="text-tsdarkgreen">
-                  Contact: <a href="">+603-61505818</a>
-                  <br />
-                  Whatsapp:<a href="">+603-61505818</a>
-                  <br />
-                  Email: <a href="">enquiry@thomson.com</a>
-                </address>
+          <div className="gap-10 rounded-t-[56px] rounded-bl-[56px] bg-tsdarkgreen p-10 sm:flex">
+            <div className="location-left w-full sm:basis-1/2">
+              <h4>Malaysia Sales & Marketing Office</h4>
+              <div>
+                <div className="address">
+                  C-06-07, Sunway Nexis, No. 1, Jalan PJU 5/1, Kota
+                  Damansara, 47810 Petaling Jaya, Malaysia
+                </div>
+                <div className="contact">
+                  Contact: +603–6150 5818 WhatsApp: +6012-878 6438
+                  Email: enquiry@thomson.com.my
+                </div>
               </div>
             </div>
-
-            <div className="contact-inner-right w-full sm:basis-1/2">
-              <div className="relative aspect-square w-full">
-                <Image
-                  fill
-                  className="object-cover object-center"
-                  alt="health-professionals"
-                  src="/images/contact-bottom-right.png"
-                />
-
-                <div className="absolute inset-0 h-full w-full bg-gradient-to-b from-white via-transparent via-70% to-transparent"></div>
-
-                <div className="absolute inset-0 h-full w-full from-white via-transparent via-70% to-transparent md:bg-gradient-to-r"></div>
+            <div className="location-right w-full border-white sm:basis-1/2 sm:border-l-2 sm:pl-10">
+              <h4>Factory</h4>
+              <div>
+                <div className="address">
+                  C-06-07, Sunway Nexis, No. 1, Jalan PJU 5/1, Kota
+                  Damansara, 47810 Petaling Jaya, Malaysia
+                </div>
+                <div className="contact">
+                  Contact: +603–6150 5818 WhatsApp: +6012-878 6438
+                  Email: enquiry@thomson.com.my
+                </div>
               </div>
             </div>
           </div>

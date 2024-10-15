@@ -11,7 +11,7 @@ module.exports = {
         "about-us-pattern": "url('/images/about-pattern.png')",
         "flower-bg-1": "url('/images/flower-bg-1.png')",
         "contact-bg-1": "url('/images/contact-bg.png')",
-        "home-bottom-bg": "url('/images/home-bottom-bg.png')",
+        "home-bottom-bg": "url('/images/home-bottom-bg.webp')",
         "about-hero": "url(/images/about-hero.png)",
       },
       colors: {
