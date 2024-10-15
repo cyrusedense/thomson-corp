@@ -13,6 +13,7 @@ module.exports = {
         "contact-bg-1": "url('/images/contact-bg.png')",
         "home-bottom-bg": "url('/images/home-bottom-bg.webp')",
         "about-hero": "url(/images/about-hero.png)",
+        "factory-bg": "url(/images/factory.webp)",
       },
       colors: {
         background: "var(--background)",

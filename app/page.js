@@ -189,7 +189,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Location and Contact begins */}
         <div className="m-auto max-w-screen-xl py-10 md:py-14 lg:py-20">
           <h1 className="mb-5 text-center text-4xl text-tsdarkgreen">
             Location
@@ -200,8 +199,8 @@ export default function Home() {
               <h4 className="text-xl">Malaysia Sales & Marketing Office</h4>
               <div>
                 <div className="address">
-                  C-06-07, Sunway Nexis, No. 1, Jalan PJU 5/1, Kota
-                  Damansara, 47810 Petaling Jaya, Malaysia
+                  C-06-07, Sunway Nexis,No. 1, Jalan PJU 5/1,Kota
+                  Damansara,47810 Petaling Jaya, Malaysia
                 </div>
                 <div className="contact">
                   Contact: +603–6150 5818 WhatsApp: +6012-878 6438
@@ -213,12 +212,18 @@ export default function Home() {
               <h4 className="text-xl">Factory</h4>
               <div>
                 <div className="address">
-                  C-06-07, Sunway Nexis, No. 1, Jalan PJU 5/1, Kota
-                  Damansara, 47810 Petaling Jaya, Malaysia
+                  C-06-07, Sunway Nexis,
+                  <br />
+                  No. 1, Jalan PJU 5/1,
+                  <br />
+                  Kota Damansara,
+                  <br />
+                  47810 Petaling Jaya, Malaysia
                 </div>
                 <div className="contact">
-                  Contact: +603–6150 5818 WhatsApp: +6012-878 6438
-                  Email: enquiry@thomson.com.my
+                  Contact: +603–6150 5818 <br />
+                  WhatsApp: +6012-878 6438 <br />
+                  Email: enquiry@thomson.com.my
                 </div>
               </div>
             </div>
