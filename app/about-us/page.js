@@ -1,6 +1,7 @@
 import Button from "../components/Button";
 import PersonCard from "../components/PersonCard";
 import TextBox from "../components/TextBox";
+import Timeline from "../components/Timeline";
 
 const leaderList = [
   {
@@ -28,6 +29,10 @@ function AboutUs() {
           <h1 className="mb-4 text-4xl text-white md:text-6xl">About Us</h1>
           <p className="text-xl text-white">Where Health Matters</p>
         </div>
+      </section>
+
+      <section className="timeline">
+        <Timeline />
       </section>
 
       <section className="px-5 py-10 md:py-14 xl:py-20">

@@ -195,9 +195,9 @@ export default function Home() {
             Location
           </h1>
 
-          <div className="gap-10 rounded-t-[56px] rounded-bl-[56px] bg-tsdarkgreen p-10 sm:flex">
+          <div className="flex flex-col gap-10 rounded-t-[56px] rounded-bl-[56px] bg-tsdarkgreen p-10 sm:flex-row">
             <div className="location-left w-full sm:basis-1/2">
-              <h4>Malaysia Sales & Marketing Office</h4>
+              <h4 className="text-xl">Malaysia Sales & Marketing Office</h4>
               <div>
                 <div className="address">
                   C-06-07, Sunway Nexis, No. 1, Jalan PJU 5/1, Kota
@@ -210,7 +210,7 @@ export default function Home() {
               </div>
             </div>
             <div className="location-right w-full border-white sm:basis-1/2 sm:border-l-2 sm:pl-10">
-              <h4>Factory</h4>
+              <h4 className="text-xl">Factory</h4>
               <div>
                 <div className="address">
                   C-06-07, Sunway Nexis, No. 1, Jalan PJU 5/1, Kota
