@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 
 import Button from "./components/Button";
 import BlogCard from "./components/BlogCard";
+import ProductSlider from "./components/ProductSlider";
 
 gsap.registerPlugin(useGSAP);
 
@@ -18,6 +19,11 @@ export default function Home() {
   //wave animation
   const waveAnimation = useRef();
 
+  //product animations
+  const rotationElement = useRef();
+
+  const infoAnimation = useRef();
+
   //contact animations
   const contactForm = useRef();
 
@@ -27,6 +33,8 @@ export default function Home() {
   //GSAP
 
   useGSAP(() => {
+    //initialise timeline
+
     gsap.to(waveAnimation.current, {
       width: "100vw",
       duration: 2,
@@ -35,6 +43,15 @@ export default function Home() {
     gsap.from(contactForm.current, {
       translateX: "100%",
       duration: 1,
+    });
+
+    gsap.to(rotationElement.current, {
+      translateX: "10px",
+      translateY: "20px",
+      repeat: -1,
+      yoyo: true,
+      duration: 5,
+      ease: "none",
     });
   });
 
@@ -64,7 +81,91 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="about-us mt-[-40px] flex min-h-[90vh] justify-end bg-about-us-pattern bg-cover px-5 py-10 lg:py-20">
+      <section className="product-section h-[50vh] md:h-[100vh]">
+        <div className="product-frame relative h-full w-full py-10 md:py-14 lg:py-20">
+          <Image
+            fill
+            className="z-10 object-cover"
+            // width={500}
+            // height={500}
+            alt="background"
+            src={
+              "/images/product-animations/activated-ginko/activated-ginkgo-bg.png"
+            }
+          />
+          <Image
+            alt="stage-ring"
+            className="absolute z-[18] w-[50%] translate-x-[50%]"
+            width={300}
+            height={300}
+            src={"/images/product-animations/stage-ring.png"}
+          />
+          <Image
+            alt="stage-shadow"
+            className="absolute bottom-0 z-20 max-h-[300px] w-full object-cover object-top"
+            width={300}
+            height={300}
+            src={"/images/product-animations/stage-with-shadow.png"}
+          />
+
+          <div className="absolute left-[5%] z-20 w-[30%]">
+            <h1 className="text-3xl text-tsdarkgreen xl:text-4xl">
+              Activated Ginkgo
+            </h1>
+            <h3 className="text-tsdarkgreen md:text-2xl">
+              Traditionally Used To Promote Blood Circulation & Health
+            </h3>
+          </div>
+
+          <Image
+            width={300}
+            height={300}
+            alt="product"
+            className="absolute left-[50%] z-20 h-[50%] w-[40%] translate-x-[-50%] translate-y-[20%] object-cover"
+            src={
+              "/images/product-animations/activated-ginko/activated_ginko.png"
+            }
+          />
+
+          <Image
+            width={300}
+            height={400}
+            alt="human"
+            className="absolute right-[-50px] z-20 h-[50%] w-[40%] translate-y-[50%] object-cover"
+            src={
+              "/images/product-animations/activated-ginko/activated-ginkgo-human.png"
+            }
+          />
+
+          <Image
+            ref={infoAnimation}
+            width={300}
+            height={400}
+            alt="product-info"
+            className="absolute bottom-[40%] left-[19%] z-[19] w-[25%]"
+            src={
+              "/images/product-animations/activated-ginko/activated-ginkgo-banner.png"
+            }
+          />
+
+          <Image
+            ref={rotationElement}
+            alt="blood"
+            className="absolute right-[27%] z-20 max-h-[300px] w-[20%] transform-gpu object-contain object-top"
+            width={200}
+            height={200}
+            src={
+              "/images/product-animations/activated-ginko/activated-ginkgo-blood.png"
+            }
+          />
+        </div>
+      </section>
+
+      <section className="product-section h-[50vh] md:h-[100vh]">
+        <ProductSlider />
+      </section>
+
+      <section className="about-us flex min-h-[90vh] justify-end bg-about-us-pattern bg-cover px-5 py-10 lg:py-20">
         <div className="about-us-content my-20 flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10 sm:w-[50%] sm:max-w-[500px]">
           <h1 className="text-3xl text-tsdarkgreen md:text-4xl">ABOUT US</h1>
           <p className="text-sm">
