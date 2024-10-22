@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import React from "react";
 import Image from "next/image";
+import Button from "./Button.js"
 
 gsap.registerPlugin(useGSAP);
 
@@ -58,9 +59,13 @@ const ContactForm = () => {
                       />
                     </div>
                     <div className="flex justify-center md:justify-start">
-                      <button className="rounded-lg bg-yellow-500 px-[15%] py-1 font-bold text-white transition hover:bg-yellow-600">
+                      {/* <button className="rounded-lg bg-yellow-500 px-[15%] py-1 font-bold text-white transition hover:bg-yellow-600">
                         Submit
-                      </button>
+                      </button> */}
+                  
+                        {" "}
+                        <Button color="yellow" text={"Submit"} />
+                    
                     </div>
                   </form>
                 </div>

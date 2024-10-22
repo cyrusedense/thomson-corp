@@ -5,11 +5,11 @@ function LocationInfo() {
   return (
     <main>
       {/* Apply centering styles only for mobile */}
-      <section className="m-[5%] flex w-full flex-col items-center p-5 md:m-[5%] md:h-[168px] md:w-[767px] md:flex-row md:items-start md:p-5">
+      <section className=" flex w-full flex-col items-center p-5 md:m-[5%] md:h-[168px] md:w-[767px] md:flex-row md:items-start md:p-5">
         <div className="mb-4 flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#F9B002] md:mb-0 md:h-[67px] md:w-[68.39px]">
           <GrLocation className="h-[25px] w-[25px] text-white md:h-[35px] md:w-[35px]" />
         </div>
-        <div className="flex w-full flex-col md:ml-5 md:flex-row md:items-start md:space-x-16">
+        <div className="flex w-[80%] flex-col md:ml-5 md:flex-row md:items-start md:space-x-16">
           <div className="mb-5 flex w-full flex-col text-center md:mb-0 md:max-w-[50%] md:text-left">
             <h1 className="text-[30px] md:text-[30px]">Location</h1>
             <h2 className="text-[16px] md:text-[20px]">

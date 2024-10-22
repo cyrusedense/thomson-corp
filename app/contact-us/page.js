@@ -2,6 +2,7 @@ import { FaPhone, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import ContactForm from "../components/ContactForm";
 import LocationInfo from "../components/Locations";
 import Image from "next/image";
+import Button from "../components/Button";
 
 function Contact() {
   return (
@@ -103,9 +104,10 @@ function Contact() {
                 <p className="flex items-center gap-1 text-white">
                   <span>📍</span> Malaysia
                 </p>
-                <button className="rounded-full bg-white px-6 py-2 font-semibold text-[#2C5F2D]">
-                  Apply Now
-                </button>
+                <div className="">
+                  {" "}
+                  <Button color="white" text={"Apply Now"} />
+                </div>
               </div>
             </div>
 
@@ -120,9 +122,11 @@ function Contact() {
                 <p className="flex items-center gap-1 text-white">
                   <span>📍</span> Malaysia
                 </p>
-                <button className="rounded-full bg-white px-6 py-2 font-semibold text-[#2C5F2D]">
-                  Apply Now
-                </button>
+
+                <div className="">
+                  {" "}
+                  <Button color="yellow" text={"Apply Now"} />
+                </div>
               </div>
             </div>
 
@@ -137,17 +141,19 @@ function Contact() {
                 <p className="flex items-center gap-1 text-white">
                   <span>📍</span> Malaysia
                 </p>
-                <button className="rounded-full bg-white px-6 py-2 font-semibold text-[#2C5F2D]">
-                  Apply Now
-                </button>
+                <div className="">
+                  {" "}
+                  <Button color="white" text={"Apply Now"} />
+                </div>
               </div>
             </div>
           </div>
 
           <div className="mt-[60px]">
-            <button className="rounded-[15px] bg-[#F9B002] px-[50px] py-2 font-semibold text-white">
-              See More
-            </button>
+            <div className="">
+              {" "}
+              <Button color="yellow" text={"See More"} />
+            </div>
           </div>
         </div>
       </section>
@@ -170,13 +176,15 @@ function Contact() {
               sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
               vel, aliquet nec, vulputate eget, arcu
             </p>
-            <div className="mb-10 flex w-[80%] gap-4 text-[10px] md:w-full md:flex-row md:text-[15px]">
-              <button className="w-full rounded-lg bg-yellow-500 px-4 py-2 font-bold text-white transition hover:bg-yellow-600 md:w-[45%]">
-                Join Now
-              </button>
-              <button className="w-full rounded-lg bg-yellow-500 px-4 py-2 font-bold text-white transition hover:bg-yellow-600 md:w-[45%]">
-                Read More
-              </button>
+            <div className="mb-10 flex justify-center  w-[80%] gap-4 text-[15px] md:w-full md:flex-row md:justify-start md:text-[15px]">
+              <div className="">
+                {" "}
+                <Button color="yellow" text={"Join Now"} />
+              </div>
+              <div className="">
+                {" "}
+                <Button color="yellow" text={"Read More"} />
+              </div>
             </div>
           </div>
           <div className="grid-right z-10 mb-10 w-full px-10 md:relative md:right-[5%] md:mb-[75px] md:mt-0 md:w-[1000px] md:px-0 lg:relative lg:right-[-10%]">
@@ -190,7 +198,6 @@ function Contact() {
             </div>
           </div>
         </div>
-        
       </section>
     </main>
   );
