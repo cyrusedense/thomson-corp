@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
+* {
   box-sizing: border-box;
 }
 /* :root {
@@ -30,3 +29,7 @@ body {
     text-wrap: balance;
   }
 }
+
+/* .button-arrow {
+  transition-behavior: allow-discrete;
+} */

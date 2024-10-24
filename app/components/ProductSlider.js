@@ -29,10 +29,10 @@ export default function ProductSlider() {
       title: "Circulon",
       description: "Traditionally Used To Promote Blood Circulation & Health",
       images: {
-        bg: "/images/product-animations/product-2/product-bg.png",
-        product: "/images/product-animations/product-2/product.png",
-        human: "/images/product-animations/product-2/product-human.png",
-        featured: "/images/product-animations/product-2/product-featured.png", // New featured image
+        bg: "/images/product-animations/probiogut/probiogut-bg.jpg",
+        product: "/images/product-animations/probiogut/probiogut.png",
+        human: "/images/product-animations/probiogut/probiogut-human.png",
+        featured: "/images/product-animations/probiogut/probiogut.png", // New featured image
       },
     },
     // Add more scenes as needed...
@@ -190,9 +190,9 @@ export default function ProductSlider() {
       </div>
 
       {/* Product List with Featured Images */}
-      <div className="product-indicators-wrapper absolute bottom-0 left-0 z-[30] w-full rounded-full bg-tsdarkgreen bg-opacity-70 py-6">
+      <div className="product-indicators-wrapper absolute bottom-0 left-[50%] z-[30] flex w-fit translate-x-[-50%] items-center justify-center gap-10 rounded-full bg-tsdarkgreen px-6 py-6">
         {/* Previous Button with Arrow Image */}
-        <button onClick={prevScene} className="absolute left-6 cursor-pointer">
+        <button onClick={prevScene} className="left-6 cursor-pointer">
           <Image
             src="/images/prev-arrow.png" // Path to your left arrow image
             alt="Previous"
@@ -226,7 +226,7 @@ export default function ProductSlider() {
           ))}
         </div>
         {/* Next Button with Arrow Image */}
-        <button onClick={nextScene} className="absolute right-6 cursor-pointer">
+        <button onClick={nextScene} className="right-6 cursor-pointer">
           <Image
             src="/images/next-arrow.png" // Path to your right arrow image
             alt="Next"

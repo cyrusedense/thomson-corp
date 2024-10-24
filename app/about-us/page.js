@@ -43,7 +43,7 @@ function AboutUs() {
 
   return (
     <main>
-      <section className="bg-about-hero relative min-h-[50vh] bg-cover bg-right md:min-h-[90vh]">
+      <section className="relative min-h-[50vh] bg-about-hero bg-cover bg-right md:min-h-[90vh]">
         <div className="hero-text-wrapper absolute top-[50%] translate-y-[-50%] p-5">
           <h1 className="mb-4 text-4xl text-white md:text-6xl">About Us</h1>
           <p className="text-xl text-white">Where Health Matters</p>
@@ -61,6 +61,7 @@ function AboutUs() {
         >
           <Image
             className="object-contain"
+            alt="wave"
             fill
             src={"/images/solid-wave.webp"}
           />
@@ -109,7 +110,7 @@ function AboutUs() {
         </div>
       </section>
 
-      <section className="about-us bg-factory-bg relative flex min-h-[90vh] justify-end bg-cover px-5 py-10 lg:py-20">
+      <section className="about-us relative flex min-h-[90vh] justify-end bg-factory-bg bg-cover px-5 py-10 lg:py-20">
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-transparent via-white/0 to-white/80"></div>{" "}
         {/* White gradient overlay */} {/* White gradient overlay */}
         <div className="about-us-content relative z-10 my-20 flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10 sm:w-[50%] sm:max-w-[500px]">
