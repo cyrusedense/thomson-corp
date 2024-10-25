@@ -6,7 +6,7 @@ import { FiArrowRight } from "react-icons/fi";
 
 function Loyalty() {
   return (
-    <>
+    <main className="bg-[#f7f7f7}">
       <section className="loyalty-hero py-10 md:py-14 xl:py-20">
         <div className="relative grid min-h-[80vh] gap-5 md:grid-cols-4 md:grid-rows-6">
           <div className="hidden-grid-block hidden md:block"></div>
@@ -65,20 +65,22 @@ function Loyalty() {
         </div> */}
       </section>
 
-      <section className="loyalty-footer">
-        <div>
-          <h3>Need Further Assistance?</h3>
+      <section className="loyalty-footer px-5 py-10 md:py-14 xl:py-20">
+        <div className="m-auto max-w-screen-lg">
+          <h3 className="text-3xl font-extrabold text-tsgreen">
+            Need Further Assistance?
+          </h3>
           <p>
             Look no further! Our friendly support team is here to help you! Just
             Press the following button and chat with our team with WhatsApp
           </p>
-          <div className="button-group">
+          <div className="button-group flex gap-5">
             <button>Sign Up</button>
             <button>GET HELP via WHATSAPP</button>
           </div>
         </div>
       </section>
-    </>
+    </main>
   );
 }
 

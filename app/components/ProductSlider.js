@@ -26,7 +26,7 @@ export default function ProductSlider() {
     },
     {
       id: 1,
-      title: "Circulon",
+      title: "ProBioGut",
       description: "Traditionally Used To Promote Blood Circulation & Health",
       images: {
         bg: "/images/product-animations/probiogut/probiogut-bg.jpg",
@@ -135,18 +135,18 @@ export default function ProductSlider() {
           <div
             key={scene.id}
             ref={(el) => (sceneRefs.current[index] = el)} // Store each scene ref
-            className="absolute left-0 top-0 h-full w-full opacity-0" // Initially hidden
+            className="absolute left-0 top-0 h-full w-full py-10 opacity-0 md:py-14 xl:py-20" // Initially hidden
           >
             <Image
               alt="stage-ring"
-              className="absolute z-[18] w-[50%] translate-x-[50%]"
+              className="absolute left-[50%] z-[18] w-[80vw] max-w-[500px] translate-x-[-50%] translate-y-[40%] sm:translate-y-[30%]"
               width={300}
               height={300}
               src={"/images/product-animations/stage-ring.png"}
             />
             <Image
               alt="stage-shadow"
-              className="absolute bottom-0 z-[16] max-h-[300px] w-full object-cover object-top"
+              className="absolute bottom-0 z-[16] h-[50%] w-full object-cover object-top sm:h-[45%]"
               width={300}
               height={300}
               src={"/images/product-animations/stage-with-shadow.png"}
@@ -157,7 +157,7 @@ export default function ProductSlider() {
               fill
               alt="background"
               src={scene.images.bg}
-              className="bg-image object-cover"
+              className="bg-image w-full object-cover"
             />
 
             {/* Product Image */}
@@ -166,22 +166,22 @@ export default function ProductSlider() {
               alt="product"
               width={300}
               height={300}
-              className="product-image absolute left-[50%] z-20 h-[50%] w-[40%] translate-x-[-50%] translate-y-[20%] object-cover"
+              className="product-image absolute left-[50%] top-0 z-20 w-[70vw] max-w-[500px] translate-x-[-50%] translate-y-[70%] object-contain sm:translate-y-[50%]"
             />
             {/* Human Image */}
             <Image
               src={scene.images.human}
               alt="human"
-              width={300}
-              height={400}
-              className="human-image absolute right-[-50px] z-20 h-[50%] w-[40%] translate-y-[50%] object-cover"
+              width={500}
+              height={600}
+              className="human-image absolute right-[-5%] top-[60%] z-20 hidden aspect-square w-[40%] translate-y-[-50%] object-cover sm:block"
             />
             {/* Text Container */}
             <div className="text-container absolute left-[5%] z-20 w-[30%]">
-              <h1 className="text-3xl text-tsdarkgreen xl:text-4xl">
+              <h1 className="text-2xl text-tsdarkgreen xl:text-4xl">
                 {scene.title}
               </h1>
-              <h3 className="text-tsdarkgreen md:text-2xl">
+              <h3 className="text-sm text-tsdarkgreen md:text-2xl">
                 {scene.description}
               </h3>
             </div>
@@ -190,7 +190,7 @@ export default function ProductSlider() {
       </div>
 
       {/* Product List with Featured Images */}
-      <div className="product-indicators-wrapper absolute bottom-0 left-[50%] z-[30] flex w-fit translate-x-[-50%] items-center justify-center gap-10 rounded-full bg-tsdarkgreen px-6 py-6">
+      <div className="product-indicators-wrapper absolute bottom-0 left-[50%] z-[30] mb-6 flex w-fit translate-x-[-50%] items-center justify-center gap-10 rounded-full bg-tsdarkgreen px-2 py-2">
         {/* Previous Button with Arrow Image */}
         <button onClick={prevScene} className="left-6 cursor-pointer">
           <Image
@@ -209,8 +209,8 @@ export default function ProductSlider() {
                 currentScene === index ? "scale-110" : "scale-90"
               }`}
               style={{
-                width: currentScene === index ? "100px" : "80px",
-                height: currentScene === index ? "100px" : "80px",
+                width: currentScene === index ? "60px" : "40px",
+                height: currentScene === index ? "60px" : "40px",
               }}
             >
               <div className="absolute inset-0 flex items-center justify-center rounded-full bg-white">

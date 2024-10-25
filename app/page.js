@@ -69,19 +69,20 @@ export default function Home() {
         </div>
         <div
           ref={waveAnimation}
-          className="absolute bottom-0 w-0 translate-y-[30%]"
+          className="absolute bottom-0 z-20 w-0 translate-y-[30%]"
         >
           <Image
             width={900}
             height={300}
-            className="z-20 w-screen bg-center"
+            className="w-screen bg-center"
             alt="wave"
             src={"/images/hero-wave-1.png"}
           />
         </div>
       </section>
 
-      <section className="product-section h-[50vh] md:h-[100vh]">
+      {/* hidden */}
+      {/* <section className="product-section h-[50vh] md:h-[100vh]">
         <div className="product-frame relative h-full w-full py-10 md:py-14 lg:py-20">
           <Image
             fill
@@ -159,12 +160,10 @@ export default function Home() {
             }
           />
         </div>
-      </section>
-
-      <section className="product-section h-[50vh] md:h-[100vh]">
+      </section> */}
+      <section className="product-section h-[70vh] sm:h-[100vh]">
         <ProductSlider />
       </section>
-
       <section className="about-us flex min-h-[90vh] justify-end bg-about-us-pattern bg-cover px-5 py-10 lg:py-20">
         <div className="about-us-content my-20 flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10 sm:w-[50%] sm:max-w-[500px]">
           <h1 className="text-3xl text-tsdarkgreen md:text-4xl">ABOUT US</h1>
@@ -192,7 +191,6 @@ export default function Home() {
           />
         </div>
       </section>
-
       <section className="flex flex-col gap-5 bg-home-bottom-bg bg-cover px-5 py-14 text-white">
         <h1 className="text-center text-3xl text-tsdarkgreen md:text-4xl">
           RESOURCES
