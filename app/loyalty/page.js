@@ -7,7 +7,7 @@ import { FiArrowRight } from "react-icons/fi";
 function Loyalty() {
   return (
     <>
-      <div className="py-10 md:py-14 xl:py-20">
+      <section className="loyalty-hero py-10 md:py-14 xl:py-20">
         <div className="relative grid min-h-[80vh] gap-5 md:grid-cols-4 md:grid-rows-6">
           <div className="hidden-grid-block hidden md:block"></div>
           <div className="text-center md:col-start-2 md:row-span-6 md:row-start-1">
@@ -35,7 +35,7 @@ function Loyalty() {
                 <FiArrowRight />
               </span>
             </button>
-            <p className="text-center text-tsgreen">It's 100% Free!</p>
+            <p className="text-center text-tsgreen">It&apos;s 100% Free!</p>
           </div>
           <Image
             className="h-full w-full object-cover object-left md:col-span-2 md:col-start-3 md:row-span-6 md:row-start-1"
@@ -63,7 +63,21 @@ function Loyalty() {
           <Image width={300} height={700} src={"/videos/1-3.gif"} />
           <Image width={300} height={700} src={"/videos/2-1.gif"} />
         </div> */}
-      </div>
+      </section>
+
+      <section className="loyalty-footer">
+        <div>
+          <h3>Need Further Assistance?</h3>
+          <p>
+            Look no further! Our friendly support team is here to help you! Just
+            Press the following button and chat with our team with WhatsApp
+          </p>
+          <div className="button-group">
+            <button>Sign Up</button>
+            <button>GET HELP via WHATSAPP</button>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
