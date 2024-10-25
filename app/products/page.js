@@ -94,6 +94,33 @@ const products = [
   },
 ];
 
+const reviews = [
+  {
+    id: 1,
+    reviewBody: "This is testimonial 1",
+    outOfFive: 3,
+    reviewPic: "/",
+    reviewName: "Mr Potato",
+    reviewTitle: "Director",
+  },
+  {
+    id: 2,
+    reviewBody: "This is testimonial 2",
+    outOfFive: 4,
+    reviewPic: "/",
+    reviewName: "Mr Potato",
+    reviewTitle: "Director",
+  },
+  {
+    id: 3,
+    reviewBody: "This is testimonial 3",
+    outOfFive: 5,
+    reviewPic: "/",
+    reviewName: "Mr Potato",
+    reviewTitle: "Director",
+  },
+];
+
 function Page() {
   const router = useRouter();
 
@@ -169,8 +196,55 @@ function Page() {
         ))}
       </section>
 
-      <section className="py-10 md:py-14 xl:py-20">
-        <h1 className="text-center text-4xl">Hear it from them</h1>
+      <section className="px-5 py-10 md:py-14 xl:py-20">
+        <h1 className="mb-5 text-center text-4xl">Hear it from them</h1>
+
+        <div className="slider m-auto max-w-screen-xl grid-cols-3 gap-6 sm:grid">
+          {reviews.map((review) => (
+            <div
+              key={review.id}
+              className="over p-l-6 relative mb-5 w-full rounded-l-[56px] rounded-tr-[56px] bg-tsyellow pt-8"
+            >
+              <div className="m-auto w-[80%]">
+                <div className="flex items-center gap-2">
+                  {/* Display stars */}
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <svg
+                      width="18"
+                      height="17"
+                      key={index}
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill={index < review.outOfFive ? "#FFD700" : "#E5E7EB"} // Yellow for filled, gray/white for unfilled
+                      viewBox="0 0 18 17"
+                      strokeWidth={1}
+                      stroke="currentColor"
+                      className="h-4 w-4"
+                    >
+                      <path
+                        d="M9 0L11.0206 6.21885H17.5595L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885H6.97937L9 0Z"
+                        fill={index < review.outOfFive ? "#FFD700" : "#E5E7EB"}
+                      />
+                    </svg>
+                  ))}
+                </div>
+                <div>{review.reviewBody}</div>
+              </div>
+
+              <div className="flex w-full rounded-bl-[56px] rounded-tr-[56px] bg-tsgreen px-4 py-7">
+                <Image
+                  alt={review.reviewName}
+                  width={20}
+                  height={20}
+                  src={"/"}
+                />
+                <div className="flex">
+                  <h4>{review.reviewName}</h4>
+                  <p>{review.reviewTitle}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   );
