@@ -4,7 +4,7 @@ import { Lato } from "next/font/google";
 import Footer from "./components/Footer";
 
 const lato = Lato({
-  weight: "400",
+  weight: ["400", "700", "900"],
   subsets: ["latin"],
 });
 
