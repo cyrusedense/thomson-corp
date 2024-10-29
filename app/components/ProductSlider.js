@@ -223,7 +223,7 @@ export default function ProductSlider() {
                 className="absolute top-[50%] z-[18] translate-y-[-80%]"
                 width={800}
                 height={800}
-                src={"/images/product-animations/stage-ring.png"}
+                src={"/images/stage-ring.png"}
                 style={{
                   width: anchorPosition.width,
 
@@ -235,7 +235,7 @@ export default function ProductSlider() {
                 className="absolute bottom-0 z-[16] h-[50%] w-full object-cover object-top sm:h-[45%]"
                 width={800}
                 height={800}
-                src={"/images/product-animations/stage-with-shadow.png"}
+                src={"/images/stage-shadow.png"}
               />
 
               {/* Product Banner */}
