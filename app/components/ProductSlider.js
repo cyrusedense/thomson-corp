@@ -66,15 +66,15 @@ const scenes = [
   },
   {
     id: 4,
-    title: "Circulon125",
-    description: "Circulon",
+    title: "Livrin",
+    description: "Livrin",
     images: {
-      bg: "/images/product-animations/circulon-125/circulon-bg.png",
-      product: "/images/product-animations/circulon-125/circulon.png",
-      circular: "/images/product-animations/circulon-125/circulon-circular.png",
-      human: "/images/product-animations/circulon-125/circulon-human.png",
-      banner: "/images/product-animations/circulon-125/circulon-banner.png",
-      featured: "/images/product-animations/circulon-125/circulon.png", // New featured image
+      bg: "/images/product-animations/livrin-300/livrin-bg.png",
+      product: "/images/product-animations/livrin-300/livrin.png",
+      circular: "/images/product-animations/livrin-300/livrin-circular.png",
+      human: "/images/product-animations/livrin-300/livrin-human.png",
+      banner: "/images/product-animations/livrin-300/livrin-banner.png",
+      featured: "/images/product-animations/livrin-300/livrin.png", // New featured image
     },
   },
   {
@@ -149,15 +149,19 @@ export default function ProductSlider() {
 
       tl.to(currentElement, {
         opacity: 0,
-        duration: 1,
+        duration: 0.2,
+
+        //the animation that happens when timeline of fade out
+
         onComplete: () => {
           setCurrentScene(nextIndex); // Update current scene index after out animation
-          gsap.set(nextElement, { opacity: 0 }); // Prepare the next scene
+          // gsap.set(nextElement, { opacity: 0 }); // Prepare the next scene
 
           // In animation for the next scene (sequential element animations)
           tl.to(nextElement, { opacity: 1, duration: 1 }) // Fade in the container
             .from(nextElement.querySelector(".bg-image"), {
-              x: direction * 100 + "%",
+              scale: 2,
+              // x: direction * 100 + "%",
               duration: 1,
               ease: "power2.out",
             }) // Background image slides in
@@ -170,16 +174,27 @@ export default function ProductSlider() {
                 ease: "power2.out",
               },
               "-=0.5",
-            ) // Product image fades in with slight delay
+            )
+            .from(
+              nextElement.querySelector(".product-banner"),
+              {
+                width: 0,
+                transformOrigin: "right",
+                duration: 1,
+              },
+              "0.5",
+            )
+
+            // Product image fades in with slight delay
             .from(
               nextElement.querySelector(".human-image"),
               {
-                x: direction * -100 + "%",
+                y: -direction * -100 + "%",
                 opacity: 0,
                 duration: 1,
                 ease: "power2.out",
               },
-              "-=0.7",
+              ">-1",
             ) // Human image slides in from opposite side
             .from(
               nextElement.querySelector(".text-container"),
@@ -189,7 +204,7 @@ export default function ProductSlider() {
                 duration: 1,
                 ease: "power2.out",
               },
-              "-=0.8",
+              "+=0.8",
             ); // Text fades in from below
         },
       });
@@ -240,7 +255,7 @@ export default function ProductSlider() {
 
               {/* Product Banner */}
               <Image
-                className="absolute z-20 mr-[60vw] mt-[40vh] md:block lg:mr-[38vw]"
+                className="product-banner absolute z-20 mr-[60vw] mt-[40vh] md:block lg:mr-[38vw]"
                 width={300}
                 height={300}
                 alt="product-banner"
@@ -288,7 +303,7 @@ export default function ProductSlider() {
               {/* Circular */}
 
               <Image
-                className="absolute z-20 ml-[32vw] mt-[22vh] sm:mt-[10vh] md:block"
+                className="product-circular absolute z-20 ml-[32vw] mt-[22vh] sm:mt-[10vh] md:block"
                 src={scene.images.circular}
                 alt="circular"
                 width={200}
