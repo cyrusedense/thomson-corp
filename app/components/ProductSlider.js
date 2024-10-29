@@ -237,27 +237,25 @@ export default function ProductSlider() {
             >
               <Image
                 alt="stage-ring"
-                className="absolute top-[50%] z-[18] translate-y-[-80%]"
+                className="absolute top-[53%] z-[16] translate-y-[-80%] lg:top-[55%] xl:top-[58%] 2xl:top-[55%]"
                 width={800}
                 height={800}
                 src={"/images/stage-ring.png"}
                 style={{
-                  width: anchorPosition.width,
-
-                  left: anchorPosition.left,
+                  width: anchorPosition.width * 1.05,
                 }}
               />
               <Image
                 alt="stage-shadow"
-                className="absolute bottom-0 z-[16] h-[50%] w-full object-cover object-top sm:h-[45%]"
-                width={800}
-                height={800}
+                className="absolute bottom-0 z-[18] h-[48%] w-full object-cover object-top sm:h-[45%] 2xl:h-[48%]"
+                width={2000}
+                height={1000}
                 src={"/images/stage-shadow.png"}
               />
 
               {/* Product Banner */}
               <Image
-                className="product-banner absolute left-[2%] top-[50%] z-20 md:left-[20%] md:block"
+                className="product-banner absolute left-[8%] top-[50%] z-20 md:left-[8%] md:block lg:left-[16%] xl:left-[25%] 2xl:left-[31%]"
                 width={300}
                 height={300}
                 alt="product-banner"
@@ -269,13 +267,17 @@ export default function ProductSlider() {
                 }}
               />
 
-              {/* Background Image */}
+              {/* Circular */}
+
               <Image
-                width={1000}
-                height={800}
-                alt="background"
-                src={scene.images.bg}
-                className="bg-image absolute h-full w-full object-cover"
+                className="product-circular absolute right-[25%] top-[30%] z-20 sm:right-[30%] sm:top-[28%] md:right-[27%] md:top-[25%] md:block lg:right-[30%] 2xl:right-[37%]"
+                src={scene.images.circular}
+                alt="circular"
+                width={200}
+                height={200}
+                style={{
+                  width: anchorPosition.width * 0.3,
+                }}
               />
 
               {/* Product Image */}
@@ -285,7 +287,16 @@ export default function ProductSlider() {
                 alt="product"
                 width={800}
                 height={800}
-                className="product-image z-20 w-[70vw] max-w-[600px] object-contain"
+                className="product-image z-20 w-[60vw] object-contain lg:w-[550px]"
+              />
+
+              {/* Background Image */}
+              <Image
+                width={2000}
+                height={800}
+                alt="background"
+                src={scene.images.bg}
+                className="bg-image absolute h-full w-full object-cover"
               />
               {/* Human Image */}
               <Image
@@ -293,25 +304,12 @@ export default function ProductSlider() {
                 alt="human"
                 width={500}
                 height={600}
-                className="human-image absolute right-[-15%] top-[45%] z-20 max-w-[500px] sm:right-[-5%] sm:top-[30%]"
+                className="human-image absolute right-[-15%] top-[45%] z-20 sm:right-[-10%] sm:top-[33%] md:right-[-20%] lg:right-[-10%] xl:right-[-5%] 2xl:right-[2%]"
                 style={{
                   width: anchorPosition.width,
                   // top: anchorPosition.top,
                   // // left: anchorPosition.left - 0.5 * anchorPosition.width,
                   // left: anchorPosition.left,
-                }}
-              />
-
-              {/* Circular */}
-
-              <Image
-                className="product-circular absolute right-[18%] top-[28%] z-20 sm:right-[30%] sm:top-[20%] md:block"
-                src={scene.images.circular}
-                alt="circular"
-                width={200}
-                height={200}
-                style={{
-                  width: anchorPosition.width * 0.3,
                 }}
               />
 
