@@ -1,42 +1,122 @@
 "use client"; // Mark as client component
 
+import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+
+import useAnchorPosition from "../hooks/useAnchorPosition";
+
+const scenes = [
+  {
+    id: 0,
+    title: "Activated Ginkgo",
+    description: "Traditionally Used To Promote Blood Circulation & Health",
+    images: {
+      bg: "/images/product-animations/activated-ginko/activated-ginkgo-bg.png",
+      circular:
+        "/images/product-animations/activated-ginko/activated-ginkgo-blood.png",
+      product: "/images/product-animations/activated-ginko/activated_ginko.png",
+      human:
+        "/images/product-animations/activated-ginko/activated-ginkgo-human.png",
+      banner:
+        "/images/product-animations/activated-ginko/activated-ginkgo-banner.png",
+      featured:
+        "/images/product-animations/activated-ginko/activated_ginko.png", // New featured image
+    },
+  },
+  {
+    id: 1,
+    title: "ProBioGut",
+    description: "Fix Your Gut",
+    images: {
+      bg: "/images/product-animations/probiogut/probiogut-bg.png",
+      product: "/images/product-animations/probiogut/probiogut.png",
+      circular: "/images/product-animations/probiogut/probiogut-circular.png",
+      human: "/images/product-animations/probiogut/probiogut-human.png",
+      banner: "/images/product-animations/probiogut/probiogut-banner.png",
+      featured: "/images/product-animations/probiogut/probiogut.png", // New featured image
+    },
+  },
+  {
+    id: 2,
+    title: "Circulon125",
+    description: "Circulon",
+    images: {
+      bg: "/images/product-animations/circulon-125/circulon-bg.png",
+      product: "/images/product-animations/circulon-125/circulon.png",
+      circular: "/images/product-animations/circulon-125/circulon-circular.png",
+      human: "/images/product-animations/circulon-125/circulon-human.png",
+      banner: "/images/product-animations/circulon-125/circulon-banner.png",
+      featured: "/images/product-animations/circulon-125/circulon.png", // New featured image
+    },
+  },
+  {
+    id: 3,
+    title: "Osteopro",
+    description: "Osteopro Description",
+    images: {
+      bg: "/images/product-animations/osteopro/osteo-bg.png",
+      product: "/images/product-animations/osteopro/osteo.png",
+      circular: "/images/product-animations/osteopro/osteo-circular.png",
+      human: "/images/product-animations/osteopro/osteo-human.png",
+      banner: "/images/product-animations/osteopro/osteo-banner.png",
+      featured: "/images/product-animations/osteopro/osteo.png", // New featured image
+    },
+  },
+  {
+    id: 4,
+    title: "Circulon125",
+    description: "Circulon",
+    images: {
+      bg: "/images/product-animations/circulon-125/circulon-bg.png",
+      product: "/images/product-animations/circulon-125/circulon.png",
+      circular: "/images/product-animations/circulon-125/circulon-circular.png",
+      human: "/images/product-animations/circulon-125/circulon-human.png",
+      banner: "/images/product-animations/circulon-125/circulon-banner.png",
+      featured: "/images/product-animations/circulon-125/circulon.png", // New featured image
+    },
+  },
+  {
+    id: 5,
+    title: "Calmilax",
+    description: "Calmilax Desc",
+    images: {
+      bg: "/images/product-animations/calmilax/cml-bg.png",
+      product: "/images/product-animations/calmilax/cml.png",
+      circular: "/images/product-animations/calmilax/cml-circular.png",
+      human: "/images/product-animations/calmilax/cml-human.png",
+      banner: "/images/product-animations/calmilax/cml-banner.png",
+      featured: "/images/product-animations/calmilax/cml.png", // New featured image
+    },
+  },
+  {
+    id: 5,
+    title: "Xbido",
+    description: "Xbido Desc",
+    images: {
+      bg: "/images/product-animations/xbido/xbd-bg.png",
+      product: "/images/product-animations/xbido/xbd.png",
+      circular: "/images/product-animations/xbido/xbd-circular.png",
+      human: "/images/product-animations/xbido/xbd-human.png",
+      banner: "/images/product-animations/xbido/xbd-banner.png",
+      featured: "/images/product-animations/xbido/xbd.png", // New featured image
+    },
+  },
+  // Add more scenes as needed...
+];
 
 export default function ProductSlider() {
   const [currentScene, setCurrentScene] = useState(0); // Track active scene
   const sceneRefs = useRef([]); // Holds references to each scene
 
+  const productImageRef = useRef(null); // Ref for the product image
+
+  const anchorPosition = useAnchorPosition(productImageRef);
+
+  // Collect anchor positions using useEffect
+
   // Scenes data (you can dynamically render this with data)
-  const scenes = [
-    {
-      id: 0,
-      title: "Activated Ginkgo",
-      description: "Traditionally Used To Promote Blood Circulation & Health",
-      images: {
-        bg: "/images/product-animations/activated-ginko/activated-ginkgo-bg.png",
-        product:
-          "/images/product-animations/activated-ginko/activated_ginko.png",
-        human:
-          "/images/product-animations/activated-ginko/activated-ginkgo-human.png",
-        featured:
-          "/images/product-animations/activated-ginko/activated_ginko.png", // New featured image
-      },
-    },
-    {
-      id: 1,
-      title: "ProBioGut",
-      description: "Traditionally Used To Promote Blood Circulation & Health",
-      images: {
-        bg: "/images/product-animations/probiogut/probiogut-bg.jpg",
-        product: "/images/product-animations/probiogut/probiogut.png",
-        human: "/images/product-animations/probiogut/probiogut-human.png",
-        featured: "/images/product-animations/probiogut/probiogut.png", // New featured image
-      },
-    },
-    // Add more scenes as needed...
-  ];
 
   // Slide to next scene
   const nextScene = () => {
@@ -131,62 +211,105 @@ export default function ProductSlider() {
     <div className="relative h-full w-full">
       {/* Slider Container */}
       <div className="relative h-full w-full overflow-hidden">
-        {scenes.map((scene, index) => (
-          <div
-            key={scene.id}
-            ref={(el) => (sceneRefs.current[index] = el)} // Store each scene ref
-            className="absolute left-0 top-0 h-full w-full py-10 opacity-0 md:py-14 xl:py-20" // Initially hidden
-          >
-            <Image
-              alt="stage-ring"
-              className="absolute left-[50%] z-[18] w-[80vw] max-w-[500px] translate-x-[-50%] translate-y-[40%] sm:translate-y-[30%]"
-              width={300}
-              height={300}
-              src={"/images/product-animations/stage-ring.png"}
-            />
-            <Image
-              alt="stage-shadow"
-              className="absolute bottom-0 z-[16] h-[50%] w-full object-cover object-top sm:h-[45%]"
-              width={300}
-              height={300}
-              src={"/images/product-animations/stage-with-shadow.png"}
-            />
+        {scenes.map((scene, index) => {
+          return (
+            <div
+              key={scene.id}
+              ref={(el) => (sceneRefs.current[index] = el)} // Store each scene ref
+              className="absolute top-0 flex h-full w-full justify-center py-10 opacity-0 md:py-14 xl:py-20" // Initially hidden
+            >
+              <Image
+                alt="stage-ring"
+                className="absolute top-[50%] z-[18] translate-y-[-80%]"
+                width={800}
+                height={800}
+                src={"/images/product-animations/stage-ring.png"}
+                style={{
+                  width: anchorPosition.width,
 
-            {/* Background Image */}
-            <Image
-              fill
-              alt="background"
-              src={scene.images.bg}
-              className="bg-image w-full object-cover"
-            />
+                  left: anchorPosition.left,
+                }}
+              />
+              <Image
+                alt="stage-shadow"
+                className="absolute bottom-0 z-[16] h-[50%] w-full object-cover object-top sm:h-[45%]"
+                width={800}
+                height={800}
+                src={"/images/product-animations/stage-with-shadow.png"}
+              />
 
-            {/* Product Image */}
-            <Image
-              src={scene.images.product}
-              alt="product"
-              width={300}
-              height={300}
-              className="product-image absolute left-[50%] top-0 z-20 w-[70vw] max-w-[500px] translate-x-[-50%] translate-y-[70%] object-contain sm:translate-y-[50%]"
-            />
-            {/* Human Image */}
-            <Image
-              src={scene.images.human}
-              alt="human"
-              width={500}
-              height={600}
-              className="human-image absolute right-[-5%] top-[60%] z-20 hidden aspect-square w-[40%] translate-y-[-50%] object-cover sm:block"
-            />
-            {/* Text Container */}
-            <div className="text-container absolute left-[5%] z-20 w-[30%]">
-              <h1 className="text-2xl text-tsdarkgreen xl:text-4xl">
-                {scene.title}
-              </h1>
-              <h3 className="text-sm text-tsdarkgreen md:text-2xl">
-                {scene.description}
-              </h3>
+              {/* Product Banner */}
+              <Image
+                className="absolute z-20 mr-[60vw] mt-[40vh] md:block lg:mr-[38vw]"
+                width={300}
+                height={300}
+                alt="product-banner"
+                src={
+                  "/images/product-animations/activated-ginko/activated-ginkgo-banner.png"
+                }
+                style={{
+                  width: anchorPosition.width * 0.5,
+                }}
+              />
+
+              {/* Background Image */}
+              <Image
+                width={1000}
+                height={800}
+                alt="background"
+                src={scene.images.bg}
+                className="bg-image absolute h-full w-full object-cover"
+              />
+
+              {/* Product Image */}
+              <Image
+                ref={productImageRef}
+                src={scene.images.product}
+                alt="product"
+                width={800}
+                height={800}
+                className="product-image z-20 w-[70vw] max-w-[500px] object-contain"
+              />
+              {/* Human Image */}
+              <Image
+                src={scene.images.human}
+                alt="human"
+                width={500}
+                height={600}
+                className="human-image absolute right-[-15%] top-[45%] z-20 max-w-[500px] sm:right-[-5%] sm:top-[30%]"
+                style={{
+                  width: anchorPosition.width,
+                  // top: anchorPosition.top,
+                  // // left: anchorPosition.left - 0.5 * anchorPosition.width,
+                  // left: anchorPosition.left,
+                }}
+              />
+
+              {/* Circular */}
+
+              <Image
+                className="absolute z-20 ml-[32vw] mt-[22vh] sm:mt-[10vh] md:block"
+                src={scene.images.circular}
+                alt="circular"
+                width={200}
+                height={200}
+                style={{
+                  width: anchorPosition.width * 0.3,
+                }}
+              />
+
+              {/* Text Container */}
+              <div className="text-container absolute left-[5%] z-20 w-[30%]">
+                <h1 className="text-2xl text-tsdarkgreen xl:text-4xl">
+                  {scene.title}
+                </h1>
+                <h3 className="text-sm text-tsdarkgreen md:text-2xl">
+                  {scene.description}
+                </h3>
+              </div>
             </div>
-          </div>
-        ))}
+          ); // Anchor to the product image
+        })}
       </div>
 
       {/* Product List with Featured Images */}
