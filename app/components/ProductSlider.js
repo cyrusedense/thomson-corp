@@ -160,7 +160,7 @@ export default function ProductSlider() {
           // In animation for the next scene (sequential element animations)
           tl.to(nextElement, { opacity: 1, duration: 1 }) // Fade in the container
             .from(nextElement.querySelector(".bg-image"), {
-              scale: 2,
+              autoAlpha: 0,
               // x: direction * 100 + "%",
               duration: 1,
               ease: "power2.out",
@@ -185,16 +185,18 @@ export default function ProductSlider() {
               "0.5",
             )
 
+            .from(nextElement.querySelector(".product-circular"), {})
+
             // Product image fades in with slight delay
             .from(
               nextElement.querySelector(".human-image"),
               {
-                y: -direction * -100 + "%",
+                // y: -direction * -100 + "%",
                 opacity: 0,
                 duration: 1,
                 ease: "power2.out",
               },
-              ">-1",
+              ">-2.0",
             ) // Human image slides in from opposite side
             .from(
               nextElement.querySelector(".text-container"),
@@ -231,7 +233,7 @@ export default function ProductSlider() {
             <div
               key={scene.id}
               ref={(el) => (sceneRefs.current[index] = el)} // Store each scene ref
-              className="absolute top-0 flex h-full w-full justify-center py-10 opacity-0 md:py-14 xl:py-20" // Initially hidden
+              className="absolute top-0 flex h-full w-full justify-center opacity-0" // Initially hidden
             >
               <Image
                 alt="stage-ring"
@@ -255,7 +257,7 @@ export default function ProductSlider() {
 
               {/* Product Banner */}
               <Image
-                className="product-banner absolute z-20 mr-[60vw] mt-[40vh] md:block lg:mr-[38vw]"
+                className="product-banner absolute left-[2%] top-[50%] z-20 md:left-[20%] md:block"
                 width={300}
                 height={300}
                 alt="product-banner"
@@ -283,7 +285,7 @@ export default function ProductSlider() {
                 alt="product"
                 width={800}
                 height={800}
-                className="product-image z-20 w-[70vw] max-w-[500px] object-contain"
+                className="product-image z-20 w-[70vw] max-w-[600px] object-contain"
               />
               {/* Human Image */}
               <Image
@@ -303,7 +305,7 @@ export default function ProductSlider() {
               {/* Circular */}
 
               <Image
-                className="product-circular absolute z-20 ml-[32vw] mt-[22vh] sm:mt-[10vh] md:block"
+                className="product-circular absolute right-[18%] top-[28%] z-20 sm:right-[30%] sm:top-[20%] md:block"
                 src={scene.images.circular}
                 alt="circular"
                 width={200}
@@ -314,7 +316,7 @@ export default function ProductSlider() {
               />
 
               {/* Text Container */}
-              <div className="text-container absolute left-[5%] z-20 w-[30%]">
+              <div className="text-container absolute left-[5%] top-[10%] z-20 w-[30%]">
                 <h1 className="text-2xl text-tsdarkgreen xl:text-4xl">
                   {scene.title}
                 </h1>

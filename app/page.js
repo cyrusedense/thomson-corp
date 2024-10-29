@@ -161,7 +161,7 @@ export default function Home() {
           />
         </div>
       </section> */}
-      <section className="product-section h-screen">
+      <section className="product-section h-[700px] sm:h-[900px]">
         <ProductSlider />
       </section>
       <section className="about-us flex min-h-[90vh] justify-end bg-about-us-pattern bg-cover px-5 py-10 lg:py-20">
