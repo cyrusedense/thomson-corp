@@ -45,14 +45,14 @@ export default function Home() {
       duration: 1,
     });
 
-    gsap.to(rotationElement.current, {
-      translateX: "10px",
-      translateY: "20px",
-      repeat: -1,
-      yoyo: true,
-      duration: 5,
-      ease: "none",
-    });
+    // gsap.to(rotationElement.current, {
+    //   translateX: "10px",
+    //   translateY: "20px",
+    //   repeat: -1,
+    //   yoyo: true,
+    //   duration: 5,
+    //   ease: "none",
+    // });
   });
 
   return (
@@ -60,9 +60,8 @@ export default function Home() {
       <section className="hero relative h-[90vh] w-screen">
         <div className="relative h-full w-screen">
           <Image
-            className="bg-center"
+            className="bg-center object-cover"
             fill
-            objectFit="cover"
             alt="woman"
             src={"/images/hero-banner.png"}
           />

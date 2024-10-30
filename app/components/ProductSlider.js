@@ -91,7 +91,7 @@ const scenes = [
     },
   },
   {
-    id: 5,
+    id: 6,
     title: "Xbido",
     description: "Xbido Desc",
     images: {
@@ -120,7 +120,7 @@ export default function ProductSlider() {
 
   // Slide to next scene
   const nextScene = () => {
-    const next = (currentScene + 1) % scenes.length; // Loop back to the first scene
+    const next = (currentScene + 1) % scenes.length; // Loop back to the first scene this is an index that is based on state
     playSceneAnimation(next, 1); // Forward direction (right)
   };
 
@@ -144,85 +144,119 @@ export default function ProductSlider() {
     const nextElement = sceneRefs.current[nextIndex];
 
     const ctx = gsap.context(() => {
-      // Out animation for the current scene
-      const tl = gsap.timeline();
+      //i initiate a master timeline
+      const masterTimeline = gsap.timeline();
 
-      tl.to(currentElement, {
-        opacity: 0,
-        duration: 0.2,
+      // Initial setup - only set opacity for container, not children
+      // i set my nextElement, which is based on the nextIndex state that is passed into the playScene
+      // the argument is passed in when i click the button, it runs the function prevScene or nextScene, which runs playScene
 
-        //the animation that happens when timeline of fade out
+      //I first set next element to be invisible since by default it is not
 
-        onComplete: () => {
-          setCurrentScene(nextIndex); // Update current scene index after out animation
-          // gsap.set(nextElement, { opacity: 0 }); // Prepare the next scene
+      // gsap.set(nextElement, {
+      //   opacity: 0,
+      //   visibility: "visible",
+      // });
 
-          // In animation for the next scene (sequential element animations)
-          tl.to(nextElement, { opacity: 1, duration: 1 }) // Fade in the container
-            .from(nextElement.querySelector(".bg-image"), {
-              autoAlpha: 0,
-              // x: direction * 100 + "%",
-              duration: 1,
-              ease: "power2.out",
-            }) // Background image slides in
-            .from(
-              nextElement.querySelector(".product-image"),
-              {
-                scale: 0.8,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out",
-              },
-              "-=0.5",
-            )
-            .from(
-              nextElement.querySelector(".product-banner"),
-              {
-                width: 0,
-                transformOrigin: "right",
-                duration: 1,
-              },
-              "0.5",
-            )
+      //i fade out the current animations with a timeline
 
-            .from(nextElement.querySelector(".product-circular"), {})
+      // Exit animations
+      masterTimeline
+        .to(currentElement.querySelector(".product-image"), {
+          y: "-100%",
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.in",
+        })
+        .to(
+          [
+            currentElement.querySelector(".text-container"),
+            currentElement.querySelector(".product-banner"),
+            currentElement.querySelector(".human-image"),
+          ],
+          {
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.1,
+          },
+          "<+=0.2",
+        )
+        //i set the nextElement to be visible
+        .add(() => {
+          setCurrentScene(nextIndex);
+          // Make next element visible
+          gsap.set(nextElement, { opacity: 1 });
+        });
 
-            // Product image fades in with slight delay
-            .from(
-              nextElement.querySelector(".human-image"),
-              {
-                // y: -direction * -100 + "%",
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out",
-              },
-              ">-2.0",
-            ) // Human image slides in from opposite side
-            .from(
-              nextElement.querySelector(".text-container"),
-              {
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out",
-              },
-              "+=0.8",
-            ); // Text fades in from below
-        },
-      });
+      // Entrance animations
+      masterTimeline
+        .from(nextElement.querySelector(".bg-image"), {
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+        })
+        .from(
+          nextElement.querySelector(".product-image"),
+          {
+            y: "100%",
+            opacity: 0,
+            duration: 1.2,
+            ease: "power2.out",
+          },
+          "-=0.6",
+        )
+        // Synchronized spring animation for circular and banner
+        .from(
+          [
+            nextElement.querySelector(".product-circular"),
+            nextElement.querySelector(".product-banner"),
+          ],
+          {
+            opacity: 0,
+            scale: 0,
+            duration: 1.2,
+            ease: "back.out(1.7)",
+            transformOrigin: "center",
+            stagger: 0,
+          },
+          "<+=0.2",
+        )
+        .from(
+          nextElement.querySelector(".human-image"),
+          {
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+          },
+          "<+=0.2",
+        )
+        .from(
+          nextElement.querySelector(".text-container"),
+          {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out",
+          },
+          "<+=0.2",
+        );
     });
 
-    return () => ctx.revert(); // Clean up animations when the component is unmounted
+    return () => {
+      ctx.revert();
+      // Ensure elements are visible after animation cleanup
+    };
   };
 
   // Initialize the first scene (make sure it's visible) and create context for animations
   useEffect(() => {
+    console.log(`useEffect fired, current scene is ${currentScene}`);
     const ctx = gsap.context(() => {
       gsap.set(sceneRefs.current[currentScene], { opacity: 1 });
     });
 
     return () => ctx.revert(); // Clean up on component unmount
-  }, [currentScene]);
+  }, []);
 
   return (
     <div className="relative h-full w-full">
@@ -255,7 +289,7 @@ export default function ProductSlider() {
 
               {/* Product Banner */}
               <Image
-                className="product-banner absolute left-[8%] top-[50%] z-20 md:left-[8%] md:block lg:left-[16%] xl:left-[25%] 2xl:left-[31%]"
+                className="product-banner absolute left-[8%] top-[50%] z-20 overflow-hidden md:left-[8%] md:block lg:left-[16%] xl:left-[25%] 2xl:left-[31%]"
                 width={300}
                 height={300}
                 alt="product-banner"
@@ -270,7 +304,7 @@ export default function ProductSlider() {
               {/* Circular */}
 
               <Image
-                className="product-circular absolute right-[25%] top-[30%] z-20 sm:right-[30%] sm:top-[28%] md:right-[27%] md:top-[25%] md:block lg:right-[30%] 2xl:right-[37%]"
+                className="product-circular absolute right-[25%] top-[30%] z-20 overflow-hidden sm:right-[30%] sm:top-[28%] md:right-[27%] md:top-[25%] md:block lg:right-[30%] 2xl:right-[37%]"
                 src={scene.images.circular}
                 alt="circular"
                 width={200}

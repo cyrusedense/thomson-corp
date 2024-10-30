@@ -58,11 +58,29 @@ function Loyalty() {
           </div>
         </div>
 
-        {/* <div className="m-auto flex max-w-screen-lg flex-wrap justify-center gap-10">
-          <Image width={300} height={700} src={"/videos/3-2.gif"} />
-          <Image width={300} height={700} src={"/videos/1-3.gif"} />
-          <Image width={300} height={700} src={"/videos/2-1.gif"} />
-        </div> */}
+        <div className="m-auto flex max-w-screen-lg flex-wrap justify-center gap-10">
+          <video
+            loop
+            autoPlay
+            width={300}
+            height={700}
+            src={"/videos/3-2.mp4"}
+          />
+          <video
+            loop
+            autoPlay
+            width={300}
+            height={700}
+            src={"/videos/1-3.mp4"}
+          />
+          <video
+            loop
+            autoPlay
+            width={300}
+            height={700}
+            src={"/videos/2-1.mp4"}
+          />
+        </div>
       </section>
 
       <section className="loyalty-footer px-5 py-10 md:py-14 xl:py-20">
