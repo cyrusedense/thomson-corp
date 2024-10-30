@@ -61,6 +61,8 @@ function Loyalty() {
         <div className="m-auto flex max-w-screen-lg flex-wrap justify-center gap-10">
           <video
             loop
+            muted
+            playsInline
             autoPlay
             width={300}
             height={700}
@@ -68,6 +70,8 @@ function Loyalty() {
           />
           <video
             loop
+            muted
+            playsInline
             autoPlay
             width={300}
             height={700}
@@ -75,6 +79,8 @@ function Loyalty() {
           />
           <video
             loop
+            muted
+            playsInline
             autoPlay
             width={300}
             height={700}
