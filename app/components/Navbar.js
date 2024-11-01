@@ -9,8 +9,8 @@ import { useState, useEffect } from "react";
 
 const NAV_LINKS = [
   { href: "/about-us", label: "About Us" },
-  { href: "#", label: "Our Products" },
-  { href: "#", label: "Blogs & Articles" },
+  { href: "/products", label: "Our Products" },
+  { href: "blogs", label: "Blogs & Articles" },
   { href: "/community", label: "Community" },
 ];
 
@@ -35,7 +35,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 z-20 flex h-[50px] w-screen items-center justify-between px-5 py-10 transition-all duration-300 ${
+      className={`fixed top-0 z-40 flex h-[50px] w-screen items-center justify-between px-5 py-10 transition-all duration-300 ${
         hasScrolled
           ? "bg-tsdarkgreen bg-opacity-90 backdrop-blur-md"
           : "bg-transparent"

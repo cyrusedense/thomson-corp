@@ -7,7 +7,7 @@ import Button from "../components/Button";
 function Contact() {
   return (
     <main className="text-[#004414]">
-      <section className="relative min-h-[50vh] bg-contact-us bg-cover bg-right md:min-h-[90vh]">
+      <section className="bg-contact-us relative min-h-[50vh] bg-cover bg-right md:min-h-[90vh]">
         <div className="hero-text-wrapper absolute top-[50%] translate-y-[-50%] p-5">
           <h1 className="mb-4 text-4xl text-white md:text-6xl">Contact Us</h1>
           <p className="text-xl text-white">
@@ -176,7 +176,7 @@ function Contact() {
               sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
               vel, aliquet nec, vulputate eget, arcu
             </p>
-            <div className="mb-10 flex justify-center  w-[80%] gap-4 text-[15px] md:w-full md:flex-row md:justify-start md:text-[15px]">
+            <div className="mb-10 flex w-[80%] justify-center gap-4 text-[15px] md:w-full md:flex-row md:justify-start md:text-[15px]">
               <div className="">
                 {" "}
                 <Button color="yellow" text={"Join Now"} />

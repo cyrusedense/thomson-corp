@@ -5,7 +5,7 @@ function LocationInfo() {
   return (
     <main>
       {/* Apply centering styles only for mobile */}
-      <section className=" flex w-full flex-col items-center p-5 md:m-[5%] md:h-[168px] md:w-[767px] md:flex-row md:items-start md:p-5">
+      <section className="flex w-full flex-col items-center p-5 md:m-[5%] md:h-[168px] md:w-[767px] md:flex-row md:items-start md:p-5">
         <div className="mb-4 flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#F9B002] md:mb-0 md:h-[67px] md:w-[68.39px]">
           <GrLocation className="h-[25px] w-[25px] text-white md:h-[35px] md:w-[35px]" />
         </div>
