@@ -2,10 +2,16 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Lato } from "next/font/google";
 import Footer from "./components/Footer";
+import localFont from "next/font/local";
 
 const lato = Lato({
   weight: ["400", "700", "900"],
   subsets: ["latin"],
+});
+
+const highTide = localFont({
+  src: "./fonts/HighTide.ttf",
+  variable: "--font-high-tide",
 });
 
 // const geistSans = localFont({
@@ -27,7 +33,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${lato.className} overflow-x-hidden`}>
+      <body
+        className={`${lato.className} ${highTide.variable} overflow-x-hidden`}
+      >
         <Navbar />
         {children}
         <Footer />

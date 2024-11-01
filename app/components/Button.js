@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-function Button({ color, text, clickFunction }) {
+function Button({ color, text, link }) {
   return (
     <button
-      onClick={clickFunction}
-      className={`rounded-full transition-transform hover:scale-105 ${color === "yellow" ? "bg-tsyellow" : "bg-white"} px-3 py-2`}
+      className={`rounded-full transition-transform hover:scale-105 ${color === "yellow" ? "bg-tsyellow" : "bg-white"} px-3 py-2 text-black`}
     >
-      {text}
+      {" "}
+      <Link href={`${link || "/"}`}>{text}</Link>
     </button>
   );
 }

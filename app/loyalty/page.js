@@ -1,12 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Button from "../components/Button";
 
 import { FiArrowRight } from "react-icons/fi";
+import SingleFAQ from "../components/SingleFAQ";
 
 function Loyalty() {
   return (
-    <main className="bg-[#f7f7f7}">
+    <main className="bg-[#f7f7f7]">
       <section className="loyalty-hero py-10 md:py-14 xl:py-20">
         <div className="relative grid min-h-[80vh] gap-5 md:grid-cols-4 md:grid-rows-6">
           <div className="hidden-grid-block hidden md:block"></div>
@@ -57,50 +59,343 @@ function Loyalty() {
             </span>
           </div>
         </div>
+      </section>
 
-        <div className="m-auto flex max-w-screen-lg flex-wrap justify-center gap-10">
-          <video
-            loop
-            muted
-            playsInline
-            autoPlay
-            width={300}
-            height={700}
-            src={"/videos/3-2.mp4"}
-          />
-          <video
-            loop
-            muted
-            playsInline
-            autoPlay
-            width={300}
-            height={700}
-            src={"/videos/1-3.mp4"}
-          />
-          <video
-            loop
-            muted
-            playsInline
-            autoPlay
-            width={300}
-            height={700}
-            src={"/videos/2-1.mp4"}
-          />
+      <section className="flex h-auto flex-col items-center gap-5 bg-ginkgo bg-cover py-10 md:py-14 xl:py-20">
+        <h1 className="mb-5 text-center text-4xl font-bold text-[#195729] md:text-5xl md:text-[50px]">
+          Why Join Us?
+        </h1>
+
+        <div className="m-auto flex flex-wrap justify-center md:max-w-screen-lg">
+          <div>
+            <Image
+              src={"/images/loyalty-icons/member-discounts.png"}
+              width={240}
+              height={241}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/loyalty-icons/welcome-rewards.png"}
+              width={240}
+              height={241}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/loyalty-icons/loyalty-points.png"}
+              width={240}
+              height={241}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/loyalty-icons/refer-a-friend.png"}
+              width={240}
+              height={241}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/loyalty-icons/Birthday-month.png"}
+              width={240}
+              height={241}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/loyalty-icons/survey-and-review.png"}
+              width={240}
+              height={241}
+            />
+          </div>
+          <div>
+            <Image
+              src={"/images/loyalty-icons/welcome-rewards.png"}
+              width={240}
+              height={241}
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-col md:justify-between lg:w-[80%] lg:flex-row lg:justify-start">
+          <div className="flex-grow">
+            <p className="m-2 text-[20px] text-[#195729]">
+              Have more questions? Check out our FAQ
+            </p>
+          </div>
+          <div className="flex justify-center lg:gap-4">
+            <div className="rounded-full p-1 text-[16px] text-[#195729] shadow-md">
+              <Button color={"white"} text={"GO TO FAQ"} />
+            </div>
+            <div className="shadow-md-rounded p-1 text-[16px] text-[#195729]">
+              <Button color={"yellow"} text={"SIGN UP NOW"} />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="flex h-auto flex-col items-center justify-center gap-5 py-10 md:py-14 xl:py-20">
+        <div className="flex justify-center lg:ml-[20%] lg:w-full lg:justify-start">
+          <h1 className="mb-5 text-left text-4xl font-bold text-[#195729] md:text-[50px]">
+            How To’s
+          </h1>
+        </div>
+
+        <div className="w-full space-y-8 p-5 lg:max-w-[80%] lg:justify-start lg:p-0">
+          {[
+            {
+              id: 1,
+              question: "How to Register & Add to Home Page?",
+              answer: "Sign up with either your email or mobile numbers",
+              screens: [
+                {
+                  url: "/videos/1-1.mp4",
+                  caption: "Press Sign Up",
+                },
+                {
+                  url: "/videos/1-2.mp4",
+                  caption: "Use Email / Mobile Numbers",
+                },
+                {
+                  url: "/videos/1-3.mp4",
+                  caption: "Fill in your Info",
+                },
+                {
+                  url: "/videos/1-2.mp4",
+                  caption: "Add To Home Page",
+                },
+              ],
+            },
+            {
+              id: 2,
+              question: "How to Earn Points",
+              answer:
+                "Submit Receipts, Perform Survey & Review or Refer a Friend!",
+              screens: [
+                {
+                  url: "/videos/2-1.mp4",
+                  caption: "Submit Receipt",
+                },
+                {
+                  url: "/videos/2-2.mp4",
+                  caption: "Perform Survey",
+                },
+                {
+                  url: "/videos/2-3.mp4",
+                  caption: "Refer a Friend",
+                },
+              ],
+            },
+            {
+              id: 3,
+              question: "How to Redeem Rewards",
+              answer:
+                "Redeem Rewards with Member Points or Redeem Member Discount voucher online",
+              screens: [
+                {
+                  url: "/videos/3-1.mp4",
+                  caption: "Claim Vouchers",
+                },
+                {
+                  url: "/videos/3-2.mp4",
+                  caption: "Copy Code & Go to Store",
+                },
+                {
+                  url: "/videos/3-3.mp4",
+                  caption: "Press Check Out",
+                },
+                {
+                  url: "/videos/3-4.mp4",
+                  caption: "Apply Code & Pay",
+                },
+              ],
+            },
+          ].map(({ id, question, answer, screens }, index) => (
+            <details
+              className="group [&_summary::-webkit-details-marker]:hidden"
+              key={id}
+              open={index === 0}
+            >
+              <summary className="flex cursor-pointer items-center justify-between p-0 text-[24px] font-medium text-[#195729]">
+                <h2 className="text-[#195729]">{question}</h2>
+                <div className="rounded-full p-1 text-[#195729] shadow-md">
+                  <svg
+                    className="h-6 w-6 text-[#195729] transition-transform duration-300 group-open:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 15l7-7 7 7"
+                    />
+                  </svg>
+                </div>
+              </summary>
+              <p className="mt-2 text-lg font-bold text-[#195729]">{answer}</p>
+
+              {/* screens */}
+              <div className="my-14 grid gap-6 sm:grid-cols-3 xl:grid-cols-4">
+                {screens.map((screen) => (
+                  <div key={screen.id} className="m-auto max-w-[250px]">
+                    <div className="relative w-full">
+                      <video
+                        className="rounded-[14px] border-[4px] border-black object-cover"
+                        src={screen.url}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      ></video>
+                    </div>
+                    <h3 className="my-3 text-center text-xl text-tsdarkgreen">
+                      {screen.caption}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-loyalty-banner bg-cover bg-center px-5 py-10 text-white md:py-14 lg:py-20">
+        <h1 className="mb-5 text-center text-4xl font-bold">
+          Be Part of the Family
+        </h1>
+        <h3 className="mb-5 text-center text-xl">
+          Be Part of the Family Now with our new Loyalty Program! Sign up today
+          to enjoy our benefits!
+        </h3>
+        <div className="m-auto w-fit">
+          <Button color={"yellow"} text={"SIGN UP NOW"}></Button>
+        </div>
+      </section>
+
+      <section className="bg-ginkgo-2 min-h-[50vh] bg-contain bg-center px-5 py-10 md:py-14 lg:py-20">
+        <div className="faq-content-wrapper m-auto max-w-screen-lg">
+          <h1 className="mb-5 text-4xl font-bold text-tsdarkgreen">
+            Common FAQ
+          </h1>
+
+          <div className="general-section">
+            <h3 className="mb-3 text-2xl text-tsdarkgreen">
+              General Questions
+            </h3>
+            <hr className="h-1 bg-tsdarkgreen" />
+
+            <SingleFAQ
+              question={"Is there any fee to join Family?"}
+              answer={
+                "None at all. In fact, you also do not need to make a purchase to join. How can I add this app into my home page? We strongly recommend that you add Thomson Family onto your homescreen, upon which re-login is not necessary for your ease."
+              }
+            />
+            <SingleFAQ
+              question={"How can I add this app into my home page?"}
+              answer={
+                "We strongly recommend that you add Thomson Family onto your homescreen, upon which re-login is not necessary for your ease."
+              }
+            />
+            <Image
+              className="m-auto mb-8"
+              alt="homepage-loyalty-programme"
+              width={300}
+              height={700}
+              src={"/images/homepage-faq.webp"}
+            />
+          </div>
+
+          <div className="family-points-section">
+            <h3 className="mb-3 text-2xl text-tsdarkgreen">
+              Thomson Family Points Questions
+            </h3>
+            <hr className="h-1 bg-tsdarkgreen" />
+
+            <SingleFAQ
+              question={"How do I earn Welcome points?"}
+              answer={
+                "Upon signing up into our Thomson Family Loyalty Program, your welcome points will be automatically accorded to your account."
+              }
+            />
+
+            <SingleFAQ
+              question={
+                "How many points do I get for purchasing Thomson products?"
+              }
+              answer={"Earn 1 point for every $1 spent."}
+            />
+            <SingleFAQ
+              question={
+                "Can I get points even if I purchase Thomson products from other retailers?"
+              }
+              answer={
+                "Certainly! We accept purchase receipts from anywhere in Singapore as long as the submission image captures these details: date and place of purchase, receipt/invoice number, items purchased and amount spent"
+              }
+            />
+            <SingleFAQ
+              question={
+                "Why are the points not reflected immediately after submission?"
+              }
+              answer={
+                "For any product purchase and testimonial/survey submission, the points will be verified and approved by us before points are accorded. Kindly allow us 3-7 working days to process your submission."
+              }
+            />
+
+            <SingleFAQ
+              question={"When do my collected points expire?"}
+              answer={
+                "Your points expire in 2 years (last day of the 2nd year from the day it is earned)."
+              }
+            />
+
+            <SingleFAQ
+              question={"How do I earn the “Refer a Friend” points?"}
+              answer={
+                "Please proceed to the Refer a Friend page and provide your friend with the Referral code. Once your friend has applied the referral code, he/she would have to submit a receipt of any purchase of any Thomson SKU through his/her Thomson Family Loyalty Program and you will both be rewarded the referral points. Note: These referral points will be rewarded to you for each subsequent new referral. For more info : How to refer a friend"
+              }
+            />
+
+            <SingleFAQ
+              question={"How do I earn the Survey and review points?"}
+              answer={
+                "After submitting your Survey and review, you will be awarded the corresponding points into your account as long as min. requirement met (e.g. free text: min. 100 words, video: min. 30secs)."
+              }
+            />
+
+            <SingleFAQ
+              question={"How do I earn the Birthday Month 2x points?"}
+              answer={
+                "In the month of your birthday, you will be rewarded 2x points for your submitted purchase receipts (date of the receipt submitted has to be within the month of your birthday), i.e. if your birthday month is in July, your receipts submitted has to include Thomson purchases made in the month of July."
+              }
+            />
+          </div>
         </div>
       </section>
 
       <section className="loyalty-footer px-5 py-10 md:py-14 xl:py-20">
-        <div className="m-auto max-w-screen-lg">
+        <div className="m-auto flex max-w-screen-lg flex-col gap-4">
           <h3 className="text-3xl font-extrabold text-tsgreen">
             Need Further Assistance?
           </h3>
-          <p>
+          <p className="text-xl">
             Look no further! Our friendly support team is here to help you! Just
             Press the following button and chat with our team with WhatsApp
           </p>
           <div className="button-group flex gap-5">
-            <button>Sign Up</button>
-            <button>GET HELP via WHATSAPP</button>
+            <Button text="SIGN UP NOW" color={"yellow"} link={"/"} />
+            <button className="flex items-center gap-2 rounded-[40px] px-10 py-4">
+              <Image
+                className="h-[30px] w-[30px]"
+                alt="whatsapp-button"
+                width={50}
+                height={50}
+                src={"/images/whatsapp.svg"}
+              />
+              GET HELP via WHATSAPP
+            </button>
           </div>
         </div>
       </section>

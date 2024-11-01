@@ -56,11 +56,7 @@ function Navbar() {
               </Link>
             </li>
           ))}
-          <Button
-            clickFunction={() => router.push("/contact-us")}
-            color="yellow"
-            text="Contact Us"
-          />
+          <Button link={"contact-us"} color="yellow" text="Contact Us" />
         </ul>
       </div>
 
@@ -93,9 +89,9 @@ function Navbar() {
           <li>
             <Button
               clickFunction={() => {
-                router.push("/contact-us");
                 setOpen(false); // Close menu after navigating
               }}
+              link={"/contact-us"}
               color="yellow"
               text="Contact Us"
             />

@@ -1,13 +1,71 @@
+import Button from "../components/Button";
+import Image from "next/image";
+import BlogCard from "../components/BlogCard";
+
 function Community() {
   return (
     <div>
-      <section className="bg-community-hero relative min-h-[50vh] bg-cover bg-right md:min-h-[90vh]">
+      <section className="relative min-h-[50vh] bg-community-hero bg-cover bg-right md:min-h-[70vh]">
         <div className="hero-text-wrapper absolute top-[50%] translate-y-[-50%] p-5">
           <h1 className="mb-4 text-4xl text-white md:text-6xl">Community</h1>
           <p className="text-xl text-white">
             Thomson&apos;s commitment to society
           </p>
         </div>
+      </section>
+      <section className="bg-flower-bg-1 bg-cover bg-center bg-no-repeat px-5 py-10 lg:py-14 xl:py-20">
+        <div className="loyalty-summary m-auto max-w-screen-xl sm:flex">
+          <div className="loyalty-left mt-[40px] flex basis-1/2 translate-x-[56px] flex-col items-start justify-between rounded-l-[56px] bg-tsdarkgreen p-10 pr-20 text-white">
+            <h1 className="text-4xl">EBER LOYALTY AWARDS</h1>
+            <p className="text-xl">Exclusive perks for our loyal customers!</p>
+            <Button color="yellow" link="/loyalty" text="Learn More" />
+          </div>
+          <Image
+            className="z-10 basis-1/2"
+            alt="family-health"
+            width="500"
+            height="500"
+            src="/images/loyalty-section-img.png"
+          />
+        </div>
+
+        <div className="m-auto max-w-screen-lg py-10 md:py-14 lg:py-20">
+          <h1 className="mb-6 text-center text-4xl">ROADSHOW & EVENTS</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+            magni quidem, sit fuga illum mollitia, dolorum aperiam facere eum
+            rem esse? Est obcaecati nemo nostrum, magnam culpa quaerat a iste?
+          </p>
+        </div>
+
+        <div className="blog-wrapper m-auto grid max-w-screen-lg gap-6 text-white md:grid-cols-3">
+          <BlogCard
+            color={"green"}
+            title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
+            author="Benjamin Lim"
+            featuredImage={"/images/test-blog-img.png"}
+          />
+
+          <BlogCard
+            title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
+            author="Benjamin Lim"
+            featuredImage={"/images/test-blog-img.png"}
+          />
+
+          <BlogCard
+            color="green"
+            title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
+            author="Benjamin Lim"
+            featuredImage={"/images/test-blog-img.png"}
+          />
+        </div>
+      </section>
+      <section className="relative aspect-[16/9] w-full">
+        <Image
+          className="object-cover"
+          fill
+          src={"/images/promo-banner.webp"}
+        />
       </section>
     </div>
   );

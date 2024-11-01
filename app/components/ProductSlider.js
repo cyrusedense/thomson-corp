@@ -144,7 +144,6 @@ export default function ProductSlider() {
     const nextElement = sceneRefs.current[nextIndex];
 
     const ctx = gsap.context(() => {
-      //i initiate a master timeline
       const masterTimeline = gsap.timeline();
 
       // Initial setup - only set opacity for container, not children

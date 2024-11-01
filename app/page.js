@@ -58,7 +58,17 @@ export default function Home() {
   return (
     <main ref={container}>
       <section className="hero relative min-h-[50vh]">
-        <div>
+        <div className="">
+          <div className="absolute left-[5%] translate-y-[50%]">
+            <h1 className="font-hightide text-[150px] text-white">
+              Redefining
+            </h1>
+            <h2 className="text-5xl text-white">
+              {" "}
+              Health and Wellness for a Better You
+            </h2>
+          </div>
+
           <video
             className="h-full w-full object-cover"
             autoPlay
@@ -178,11 +188,7 @@ export default function Home() {
             countless journeys toward better health, offering reliable, natural
             support for everyday wellness.
           </p>
-          <Button
-            clickFunction={() => router.push("/about-us")}
-            color={"yellow"}
-            text={"Read More"}
-          />
+          <Button link={"/about-us"} color={"yellow"} text={"Read More"} />
 
           <Image
             width={157}
@@ -222,7 +228,7 @@ export default function Home() {
 
         <div className="mb-10 w-fit self-center md:mb-14 lg:mb-20">
           {" "}
-          <Button color={"yellow"} text={"See More"} />
+          <Button color={"yellow"} text={"See More"} link={"/"} />
         </div>
 
         <h1 className="mb-4 text-center text-3xl text-tsdarkgreen md:text-4xl">
@@ -279,7 +285,7 @@ export default function Home() {
                       <label htmlFor="email"></label>
                       <div className="">
                         {" "}
-                        <Button color="yellow" text={"Subscribe"} />
+                        <Button color="yellow" text={"Subscribe"} link={"/"} />
                       </div>
                     </div>
                   </form>

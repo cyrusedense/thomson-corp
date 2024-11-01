@@ -19,6 +19,9 @@ module.exports = {
         "product-bg": "url(/images/hero-bgs/hero-bg2.png)",
         "blog-hero": "url(/images/hero-bgs/hero-bg3.png)",
         "community-hero": "url(/images/hero-bgs/hero-bg7.png)",
+        ginkgo: "url(/images/bg-ginkgo.png)",
+        "loyalty-banner": "url(/images/loyalty-banner.webp)",
+        "ginkgo-2": "url(/images/bg-ginkgo-2.webp)",
       },
       colors: {
         background: "var(--background)",
@@ -26,6 +29,9 @@ module.exports = {
         tsgreen: "#016A38",
         tsyellow: "#F9B002",
         tsdarkgreen: "#004414",
+      },
+      fontFamily: {
+        hightide: "var(--font-high-tide)",
       },
     },
   },
