@@ -101,7 +101,7 @@ function Loyalty() {
           </div>
           <div>
             <Image
-              src={"/images/loyalty-icons/Birthday-month.png"}
+              src={"/images/loyalty-icons/birthday-month.png"}
               alt="birthday-reward"
               width={240}
               height={241}
@@ -125,12 +125,12 @@ function Loyalty() {
           </div>
         </div>
 
-        <div className="m-auto mt-10 flex max-w-screen-lg flex-wrap justify-between">
-          <p className="text-center text-[20px] text-[#195729]">
+        <div className="m-auto mt-10 max-w-screen-lg justify-between px-5 sm:flex">
+          <p className="mb-5 text-center text-xl text-[#195729]">
             Have more questions? Check out our FAQ
           </p>
 
-          <div className="flex gap-6">
+          <div className="flex justify-center gap-6">
             <Button color={"white"} text={"GO TO FAQ"} />
 
             <Button color={"yellow"} text={"SIGN UP NOW"} />
@@ -138,13 +138,13 @@ function Loyalty() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-center gap-5 py-10 md:py-14 xl:py-20">
-        <div>
+      <section className="px-5 py-10 md:py-14 xl:py-20">
+        <div className="m-auto max-w-screen-lg">
           <h1 className="mb-5 text-left text-4xl font-bold text-tsdarkgreen md:text-5xl">
             How To’s
           </h1>
 
-          <div className="m-auto w-[80vw] max-w-screen-lg">
+          <div className="">
             {[
               {
                 id: 1,
@@ -215,12 +215,12 @@ function Loyalty() {
               },
             ].map(({ id, question, answer, screens }, index) => (
               <details
-                className="group [&_summary::-webkit-details-marker]:hidden"
+                className="group mb-6 [&_summary::-webkit-details-marker]:hidden"
                 key={id}
                 open={index === 0}
               >
-                <summary className="flex cursor-pointer items-center justify-between p-0 text-[24px] font-medium text-[#195729]">
-                  <h2 className="text-[#195729]">{question}</h2>
+                <summary className="flex cursor-pointer items-center justify-between p-0 text-2xl font-medium text-[#195729] xl:text-3xl">
+                  <h2 className="text-tsdarkgreen">{question}</h2>
                   <div className="rounded-full p-1 text-[#195729] shadow-md">
                     <svg
                       className="h-6 w-6 text-[#195729] transition-transform duration-300 group-open:rotate-180"
