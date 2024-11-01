@@ -61,15 +61,16 @@ function Loyalty() {
         </div>
       </section>
 
-      <section className="flex h-auto flex-col items-center gap-5 bg-ginkgo bg-cover py-10 md:py-14 xl:py-20">
+      <section className="h-auto gap-5 bg-ginkgo bg-cover py-10 md:py-14 xl:py-20">
         <h1 className="mb-5 text-center text-4xl font-bold text-[#195729] md:text-5xl md:text-[50px]">
           Why Join Us?
         </h1>
 
-        <div className="m-auto flex flex-wrap justify-center md:max-w-screen-lg">
+        <div className="m-auto flex max-w-screen-lg flex-wrap justify-center">
           <div>
             <Image
               src={"/images/loyalty-icons/member-discounts.png"}
+              alt="discounts"
               width={240}
               height={241}
             />
@@ -77,6 +78,7 @@ function Loyalty() {
           <div>
             <Image
               src={"/images/loyalty-icons/welcome-rewards.png"}
+              alt="loyalty"
               width={240}
               height={241}
             />
@@ -84,6 +86,7 @@ function Loyalty() {
           <div>
             <Image
               src={"/images/loyalty-icons/loyalty-points.png"}
+              alt="points"
               width={240}
               height={241}
             />
@@ -91,6 +94,7 @@ function Loyalty() {
           <div>
             <Image
               src={"/images/loyalty-icons/refer-a-friend.png"}
+              alt="friend-referral"
               width={240}
               height={241}
             />
@@ -98,6 +102,7 @@ function Loyalty() {
           <div>
             <Image
               src={"/images/loyalty-icons/Birthday-month.png"}
+              alt="birthday-reward"
               width={240}
               height={241}
             />
@@ -105,6 +110,7 @@ function Loyalty() {
           <div>
             <Image
               src={"/images/loyalty-icons/survey-and-review.png"}
+              alt="survey-rewards"
               width={240}
               height={241}
             />
@@ -112,153 +118,153 @@ function Loyalty() {
           <div>
             <Image
               src={"/images/loyalty-icons/welcome-rewards.png"}
+              alt="welcome-rewards"
               width={240}
               height={241}
             />
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-col md:justify-between lg:w-[80%] lg:flex-row lg:justify-start">
-          <div className="flex-grow">
-            <p className="m-2 text-[20px] text-[#195729]">
-              Have more questions? Check out our FAQ
-            </p>
-          </div>
-          <div className="flex justify-center lg:gap-4">
-            <div className="rounded-full p-1 text-[16px] text-[#195729] shadow-md">
-              <Button color={"white"} text={"GO TO FAQ"} />
-            </div>
-            <div className="shadow-md-rounded p-1 text-[16px] text-[#195729]">
-              <Button color={"yellow"} text={"SIGN UP NOW"} />
-            </div>
+        <div className="m-auto mt-10 flex max-w-screen-lg flex-wrap justify-between">
+          <p className="text-center text-[20px] text-[#195729]">
+            Have more questions? Check out our FAQ
+          </p>
+
+          <div className="flex gap-6">
+            <Button color={"white"} text={"GO TO FAQ"} />
+
+            <Button color={"yellow"} text={"SIGN UP NOW"} />
           </div>
         </div>
       </section>
-      <section className="flex h-auto flex-col items-center justify-center gap-5 py-10 md:py-14 xl:py-20">
-        <div className="flex justify-center lg:ml-[20%] lg:w-full lg:justify-start">
-          <h1 className="mb-5 text-left text-4xl font-bold text-[#195729] md:text-[50px]">
+
+      <section className="flex flex-col items-center justify-center gap-5 py-10 md:py-14 xl:py-20">
+        <div>
+          <h1 className="mb-5 text-left text-4xl font-bold text-tsdarkgreen md:text-5xl">
             How To’s
           </h1>
-        </div>
 
-        <div className="w-full space-y-8 p-5 lg:max-w-[80%] lg:justify-start lg:p-0">
-          {[
-            {
-              id: 1,
-              question: "How to Register & Add to Home Page?",
-              answer: "Sign up with either your email or mobile numbers",
-              screens: [
-                {
-                  url: "/videos/1-1.mp4",
-                  caption: "Press Sign Up",
-                },
-                {
-                  url: "/videos/1-2.mp4",
-                  caption: "Use Email / Mobile Numbers",
-                },
-                {
-                  url: "/videos/1-3.mp4",
-                  caption: "Fill in your Info",
-                },
-                {
-                  url: "/videos/1-2.mp4",
-                  caption: "Add To Home Page",
-                },
-              ],
-            },
-            {
-              id: 2,
-              question: "How to Earn Points",
-              answer:
-                "Submit Receipts, Perform Survey & Review or Refer a Friend!",
-              screens: [
-                {
-                  url: "/videos/2-1.mp4",
-                  caption: "Submit Receipt",
-                },
-                {
-                  url: "/videos/2-2.mp4",
-                  caption: "Perform Survey",
-                },
-                {
-                  url: "/videos/2-3.mp4",
-                  caption: "Refer a Friend",
-                },
-              ],
-            },
-            {
-              id: 3,
-              question: "How to Redeem Rewards",
-              answer:
-                "Redeem Rewards with Member Points or Redeem Member Discount voucher online",
-              screens: [
-                {
-                  url: "/videos/3-1.mp4",
-                  caption: "Claim Vouchers",
-                },
-                {
-                  url: "/videos/3-2.mp4",
-                  caption: "Copy Code & Go to Store",
-                },
-                {
-                  url: "/videos/3-3.mp4",
-                  caption: "Press Check Out",
-                },
-                {
-                  url: "/videos/3-4.mp4",
-                  caption: "Apply Code & Pay",
-                },
-              ],
-            },
-          ].map(({ id, question, answer, screens }, index) => (
-            <details
-              className="group [&_summary::-webkit-details-marker]:hidden"
-              key={id}
-              open={index === 0}
-            >
-              <summary className="flex cursor-pointer items-center justify-between p-0 text-[24px] font-medium text-[#195729]">
-                <h2 className="text-[#195729]">{question}</h2>
-                <div className="rounded-full p-1 text-[#195729] shadow-md">
-                  <svg
-                    className="h-6 w-6 text-[#195729] transition-transform duration-300 group-open:rotate-180"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M5 15l7-7 7 7"
-                    />
-                  </svg>
-                </div>
-              </summary>
-              <p className="mt-2 text-lg font-bold text-[#195729]">{answer}</p>
-
-              {/* screens */}
-              <div className="my-14 grid gap-6 sm:grid-cols-3 xl:grid-cols-4">
-                {screens.map((screen) => (
-                  <div key={screen.id} className="m-auto max-w-[250px]">
-                    <div className="relative w-full">
-                      <video
-                        className="rounded-[14px] border-[4px] border-black object-cover"
-                        src={screen.url}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                      ></video>
-                    </div>
-                    <h3 className="my-3 text-center text-xl text-tsdarkgreen">
-                      {screen.caption}
-                    </h3>
+          <div className="m-auto w-[80vw] max-w-screen-lg">
+            {[
+              {
+                id: 1,
+                question: "How to Register & Add to Home Page?",
+                answer: "Sign up with either your email or mobile numbers",
+                screens: [
+                  {
+                    url: "/videos/1-1.mp4",
+                    caption: "Press Sign Up",
+                  },
+                  {
+                    url: "/videos/1-2.mp4",
+                    caption: "Use Email / Mobile Numbers",
+                  },
+                  {
+                    url: "/videos/1-3.mp4",
+                    caption: "Fill in your Info",
+                  },
+                  {
+                    url: "/videos/1-2.mp4",
+                    caption: "Add To Home Page",
+                  },
+                ],
+              },
+              {
+                id: 2,
+                question: "How to Earn Points",
+                answer:
+                  "Submit Receipts, Perform Survey & Review or Refer a Friend!",
+                screens: [
+                  {
+                    url: "/videos/2-1.mp4",
+                    caption: "Submit Receipt",
+                  },
+                  {
+                    url: "/videos/2-2.mp4",
+                    caption: "Perform Survey",
+                  },
+                  {
+                    url: "/videos/2-3.mp4",
+                    caption: "Refer a Friend",
+                  },
+                ],
+              },
+              {
+                id: 3,
+                question: "How to Redeem Rewards",
+                answer:
+                  "Redeem Rewards with Member Points or Redeem Member Discount voucher online",
+                screens: [
+                  {
+                    url: "/videos/3-1.mp4",
+                    caption: "Claim Vouchers",
+                  },
+                  {
+                    url: "/videos/3-2.mp4",
+                    caption: "Copy Code & Go to Store",
+                  },
+                  {
+                    url: "/videos/3-3.mp4",
+                    caption: "Press Check Out",
+                  },
+                  {
+                    url: "/videos/3-4.mp4",
+                    caption: "Apply Code & Pay",
+                  },
+                ],
+              },
+            ].map(({ id, question, answer, screens }, index) => (
+              <details
+                className="group [&_summary::-webkit-details-marker]:hidden"
+                key={id}
+                open={index === 0}
+              >
+                <summary className="flex cursor-pointer items-center justify-between p-0 text-[24px] font-medium text-[#195729]">
+                  <h2 className="text-[#195729]">{question}</h2>
+                  <div className="rounded-full p-1 text-[#195729] shadow-md">
+                    <svg
+                      className="h-6 w-6 text-[#195729] transition-transform duration-300 group-open:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 15l7-7 7 7"
+                      />
+                    </svg>
                   </div>
-                ))}
-              </div>
-            </details>
-          ))}
+                </summary>
+                <p className="mt-2 text-lg font-bold text-[#195729]">
+                  {answer}
+                </p>
+
+                {/* screens */}
+                <div className="my-14 grid gap-6 sm:grid-cols-3 xl:grid-cols-4">
+                  {screens.map((screen) => (
+                    <div key={screen.id} className="m-auto max-w-[250px]">
+                      <div className="relative w-full">
+                        <video
+                          className="rounded-[14px] border-[4px] border-black object-cover"
+                          src={screen.url}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                        ></video>
+                      </div>
+                      <h3 className="my-3 text-center text-xl text-tsdarkgreen">
+                        {screen.caption}
+                      </h3>
+                    </div>
+                  ))}
+                </div>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 
