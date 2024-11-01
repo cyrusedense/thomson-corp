@@ -57,14 +57,16 @@ export default function Home() {
 
   return (
     <main ref={container}>
-      <section className="hero relative h-[90vh] w-screen">
-        <div className="relative h-full w-screen">
-          <Image
-            className="bg-center object-cover"
-            fill
-            alt="woman"
-            src={"/images/hero-banner.png"}
-          />
+      <section className="hero relative min-h-[50vh]">
+        <div>
+          <video
+            className="h-full w-full object-cover"
+            autoPlay
+            muted
+            playsInline
+            loop
+            src="/videos/brand-story.mp4"
+          ></video>
         </div>
         <div
           ref={waveAnimation}
