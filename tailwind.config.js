@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        "contact-us": "url('/images/Contact-us.png')",
         "about-us-pattern": "url('/images/about-pattern.png')",
         "flower-bg-1": "url('/images/flower-bg-1.png')",
         "contact-bg-1": "url('/images/contact-bg.png')",
