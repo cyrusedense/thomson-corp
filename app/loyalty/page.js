@@ -389,18 +389,21 @@ function Loyalty() {
           <h3 className="text-3xl font-extrabold text-tsgreen">
             Need Further Assistance?
           </h3>
-          <p className="text-xl">
+          <p className="text-lg">
             Look no further! Our friendly support team is here to help you! Just
             Press the following button and chat with our team with WhatsApp
           </p>
-          <div className="button-group flex gap-5">
-            <Button text="SIGN UP NOW" color={"yellow"} link={"/"} />
+          <div className="button-group flex flex-wrap gap-5 sm:items-center">
+            <button className="flex items-center gap-2 rounded-[40px] bg-tsyellow px-10 py-4">
+              SIGN UP NOW
+            </button>
+
             <button className="flex items-center gap-2 rounded-[40px] px-10 py-4">
               <Image
                 className="h-[30px] w-[30px]"
                 alt="whatsapp-button"
-                width={50}
-                height={50}
+                width={30}
+                height={30}
                 src={"/images/whatsapp.svg"}
               />
               GET HELP via WHATSAPP
