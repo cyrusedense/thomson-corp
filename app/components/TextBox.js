@@ -3,7 +3,7 @@ import Image from "next/image";
 function TextBox({ title, subtitle, para, color }) {
   return (
     <div
-      className={`${color === "yellow" ? "bg-tsyellow" : "bg-tsgreen"} m-auto max-w-[500px] rounded-bl-[56px] rounded-br-[0px] rounded-tl-[56px] rounded-tr-[56px] p-10 text-white`}
+      className={`${color === "yellow" ? "bg-tsyellow" : "bg-tsgreen"} m-auto min-h-[400px] max-w-[500px] rounded-bl-[56px] rounded-br-[0px] rounded-tl-[56px] rounded-tr-[56px] p-10 text-white`}
     >
       <div className="flex items-center justify-between">
         <h2 className="text-3xl">{title}</h2>
@@ -16,8 +16,8 @@ function TextBox({ title, subtitle, para, color }) {
         />
       </div>
 
-      <h3>{subtitle}</h3>
-      <h4 className="text-sm">{para}</h4>
+      {/* <h3>{subtitle}</h3> */}
+      <h4 className="">{para}</h4>
     </div>
   );
 }

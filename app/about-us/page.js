@@ -76,14 +76,14 @@ function AboutUs() {
             subtitle={"Subtitle for Mission"}
             color={"yellow"}
             para={
-              "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu"
+              "To deliver premier health solutions that make a genuine difference in the health journeys of our customers. We harmonize age-old herbal insights with cutting-edge scientific discoveries, ensuring our offerings are not just products, but partners in wellness."
             }
           />
           <TextBox
-            title={"Vision"}
+            title={"Core Values"}
             subtitle={"Subtitle for Vision"}
             para={
-              "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu"
+              "Unwavering quality, relentless innovation, and an unwavering focus on customer well-being guides every step we take."
             }
           />
         </div>
@@ -117,15 +117,22 @@ function AboutUs() {
           <h1 className="text-3xl text-tsdarkgreen md:text-4xl">
             FACTORY FACILITIES
           </h1>
-          <p className="text-sm">
-            At Thomson, we are dedicated to improving the health and well-being
-            of our customers through natural solutions. For over 30 years, we
-            have been a trusted name, helping customers to enhance their overall
-            quality of life. Our customers consistently share stories of relief
-            from chronic issues and improved vitality, with many recommending
-            our products to friends and family. We are proud to be a part of
-            countless journeys toward better health, offering reliable, natural
-            support for everyday wellness.
+          <p className="">
+            At Thomson, we are GMP certified by the Ministry of Health Malaysia,
+            ensuring strict standards for cleanliness and consistency. Our
+            facility uses state-of-the-art German machinery from Fette, Bosch,
+            and Uhlmann, known for superior quality. <br />
+            <br />
+            In our QC lab, we perform:
+            <br />- Dissolution Testing: Ensures ingredients dissolve
+            efficiently for better absorption.
+            <br />- HPLC Testing: Verifies ingredient identity, checks for
+            adulteration, and ensures quality.
+            <br />
+            <br />
+            We believe these two tests are crucial to maintaining the
+            high-quality standards of all Thomson products, ensuring our
+            commitment to excellence.
           </p>
           <Button
             clickFunction={() => router.push("/about-us")}
