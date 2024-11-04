@@ -97,27 +97,30 @@ const products = [
 const reviews = [
   {
     id: 1,
-    reviewBody: "This is testimonial 1",
+    reviewBody:
+      "my husband take it for past 20 years so that he can cover overwhelming work load.",
     outOfFive: 3,
-    reviewPic: "/",
-    reviewName: "Mr Potato",
-    reviewTitle: "Director",
+    reviewPic: "",
+    reviewName: "Swee Leng Ng ",
+    reviewTitle: "Proven for brain power",
   },
   {
     id: 2,
-    reviewBody: "This is testimonial 2",
+    reviewBody:
+      "My husband's family has been taking this product from his teen years. Proven to help in blood circulation matters such as sleep problems and fatigue. So, I have been taking it to help in my migraine problem. Seems to have reduced the intensity of the pain.",
     outOfFive: 4,
-    reviewPic: "/",
-    reviewName: "Mr Potato",
-    reviewTitle: "Director",
+    reviewPic: "",
+    reviewName: "PEI CHEE CHONG",
+    reviewTitle: "Trusted gingko extract for generations.",
   },
   {
     id: 3,
-    reviewBody: "This is testimonial 3",
+    reviewBody:
+      "I struggled with waking up in the middle of the night and couldn't get back to sleep, despite trying various solutions. Since starting Calmilax, I now sleep soundly through the night, and my overall sleep quality has significantly improved. I feel more refreshed and well-rested each morning!",
     outOfFive: 5,
-    reviewPic: "/",
-    reviewName: "Mr Potato",
-    reviewTitle: "Director",
+    reviewPic: "",
+    reviewName: "Wai Fang Chan",
+    reviewTitle: "Say Goodbye to Restless Nights",
   },
 ];
 
@@ -203,9 +206,9 @@ function Page() {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="over p-l-6 relative mb-5 w-full rounded-l-[56px] rounded-tr-[56px] bg-tsyellow pt-8"
+              className="over p-l-6 relative mb-5 flex w-full flex-col justify-between rounded-l-[56px] rounded-tr-[56px] bg-tsyellow pt-8"
             >
-              <div className="m-auto w-[80%]">
+              <div className="mx-auto mb-6 flex w-[80%] flex-col gap-4">
                 <div className="flex items-center gap-2">
                   {/* Display stars */}
                   {Array.from({ length: 5 }).map((_, index) => (
@@ -227,19 +230,26 @@ function Page() {
                     </svg>
                   ))}
                 </div>
+                <h3 className="text-2xl font-bold">{review.reviewTitle}</h3>
                 <div>{review.reviewBody}</div>
               </div>
 
-              <div className="flex w-full rounded-bl-[56px] rounded-tr-[56px] bg-tsgreen px-4 py-7">
-                <Image
-                  alt={review.reviewName}
-                  width={20}
-                  height={20}
-                  src={"/"}
-                />
-                <div className="flex">
-                  <h4>{review.reviewName}</h4>
-                  <p>{review.reviewTitle}</p>
+              <div className="flex w-full gap-5 rounded-bl-[56px] rounded-tr-[56px] bg-tsgreen px-4 py-7">
+                <div className="mx-auto flex w-[80%] items-center gap-5">
+                  <Image
+                    alt={review.reviewName}
+                    className="object-contain"
+                    width={40}
+                    height={40}
+                    src={
+                      review.reviewPic === ""
+                        ? "/images/user-ph.png"
+                        : review.reviewPic
+                    }
+                  />
+                  <div className="flex">
+                    <h4 className="text-xl text-white">{review.reviewName}</h4>
+                  </div>
                 </div>
               </div>
             </div>
