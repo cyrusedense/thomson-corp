@@ -200,7 +200,7 @@ function Page() {
       </section>
 
       <section className="px-5 py-10 md:py-14 xl:py-20">
-        <h1 className="mb-5 text-center text-4xl">Hear it from them</h1>
+        <h1 className="mb-8 text-center text-4xl">Customer Testimonials</h1>
 
         <div className="slider m-auto max-w-screen-xl grid-cols-3 gap-6 sm:grid">
           {reviews.map((review) => (

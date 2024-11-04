@@ -134,11 +134,7 @@ function AboutUs() {
             high-quality standards of all Thomson products, ensuring our
             commitment to excellence.
           </p>
-          <Button
-            clickFunction={() => router.push("/about-us")}
-            color={"yellow"}
-            text={"Read More"}
-          />
+          <Button intLink={"/about-us"} color={"yellow"} text={"Read More"} />
         </div>
       </section>
     </main>

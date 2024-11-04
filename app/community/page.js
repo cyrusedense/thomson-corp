@@ -18,7 +18,7 @@ function Community() {
           <div className="loyalty-left mt-[40px] flex basis-1/2 translate-x-[56px] flex-col items-start justify-between rounded-l-[56px] bg-tsdarkgreen p-10 pr-20 text-white">
             <h1 className="text-4xl">EBER LOYALTY AWARDS</h1>
             <p className="text-xl">Exclusive perks for our loyal customers!</p>
-            <Button color="yellow" link="/loyalty" text="Learn More" />
+            <Button color="yellow" intLink={"/loyalty"} text="Learn More" />
           </div>
           <Image
             className="z-10 basis-1/2"

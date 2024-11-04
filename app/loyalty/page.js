@@ -284,7 +284,7 @@ function Loyalty() {
         </div>
       </section>
 
-      <section className="bg-ginkgo-2 min-h-[50vh] bg-contain bg-center px-5 py-10 md:py-14 lg:py-20">
+      <section className="min-h-[50vh] bg-ginkgo-2 bg-contain bg-center px-5 py-10 md:py-14 lg:py-20">
         <div className="faq-content-wrapper m-auto max-w-screen-lg">
           <h1 className="mb-5 text-4xl font-bold text-tsdarkgreen">
             Common FAQ

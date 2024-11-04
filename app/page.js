@@ -178,7 +178,7 @@ export default function Home() {
       <section className="about-us flex min-h-[90vh] justify-end bg-about-us-pattern bg-cover px-5 py-10 lg:py-20">
         <div className="about-us-content my-20 flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10 sm:w-[50%] sm:max-w-[500px]">
           <h1 className="text-3xl text-tsdarkgreen md:text-4xl">ABOUT US</h1>
-          <p className="text-sm">
+          <p className="">
             At Thomson, we are dedicated to improving the health and well-being
             of our customers through natural solutions. For over 30 years, we
             have been a trusted name, helping customers to enhance their overall
@@ -188,7 +188,7 @@ export default function Home() {
             countless journeys toward better health, offering reliable, natural
             support for everyday wellness.
           </p>
-          <Button link={"/about-us"} color={"yellow"} text={"Read More"} />
+          <Button intLink={"/about-us"} color={"yellow"} text={"Read More"} />
 
           <Image
             width={157}
@@ -228,7 +228,11 @@ export default function Home() {
 
         <div className="mb-10 w-fit self-center md:mb-14 lg:mb-20">
           {" "}
-          <Button color={"yellow"} text={"See More"} link={"/"} />
+          <Button
+            color={"yellow"}
+            text={"See More"}
+            extLink={"https://herbalrevival.life/article/"}
+          />
         </div>
 
         <h1 className="mb-4 text-center text-3xl text-tsdarkgreen md:text-4xl">
@@ -244,11 +248,7 @@ export default function Home() {
               For further inquiries, please visit our {"Contact Us"} page and
               complete the full form. Our team will assist you promptly.
             </p>
-            <Button
-              clickFunction={() => router.push("/about-us")}
-              color={"yellow"}
-              text={"See More"}
-            />
+            <Button intLink={"/about-us"} color={"yellow"} text={"See More"} />
           </div>
           <div ref={contactForm} className="grid-right w-full sm:basis-[55%]">
             <div className="outer-div h-full rounded-l-[56px] rounded-tr-[56px] bg-tsdarkgreen p-2">

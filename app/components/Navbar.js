@@ -10,7 +10,6 @@ import { useState, useEffect } from "react";
 const NAV_LINKS = [
   { href: "/about-us", label: "About Us" },
   { href: "/products", label: "Our Products" },
-  { href: "blogs", label: "Blogs & Articles" },
   { href: "/community", label: "Community" },
 ];
 
@@ -56,7 +55,7 @@ function Navbar() {
               </Link>
             </li>
           ))}
-          <Button link={"contact-us"} color="yellow" text="Contact Us" />
+          <Button intLink={"/contact-us"} color="yellow" text="Contact Us" />
         </ul>
       </div>
 
