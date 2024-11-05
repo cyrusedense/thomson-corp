@@ -37,3 +37,146 @@ body {
 button {
   box-shadow: 0px 3px 6px #00000029;
 }
+
+.milestones {
+  text-align: center;
+  padding: 40px 20px;
+}
+.milestone-card {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.milestone-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.milestone-card p {
+  color: #666;
+}
+/* Timeline Pagination Styles */
+.timeline-pagination {
+  display: flex;
+  justify-content: space-between; /* Evenly space bullets */
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* Line connecting bullets */
+.timeline-pagination::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  width: 90%;
+  margin: auto;
+  height: 2px;
+  background-color: #004414 !important; /* Green line */
+  z-index: 1;
+}
+/* Bullet Container */
+.bullet-container {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+}
+/* Hollow Bullet Styles */
+.swiper-pagination-bullet {
+  width: fit-content !important;
+  height: fit-content !important;
+  border: none !important; /* Green border */
+  border-radius: 0px !important;
+  background-color: white !important; /* Transparent inside */
+  transition: background 0.3s;
+  opacity: 1 !important;
+  z-index: 5;
+}
+
+.swiper-pagination-bullet-active {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #004414; /* Green border */
+  border-radius: 50%;
+  background-color: white !important; /* Transparent inside */
+  transition: background 0.3s;
+}
+
+.bullet {
+  width: 20px !important;
+  height: 20px !important;
+  /* Green border */
+  border-radius: 50% !important;
+  background-color: #004414 !important; /* Transparent inside */
+  transition: background 0.3s;
+  opacity: 1 !important;
+}
+
+/* Year Text */
+.year {
+  font-size: 0.8rem;
+  color: #333;
+}
+/* Active bullet styling */
+.timeline-pagination .swiper-pagination-bullet-active .bullet {
+  background-color: white !important;
+  border: 3px solid #f9b002 !important; /* Solid green for active bullet */
+}
+
+.year {
+  font-size: 22px;
+  color: #004414;
+}
+/* 
+.swiper {
+  width: 40%;
+} */
+
+@media screen and (max-width: 768px) {
+  .timeline-pagination {
+    width: 50% !important;
+    flex-direction: column !important;
+    align-items: start;
+  }
+
+  .bullet-container {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px !important;
+  }
+
+  .swiper-arranger {
+    display: flex;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .timeline-pagination::before {
+    content: "";
+    position: absolute;
+    left: 13px;
+    right: 0;
+    margin: unset !important;
+    width: 2px;
+    height: 85%;
+    background-color: #004414 !important;
+    z-index: 1;
+  }
+
+  .year {
+    font-size: 14px;
+    color: #004414;
+  }
+}
+
+.swiper-button-prev {
+  display: none !important;
+}
+
+.swiper-button-next {
+  display: none !important;
+}

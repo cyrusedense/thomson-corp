@@ -3,12 +3,12 @@ import Image from "next/image";
 import Button from "../components/Button";
 import PersonCard from "../components/PersonCard";
 import TextBox from "../components/TextBox";
-import Timeline from "../components/Timeline";
 
 import { useRef } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import Milestones from "../components/sliderTimeline";
 
 gsap.registerPlugin(useGSAP);
 
@@ -51,7 +51,7 @@ function AboutUs() {
       </section>
 
       <section className="timeline relative m-auto mb-20 max-w-screen-lg py-10 md:py-14 xl:py-20">
-        <Timeline />
+        <Milestones />
       </section>
 
       <section className="relative px-5 py-10 md:py-14 xl:py-20">
