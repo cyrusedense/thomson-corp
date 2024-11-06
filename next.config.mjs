@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: ["herbalrevival.life"], // Add the domain here
+  },
+};
 
 export default nextConfig;

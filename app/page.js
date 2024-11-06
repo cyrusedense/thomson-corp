@@ -10,6 +10,8 @@ import Button from "./components/Button";
 import BlogCard from "./components/BlogCard";
 import ProductSlider from "./components/ProductSlider";
 
+import { featuredBlogs } from "@/data/featuredBlogs";
+
 gsap.registerPlugin(useGSAP);
 
 export default function Home() {
@@ -57,20 +59,20 @@ export default function Home() {
 
   return (
     <main ref={container}>
-      <section className="hero relative min-h-[50vh]">
+      <section className="hero relative h-[50vh] sm:h-[70vh]">
         <div className="">
-          <div className="absolute left-[5%] translate-y-[50%]">
-            <h1 className="font-hightide text-[150px] text-white">
+          <div className="absolute left-[5%] top-[50%] z-10 translate-y-[-50%]">
+            <h1 className="font-hightide text-5xl text-white sm:text-[150px]">
               Redefining
             </h1>
-            <h2 className="text-5xl text-white">
+            <h2 className="text-3xl text-white sm:text-5xl">
               {" "}
               Health and Wellness for a Better You
             </h2>
           </div>
 
           <video
-            className="h-full w-full object-cover"
+            className="absolute h-full w-full object-cover"
             autoPlay
             muted
             playsInline
@@ -207,23 +209,16 @@ export default function Home() {
         </p>
 
         <div className="blog-wrapper m-auto grid max-w-screen-lg gap-6 md:grid-cols-3">
-          <BlogCard
-            title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
-            author="Benjamin Lim"
-            featuredImage={"/images/test-blog-img.png"}
-          />
-
-          <BlogCard
-            title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
-            author="Benjamin Lim"
-            featuredImage={"/images/test-blog-img.png"}
-          />
-
-          <BlogCard
-            title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
-            author="Benjamin Lim"
-            featuredImage={"/images/test-blog-img.png"}
-          />
+          {featuredBlogs.map((featuredBlog) => (
+            <BlogCard
+              color={"green"}
+              key={featuredBlog.title}
+              title={featuredBlog.title}
+              author={featuredBlog.author}
+              featuredImage={featuredBlog.imageUrl}
+              extUrl={featuredBlog.extUrl}
+            />
+          ))}
         </div>
 
         <div className="mb-10 w-fit self-center md:mb-14 lg:mb-20">

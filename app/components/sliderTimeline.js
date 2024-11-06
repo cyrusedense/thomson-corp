@@ -44,7 +44,9 @@ const Milestones = () => {
           {milestones.map((milestone, index) => (
             <SwiperSlide key={index} className="milestone-card">
               <h3>{milestone.year}</h3>
-              <p>{milestone.description}</p>
+              <p style={{ whiteSpace: "pre-line" }} className="text-justify">
+                {milestone.description}
+              </p>
             </SwiperSlide>
           ))}
         </Swiper>

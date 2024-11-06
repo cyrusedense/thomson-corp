@@ -13,19 +13,20 @@ function Community() {
           </p>
         </div>
       </section>
-      <section className="bg-flower-bg-1 bg-cover bg-center bg-no-repeat px-5 py-10 lg:py-14 xl:py-20">
-        <div className="loyalty-summary m-auto max-w-screen-xl sm:flex">
-          <div className="loyalty-left mt-[40px] flex basis-1/2 translate-x-[56px] flex-col items-start justify-between rounded-l-[56px] bg-tsdarkgreen p-10 pr-20 text-white">
-            <h1 className="text-4xl">EBER LOYALTY AWARDS</h1>
+      <section className="bg-flower-bg-1 bg-cover bg-center bg-no-repeat sm:py-14">
+        <div className="loyalty-summary mx-auto max-w-screen-lg overflow-hidden sm:flex sm:pt-0">
+          <div className="flex flex-col items-center justify-center gap-5 bg-tsdarkgreen p-10 text-center text-white sm:rounded-tl-[56px]">
+            <h1 className="text-center text-4xl">EBER LOYALTY AWARDS</h1>
             <p className="text-xl">Exclusive perks for our loyal customers!</p>
             <Button color="yellow" intLink={"/loyalty"} text="Learn More" />
           </div>
+
           <Image
-            className="z-10 basis-1/2"
+            className="z-10 max-h-[400px] w-full basis-1/2 rounded-none object-cover sm:rounded-r-[56px] sm:object-cover"
             alt="family-health"
             width="500"
             height="500"
-            src="/images/loyalty-section-img.png"
+            src="/images/eber-banner-img.webp"
           />
         </div>
 
@@ -40,6 +41,7 @@ function Community() {
 
         <div className="blog-wrapper m-auto grid max-w-screen-lg gap-6 text-white md:grid-cols-3">
           <BlogCard
+            extUrl={"/"}
             color={"green"}
             title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
             author="Benjamin Lim"
@@ -47,6 +49,7 @@ function Community() {
           />
 
           <BlogCard
+            extUrl={"/"}
             title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
             author="Benjamin Lim"
             featuredImage={"/images/test-blog-img.png"}
@@ -54,6 +57,7 @@ function Community() {
 
           <BlogCard
             color="green"
+            extUrl={"/"}
             title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
             author="Benjamin Lim"
             featuredImage={"/images/test-blog-img.png"}
