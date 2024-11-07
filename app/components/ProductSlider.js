@@ -19,6 +19,8 @@ export default function ProductSlider() {
   const [currentScene, setCurrentScene] = useState(0); // Track active scene
   const sceneRefs = useRef([]); // initiate an empty array to hold references to the total scene divs
 
+  const [isAnimating, setIsAnimating] = useState(false);
+
   // Render a function that tracks the next scene and the previous scene, based on the state of the currently tracked scene
 
   const nextScene = () => {
@@ -46,9 +48,13 @@ export default function ProductSlider() {
     const currentElement = sceneRefs.current[currentScene];
     const nextElement = sceneRefs.current[nextIndex];
 
+    setIsAnimating(true);
+
     const ctx = gsap.context(() => {
       //set up timeline
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({
+        onComplete: () => setIsAnimating(false), // Reset animation state on complete
+      });
       // Initial setup - only set opacity for container, not children
       // i set my nextElement, which is based on the nextIndex state that is passed into the playScene
       // the argument is passed in when i click the button, it runs the function prevScene or nextScene, which runs playScene
@@ -67,8 +73,8 @@ export default function ProductSlider() {
       // Exit animations
       tl.fromTo(
         [
-          currentElement.querySelector(".stage-ring"),
-          currentElement.querySelector(".stage-shadow"),
+          // currentElement.querySelector(".stage-ring"),
+          // currentElement.querySelector(".stage-shadow"),
           currentElement.querySelector(".product-circular"),
           currentElement.querySelector(".product-banner"),
           currentElement.querySelector(".bg-image"),
@@ -80,11 +86,19 @@ export default function ProductSlider() {
           autoAlpha: 0,
         },
       )
-        .to(currentElement.querySelector(".product-image"), {
-          autoAlpha: 0,
-          duration: 0.8,
-          ease: "power2.in",
-        })
+        .fromTo(
+          currentElement.querySelector(".product-image"),
+          {
+            autoAlpha: 1,
+            yPercent: 0,
+          },
+          {
+            autoAlpha: 0,
+            yPercent: 10,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+        )
         .to(
           [
             currentElement.querySelector(".text-container"),
@@ -105,19 +119,19 @@ export default function ProductSlider() {
         });
 
       // Entrance animations
-      tl.fromTo(
-        [
-          nextElement.querySelector(".stage-ring"),
-          nextElement.querySelector(".stage-shadow"),
-        ],
-        {
-          autoAlpha: 0,
-        },
-        {
-          autoAlpha: 1,
-          duration: 1,
-        },
-      );
+      // tl.fromTo(
+      //   [
+      //     nextElement.querySelector(".stage-ring"),
+      //     nextElement.querySelector(".stage-shadow"),
+      //   ],
+      //   {
+      //     autoAlpha: 0,
+      //   },
+      //   {
+      //     autoAlpha: 1,
+      //     duration: 1,
+      //   },
+      // );
       tl.fromTo(
         nextElement.querySelector(".bg-image"),
         {
@@ -133,9 +147,11 @@ export default function ProductSlider() {
         .fromTo(
           nextElement.querySelector(".product-image"),
           {
+            yPercent: 10,
             autoAlpha: 0,
           },
           {
+            yPercent: 0,
             autoAlpha: 1,
             duration: 1.2,
             ease: "power2.out",
@@ -211,6 +227,24 @@ export default function ProductSlider() {
     <div className="relative h-full w-full">
       {/* Slider Container */}
       <div className="relative h-full w-full overflow-hidden">
+        <Image
+          alt="stage-ring"
+          className="stage-ring absolute left-[50%] top-[53%] z-[16] translate-x-[-50%] translate-y-[-80%] lg:top-[55%] xl:top-[58%] 2xl:top-[55%]"
+          width={800}
+          height={800}
+          src={"/images/stage-ring.png"}
+          style={{
+            width: anchorPosition.width * 1.05,
+          }}
+        />
+        <Image
+          alt="stage-shadow"
+          className="stage-shadow absolute bottom-0 z-[18] h-[48%] w-full object-cover object-top sm:h-[45%] 2xl:h-[48%]"
+          width={2000}
+          height={1000}
+          src={"/images/stage-shadow.png"}
+        />
+
         {productSliderScenes.map((scene, index) => {
           return (
             <div
@@ -218,24 +252,6 @@ export default function ProductSlider() {
               ref={(el) => (sceneRefs.current[index] = el)} // on first render, I map through the scenes and add it to the sceneRefs array, which is a ref
               className="absolute top-0 flex h-full w-full justify-center opacity-0" // Initially hidden
             >
-              <Image
-                alt="stage-ring"
-                className="stage-ring absolute top-[53%] z-[16] translate-y-[-80%] lg:top-[55%] xl:top-[58%] 2xl:top-[55%]"
-                width={800}
-                height={800}
-                src={"/images/stage-ring.png"}
-                style={{
-                  width: anchorPosition.width * 1.05,
-                }}
-              />
-              <Image
-                alt="stage-shadow"
-                className="stage-shadow absolute bottom-0 z-[18] h-[48%] w-full object-cover object-top sm:h-[45%] 2xl:h-[48%]"
-                width={2000}
-                height={1000}
-                src={"/images/stage-shadow.png"}
-              />
-
               {/* Product Banner */}
               <Image
                 className="product-banner absolute left-[8%] top-[50%] z-20 overflow-hidden md:left-[8%] md:block lg:left-[16%] xl:left-[25%] 2xl:left-[31%]"
