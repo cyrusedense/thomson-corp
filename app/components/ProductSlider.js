@@ -4,133 +4,36 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import { productSliderScenes } from "@/data/productSliderData";
 
 import useAnchorPosition from "../hooks/useAnchorPosition";
 
-const scenes = [
-  {
-    id: 0,
-    title: "Activated Ginkgo",
-    description: "Traditionally Used To Promote Blood Circulation & Health",
-    images: {
-      bg: "/images/product-animations/activated-ginko/activated-ginkgo-bg.png",
-      circular:
-        "/images/product-animations/activated-ginko/activated-ginkgo-blood.png",
-      product: "/images/product-animations/activated-ginko/activated_ginko.png",
-      human:
-        "/images/product-animations/activated-ginko/activated-ginkgo-human.png",
-      banner:
-        "/images/product-animations/activated-ginko/activated-ginkgo-banner.png",
-      featured:
-        "/images/product-animations/activated-ginko/activated_ginko.png", // New featured image
-    },
-  },
-  {
-    id: 1,
-    title: "ProBioGut",
-    description: "Fix Your Gut",
-    images: {
-      bg: "/images/product-animations/probiogut/probiogut-bg.png",
-      product: "/images/product-animations/probiogut/probiogut.png",
-      circular: "/images/product-animations/probiogut/probiogut-circular.png",
-      human: "/images/product-animations/probiogut/probiogut-human.png",
-      banner: "/images/product-animations/probiogut/probiogut-banner.png",
-      featured: "/images/product-animations/probiogut/probiogut.png", // New featured image
-    },
-  },
-  {
-    id: 2,
-    title: "Circulon125",
-    description: "Circulon",
-    images: {
-      bg: "/images/product-animations/circulon-125/circulon-bg.png",
-      product: "/images/product-animations/circulon-125/circulon.png",
-      circular: "/images/product-animations/circulon-125/circulon-circular.png",
-      human: "/images/product-animations/circulon-125/circulon-human.png",
-      banner: "/images/product-animations/circulon-125/circulon-banner.png",
-      featured: "/images/product-animations/circulon-125/circulon.png", // New featured image
-    },
-  },
-  {
-    id: 3,
-    title: "Osteopro",
-    description: "Osteopro Description",
-    images: {
-      bg: "/images/product-animations/osteopro/osteo-bg.png",
-      product: "/images/product-animations/osteopro/osteo.png",
-      circular: "/images/product-animations/osteopro/osteo-circular.png",
-      human: "/images/product-animations/osteopro/osteo-human.png",
-      banner: "/images/product-animations/osteopro/osteo-banner.png",
-      featured: "/images/product-animations/osteopro/osteo.png", // New featured image
-    },
-  },
-  {
-    id: 4,
-    title: "Livrin",
-    description: "Livrin",
-    images: {
-      bg: "/images/product-animations/livrin-300/livrin-bg.png",
-      product: "/images/product-animations/livrin-300/livrin.png",
-      circular: "/images/product-animations/livrin-300/livrin-circular.png",
-      human: "/images/product-animations/livrin-300/livrin-human.png",
-      banner: "/images/product-animations/livrin-300/livrin-banner.png",
-      featured: "/images/product-animations/livrin-300/livrin.png", // New featured image
-    },
-  },
-  {
-    id: 5,
-    title: "Calmilax",
-    description: "Calmilax Desc",
-    images: {
-      bg: "/images/product-animations/calmilax/cml-bg.png",
-      product: "/images/product-animations/calmilax/cml.png",
-      circular: "/images/product-animations/calmilax/cml-circular.png",
-      human: "/images/product-animations/calmilax/cml-human.png",
-      banner: "/images/product-animations/calmilax/cml-banner.png",
-      featured: "/images/product-animations/calmilax/cml.png", // New featured image
-    },
-  },
-  {
-    id: 6,
-    title: "Xbido",
-    description: "Xbido Desc",
-    images: {
-      bg: "/images/product-animations/xbido/xbd-bg.png",
-      product: "/images/product-animations/xbido/xbd.png",
-      circular: "/images/product-animations/xbido/xbd-circular.png",
-      human: "/images/product-animations/xbido/xbd-human.png",
-      banner: "/images/product-animations/xbido/xbd-banner.png",
-      featured: "/images/product-animations/xbido/xbd.png", // New featured image
-    },
-  },
-  // Add more scenes as needed...
-];
-
 export default function ProductSlider() {
+  //to do anchoring
+  const productImageRef = useRef(null); // Ref for the product image to be used as the anchor
+
+  const anchorPosition = useAnchorPosition(productImageRef); // Collect anchor positions
+
+  //to do sliding
+
   const [currentScene, setCurrentScene] = useState(0); // Track active scene
-  const sceneRefs = useRef([]); // Holds references to each scene
+  const sceneRefs = useRef([]); // initiate an empty array to hold references to the total scene divs
 
-  const productImageRef = useRef(null); // Ref for the product image
+  // Render a function that tracks the next scene and the previous scene, based on the state of the currently tracked scene
 
-  const anchorPosition = useAnchorPosition(productImageRef);
-
-  // Collect anchor positions using useEffect
-
-  // Scenes data (you can dynamically render this with data)
-
-  // Slide to next scene
   const nextScene = () => {
-    const next = (currentScene + 1) % scenes.length; // Loop back to the first scene this is an index that is based on state
+    const next = (currentScene + 1) % productSliderScenes.length; // Loop back to the first scene this is an index that is based on state
     playSceneAnimation(next, 1); // Forward direction (right)
   };
 
-  // Slide to previous scene
   const prevScene = () => {
-    const prev = (currentScene - 1 + scenes.length) % scenes.length; // Loop back to the last scene
+    const prev =
+      (currentScene - 1 + productSliderScenes.length) %
+      productSliderScenes.length; // Loop back to the last scene
     playSceneAnimation(prev, -1); // Backward direction (left)
   };
 
-  // Navigate to a specific scene when a product is clicked
+  // render a function that plays the scene animation
   const goToScene = (index) => {
     if (index !== currentScene) {
       const direction = index > currentScene ? 1 : -1; // Determine animation direction
@@ -144,14 +47,16 @@ export default function ProductSlider() {
     const nextElement = sceneRefs.current[nextIndex];
 
     const ctx = gsap.context(() => {
-      const masterTimeline = gsap.timeline();
-
+      //set up timeline
+      const tl = gsap.timeline();
       // Initial setup - only set opacity for container, not children
       // i set my nextElement, which is based on the nextIndex state that is passed into the playScene
       // the argument is passed in when i click the button, it runs the function prevScene or nextScene, which runs playScene
 
       //I first set next element to be invisible since by default it is not
-
+      gsap.set(nextElement, {
+        autoAlpha: 1,
+      });
       // gsap.set(nextElement, {
       //   opacity: 0,
       //   visibility: "visible",
@@ -160,21 +65,33 @@ export default function ProductSlider() {
       //i fade out the current animations with a timeline
 
       // Exit animations
-      masterTimeline
+      tl.fromTo(
+        [
+          currentElement.querySelector(".stage-ring"),
+          currentElement.querySelector(".stage-shadow"),
+          currentElement.querySelector(".product-circular"),
+          currentElement.querySelector(".product-banner"),
+          currentElement.querySelector(".bg-image"),
+        ],
+        {
+          autoAlpha: 1,
+        },
+        {
+          autoAlpha: 0,
+        },
+      )
         .to(currentElement.querySelector(".product-image"), {
-          y: "-100%",
-          opacity: 0,
+          autoAlpha: 0,
           duration: 0.8,
           ease: "power2.in",
         })
         .to(
           [
             currentElement.querySelector(".text-container"),
-            currentElement.querySelector(".product-banner"),
             currentElement.querySelector(".human-image"),
           ],
           {
-            opacity: 0,
+            autoAlpha: 0,
             duration: 0.5,
             stagger: 0.1,
           },
@@ -183,60 +100,93 @@ export default function ProductSlider() {
         //i set the nextElement to be visible
         .add(() => {
           setCurrentScene(nextIndex);
+
           // Make next element visible
-          gsap.set(nextElement, { opacity: 1 });
         });
 
       // Entrance animations
-      masterTimeline
-        .from(nextElement.querySelector(".bg-image"), {
-          opacity: 0,
+      tl.fromTo(
+        [
+          nextElement.querySelector(".stage-ring"),
+          nextElement.querySelector(".stage-shadow"),
+        ],
+        {
+          autoAlpha: 0,
+        },
+        {
+          autoAlpha: 1,
+          duration: 1,
+        },
+      );
+      tl.fromTo(
+        nextElement.querySelector(".bg-image"),
+        {
+          autoAlpha: 0,
+        },
+
+        {
+          autoAlpha: 1,
           duration: 1,
           ease: "power2.out",
-        })
-        .from(
+        },
+      )
+        .fromTo(
           nextElement.querySelector(".product-image"),
           {
-            y: "100%",
-            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
             duration: 1.2,
             ease: "power2.out",
           },
           "-=0.6",
         )
         // Synchronized spring animation for circular and banner
-        .from(
+        .fromTo(
           [
             nextElement.querySelector(".product-circular"),
             nextElement.querySelector(".product-banner"),
           ],
           {
-            opacity: 0,
+            autoAlpha: 0,
             scale: 0,
+          },
+          {
+            autoAlpha: 1,
+            scale: 1,
             duration: 1.2,
             ease: "back.out(1.7)",
             transformOrigin: "center",
-            stagger: 0,
           },
-          "<+=0.2",
+
+          "<+=0.8",
         )
-        .from(
+        .fromTo(
           nextElement.querySelector(".human-image"),
           {
-            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
             duration: 1,
             ease: "power2.out",
           },
+
           "<+=0.2",
         )
-        .from(
+        .fromTo(
           nextElement.querySelector(".text-container"),
           {
             y: 50,
-            opacity: 0,
+            autoAlpha: 0,
+          },
+          {
+            autoAlpha: 1,
             duration: 1,
             ease: "power2.out",
           },
+
           "<+=0.2",
         );
     });
@@ -261,16 +211,16 @@ export default function ProductSlider() {
     <div className="relative h-full w-full">
       {/* Slider Container */}
       <div className="relative h-full w-full overflow-hidden">
-        {scenes.map((scene, index) => {
+        {productSliderScenes.map((scene, index) => {
           return (
             <div
               key={scene.id}
-              ref={(el) => (sceneRefs.current[index] = el)} // Store each scene ref
+              ref={(el) => (sceneRefs.current[index] = el)} // on first render, I map through the scenes and add it to the sceneRefs array, which is a ref
               className="absolute top-0 flex h-full w-full justify-center opacity-0" // Initially hidden
             >
               <Image
                 alt="stage-ring"
-                className="absolute top-[53%] z-[16] translate-y-[-80%] lg:top-[55%] xl:top-[58%] 2xl:top-[55%]"
+                className="stage-ring absolute top-[53%] z-[16] translate-y-[-80%] lg:top-[55%] xl:top-[58%] 2xl:top-[55%]"
                 width={800}
                 height={800}
                 src={"/images/stage-ring.png"}
@@ -280,7 +230,7 @@ export default function ProductSlider() {
               />
               <Image
                 alt="stage-shadow"
-                className="absolute bottom-0 z-[18] h-[48%] w-full object-cover object-top sm:h-[45%] 2xl:h-[48%]"
+                className="stage-shadow absolute bottom-0 z-[18] h-[48%] w-full object-cover object-top sm:h-[45%] 2xl:h-[48%]"
                 width={2000}
                 height={1000}
                 src={"/images/stage-shadow.png"}
@@ -372,7 +322,7 @@ export default function ProductSlider() {
           />
         </button>
         <div className="product-indicators mt-2 flex justify-center space-x-4">
-          {scenes.map((scene, index) => (
+          {productSliderScenes.map((scene, index) => (
             <div
               key={scene.id}
               onClick={() => goToScene(index)} // Navigate to the selected product

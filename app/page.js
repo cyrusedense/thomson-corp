@@ -3,7 +3,7 @@
 import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import Button from "./components/Button";
@@ -15,16 +15,18 @@ import { featuredBlogs } from "@/data/featuredBlogs";
 gsap.registerPlugin(useGSAP);
 
 export default function Home() {
+  // const [count, setCount] = useState(0);
+
+  // function increment() {
+  //   setCount((prev) => prev + 1);
+  //   setCount((prev) => prev + 1);
+  // }
+
   const router = useRouter();
   //animations
 
   //wave animation
   const waveAnimation = useRef();
-
-  //product animations
-  const rotationElement = useRef();
-
-  const infoAnimation = useRef();
 
   //contact animations
   const contactForm = useRef();
