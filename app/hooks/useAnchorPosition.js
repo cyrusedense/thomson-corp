@@ -16,7 +16,6 @@ const useAnchorPosition = (anchorRef, resize = true) => {
     const updatePosition = () => {
       const rect = anchorRef.current.getBoundingClientRect();
 
-      console.log(rect);
       setPosition({
         top: rect.top + window.scrollY,
         left: rect.left + window.scrollX,
