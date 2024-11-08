@@ -22,6 +22,7 @@ module.exports = {
         ginkgo: "url(/images/bg-ginkgo.png)",
         "loyalty-banner": "url(/images/loyalty-banner.webp)",
         "ginkgo-2": "url(/images/bg-ginkgo-2.webp)",
+        "leadership-hero": "url(/images/leadership-bg-hero.webp)",
       },
       colors: {
         background: "var(--background)",
