@@ -1,31 +1,11 @@
 import Image from "next/image";
 import Button from "../components/Button";
-
-const partnerList = [
-  "/images/client-logos/aapharm.png",
-  "/images/client-logos/aeonwellness.png",
-  "/images/client-logos/alphapharm.png",
-  "/images/client-logos/aapharm.png",
-  "/images/client-logos/alpropharm.png",
-  "/images/client-logos/ampmpharm.png",
-  "/images/client-logos/bigpharm.png",
-  "/images/client-logos/caring.png",
-  "/images/client-logos/georgetownpharm.png",
-  "/images/client-logos/healthlane.png",
-  "/images/client-logos/htmpharm.png",
-  "/images/client-logos/lazada.png",
-  "/images/client-logos/lotuspharm.png",
-  "/images/client-logos/mercury.png",
-  "/images/client-logos/murni.png",
-  "/images/client-logos/shopee.png",
-  "/images/client-logos/sunway.png",
-  "/images/client-logos/watsons.png",
-];
+import { partnerList } from "@/data/partnerList";
 
 function Collaborations() {
   return (
     <div>
-      <section className="bg-collab-bg relative min-h-[50vh] bg-cover bg-right md:min-h-[90vh]">
+      <section className="relative min-h-[50vh] bg-collab-bg bg-cover bg-right md:min-h-[90vh]">
         <div className="hero-text-wrapper absolute top-[50%] translate-y-[-50%] p-5">
           <h1 className="mb-4 max-w-[500px] text-4xl text-white md:text-6xl">
             Collaborations and Partnerships

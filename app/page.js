@@ -179,20 +179,22 @@ export default function Home() {
       <section className="product-section h-[700px] sm:h-[900px]">
         <ProductSlider />
       </section>
-      <section className="about-us flex min-h-[90vh] justify-end bg-about-us-pattern bg-cover px-5 py-10 lg:py-20">
-        <div className="about-us-content my-20 flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10 sm:w-[50%] sm:max-w-[500px]">
+      <section className="about-us flex justify-end bg-about-us-pattern bg-cover px-5 py-10 lg:py-20">
+        <div className="about-us-content flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-tsyellow p-10 sm:w-[50%] sm:max-w-[500px]">
           <h1 className="text-3xl text-tsdarkgreen md:text-4xl">ABOUT US</h1>
           <p className="">
             At Thomson, we are dedicated to improving the health and well-being
             of our customers through natural solutions. For over 30 years, we
             have been a trusted name, helping customers to enhance their overall
-            quality of life. Our customers consistently share stories of relief
-            from chronic issues and improved vitality, with many recommending
-            our products to friends and family. We are proud to be a part of
-            countless journeys toward better health, offering reliable, natural
-            support for everyday wellness.
+            quality of life. <br />
+            <br />
+            Our customers consistently share stories of relief from chronic
+            issues and improved vitality, with many recommending our products to
+            friends and family. We are proud to be a part of countless journeys
+            toward better health, offering reliable, natural support for
+            everyday wellness.
           </p>
-          <Button intLink={"/about-us"} color={"yellow"} text={"Read More"} />
+          <Button intLink={"/about-us"} text={"Read More"} />
 
           <Image
             width={157}
@@ -249,7 +251,7 @@ export default function Home() {
           </div>
           <div ref={contactForm} className="grid-right w-full sm:basis-[55%]">
             <div className="outer-div h-full rounded-l-[56px] rounded-tr-[56px] bg-tsdarkgreen p-2">
-              <div className="inner-div h-full w-full rounded-l-[48px] rounded-tr-[48px] border-[1px] border-white py-10 pl-10 pr-5 sm:pl-14 sm:pr-10">
+              <div className="inner-div h-full w-full rounded-l-[48px] rounded-tr-[48px] border-[1px] border-white py-10 pl-4 pr-5 sm:pl-14 sm:pr-10">
                 <div className="flex flex-col gap-6">
                   <div className="flex items-center">
                     <h1 className="text-3xl text-tsyellow md:text-4xl">
@@ -292,13 +294,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="m-auto max-w-screen-xl py-10 md:py-14 lg:py-20">
+        <div className="max-w-screen-xl py-10 md:py-14 lg:py-20">
           <h1 className="mb-5 text-center text-4xl text-tsdarkgreen">
             Location
           </h1>
 
-          <div className="flex flex-col gap-10 rounded-t-[56px] rounded-bl-[56px] bg-tsdarkgreen p-10 sm:flex-row">
-            <div className="location-left w-full sm:basis-1/2">
+          <div className="gap-10 rounded-t-[56px] rounded-bl-[56px] bg-tsdarkgreen p-8 sm:flex-row">
+            <div className="location-left mb-6 w-full sm:basis-1/2">
               <h4 className="text-xl">Malaysia Sales & Marketing Office</h4>
               <div>
                 <div className="address">

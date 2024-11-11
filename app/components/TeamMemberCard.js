@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function TeamMemberCard({ teamMember }) {
   return (
-    <div className="relative h-[454px] w-[336px] overflow-hidden rounded-[56px] rounded-br-[0px]">
+    <div className="relative h-[454px] w-full overflow-hidden rounded-[56px] rounded-br-[0px]">
       <Image
         className="h-full w-full object-cover"
         width="336"

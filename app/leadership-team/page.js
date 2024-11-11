@@ -27,8 +27,8 @@ function Leadership() {
           </div>
         </div>
 
-        <div className="mx-auto grid max-w-screen-xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="first-div flex h-[454px] w-[336px] flex-col justify-around rounded-[56px] rounded-br-[0px] bg-tsyellow p-[10%]">
+        <div className="mx-auto mt-20 grid max-w-screen-xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="first-div flex h-[454px] w-full flex-col justify-around rounded-[56px] rounded-br-[0px] bg-tsyellow p-[10%]">
             <div className="flex justify-between">
               <h1 className="text-3xl font-bold text-white">Our Team</h1>
               <Image

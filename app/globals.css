@@ -180,3 +180,8 @@ button {
 .swiper-button-next {
   display: none !important;
 }
+
+.group:hover .group-hover\:flex {
+  display: flex;
+  transition-delay: 150ms;
+}

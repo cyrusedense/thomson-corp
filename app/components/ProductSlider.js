@@ -17,27 +17,57 @@ export default function ProductSlider() {
   //to do sliding
 
   const [currentScene, setCurrentScene] = useState(0); // Track active scene
+
+  const [indicatorStart, setIndicatorStart] = useState(0);
+
+  const [indicatorsToShow, setIndicatorsToShow] = useState(3);
+
   const sceneRefs = useRef([]); // initiate an empty array to hold references to the total scene divs
 
+  //to track is animating or not, so that we don't play animation while animating
+
   const [isAnimating, setIsAnimating] = useState(false);
+
+  // Calculate transform style for sliding effect based on `indicatorStart`
+  const transformStyle = {
+    transform: `translateX(-${indicatorStart * 100}%)`,
+    transition: "transform 0.5s ease-in-out",
+  };
+  // Function to handle the previous set of indicators
+
+  //to handle next scene and previous scene
 
   // Render a function that tracks the next scene and the previous scene, based on the state of the currently tracked scene
 
   const nextScene = () => {
-    const next = (currentScene + 1) % productSliderScenes.length; // Loop back to the first scene this is an index that is based on state
-    playSceneAnimation(next, 1); // Forward direction (right)
+    if (!isAnimating) {
+      const next = (currentScene + 1) % productSliderScenes.length;
+      playSceneAnimation(next, 1);
+
+      if (next >= indicatorStart + indicatorsToShow) {
+        setIndicatorStart((prev) =>
+          Math.min(prev + 1, productSliderScenes.length - indicatorsToShow),
+        );
+      }
+    }
   };
 
   const prevScene = () => {
-    const prev =
-      (currentScene - 1 + productSliderScenes.length) %
-      productSliderScenes.length; // Loop back to the last scene
-    playSceneAnimation(prev, -1); // Backward direction (left)
+    if (!isAnimating) {
+      const prev =
+        (currentScene - 1 + productSliderScenes.length) %
+        productSliderScenes.length;
+      playSceneAnimation(prev, -1);
+
+      if (prev < indicatorStart) {
+        setIndicatorStart((prev) => Math.max(prev - 1, 0));
+      }
+    }
   };
 
   // render a function that plays the scene animation
   const goToScene = (index) => {
-    if (index !== currentScene) {
+    if (!isAnimating && index !== currentScene) {
       const direction = index > currentScene ? 1 : -1; // Determine animation direction
       playSceneAnimation(index, direction);
     }
@@ -214,6 +244,7 @@ export default function ProductSlider() {
   };
 
   // Initialize the first scene (make sure it's visible) and create context for animations
+
   useEffect(() => {
     console.log(`useEffect fired, current scene is ${currentScene}`);
     const ctx = gsap.context(() => {
@@ -221,6 +252,17 @@ export default function ProductSlider() {
     });
 
     return () => ctx.revert(); // Clean up on component unmount
+  }, []);
+
+  useEffect(() => {
+    const updateIndicatorsToShow = () => {
+      setIndicatorsToShow(window.innerWidth >= 1024 ? 5 : 3); // 5 on desktop (1024px and up), 3 on mobile/tablet
+    };
+
+    updateIndicatorsToShow(); // Initial check
+    window.addEventListener("resize", updateIndicatorsToShow); // Listen for screen resize
+
+    return () => window.removeEventListener("resize", updateIndicatorsToShow); // Clean up on component unmount
   }, []);
 
   return (
@@ -328,44 +370,57 @@ export default function ProductSlider() {
 
       {/* Product List with Featured Images */}
       <div className="product-indicators-wrapper absolute bottom-0 left-[50%] z-[30] mb-6 flex w-fit translate-x-[-50%] items-center justify-center gap-10 rounded-full bg-tsdarkgreen px-2 py-2">
-        {/* Previous Button with Arrow Image */}
-        <button onClick={prevScene} className="left-6 cursor-pointer">
+        {/* Previous Button for Indicators */}
+        <button onClick={prevScene} className="cursor-pointer">
           <Image
-            src="/images/prev-arrow.png" // Path to your left arrow image
+            src="/images/prev-arrow.png"
             alt="Previous"
             width={40}
             height={40}
           />
         </button>
-        <div className="product-indicators mt-2 flex justify-center space-x-4">
-          {productSliderScenes.map((scene, index) => (
-            <div
-              key={scene.id}
-              onClick={() => goToScene(index)} // Navigate to the selected product
-              className={`relative cursor-pointer rounded-[56px] bg-green-600 p-2 transition-all duration-300 ${
-                currentScene === index ? "scale-110" : "scale-90"
-              }`}
-              style={{
-                width: currentScene === index ? "60px" : "40px",
-                height: currentScene === index ? "60px" : "40px",
-              }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center rounded-full bg-white">
-                <Image
-                  src={scene.images.featured} // Featured image for each product
-                  alt={scene.title}
-                  width={60}
-                  height={60}
-                  className="rounded-full object-cover"
-                />
+
+        {/* Product Indicators with Sliding Effect */}
+        <div
+          className="flex overflow-hidden"
+          style={{
+            width: `${indicatorsToShow * 60}px`, // Set visible width to 3 indicators
+          }}
+        >
+          <div
+            className="flex space-x-4"
+            style={transformStyle} // Apply transform for sliding
+          >
+            {productSliderScenes.map((scene, index) => (
+              <div
+                key={scene.id}
+                onClick={() => goToScene(index)}
+                className={`relative cursor-pointer rounded-[56px] p-2 transition-all duration-300 ${
+                  currentScene === index ? "scale-110" : "scale-90"
+                }`}
+                style={{
+                  width: currentScene === index ? "60px" : "40px",
+                  height: currentScene === index ? "60px" : "40px",
+                }}
+              >
+                <div className="absolute inset-0 flex items-center justify-center rounded-full bg-white">
+                  <Image
+                    src={scene.images.featured}
+                    alt={scene.title}
+                    width={60}
+                    height={60}
+                    className="rounded-full object-cover"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        {/* Next Button with Arrow Image */}
-        <button onClick={nextScene} className="right-6 cursor-pointer">
+
+        {/* Next Button for Indicators */}
+        <button onClick={nextScene} className="cursor-pointer">
           <Image
-            src="/images/next-arrow.png" // Path to your right arrow image
+            src="/images/next-arrow.png"
             alt="Next"
             width={40}
             height={40}
