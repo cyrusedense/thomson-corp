@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import milestones from "@/data/milestones";
+import Image from "next/image";
 
 const Milestones = () => {
   const swiperRef = useRef(null);
@@ -42,11 +43,26 @@ const Milestones = () => {
           onSwiper={(swiper) => (swiperRef.current = swiper)}
         >
           {milestones.map((milestone, index) => (
-            <SwiperSlide key={index} className="milestone-card">
-              <h3>{milestone.year}</h3>
-              <p style={{ whiteSpace: "pre-line" }} className="text-justify">
+            <SwiperSlide key={index} className="milestone-card p-6">
+              <h3 className="text-tsdarkgreen">{milestone.year}</h3>
+              <p
+                style={{ whiteSpace: "pre-line" }}
+                className="m-auto mb-6 max-w-[700px] text-justify"
+              >
                 {milestone.description}
               </p>
+              <Image
+                className="aspect-video w-full object-contain object-center"
+                alt={milestone.imageUrl
+                  .split("/")
+                  .pop()
+                  .split(".")
+                  .slice(0, -1)
+                  .join(".")}
+                width="500"
+                height="500"
+                src={milestone.imageUrl}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -22,15 +22,18 @@ export default function ProductSlider() {
 
   const [indicatorsToShow, setIndicatorsToShow] = useState(3);
 
-  const sceneRefs = useRef([]); // initiate an empty array to hold references to the total scene divs
-
   //to track is animating or not, so that we don't play animation while animating
 
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const sceneRefs = useRef([]); // initiate an empty array to hold references to the total scene divs
+
+  const totalScenes = productSliderScenes.length;
+
+  // Calculate transform style for sliding effect based on `indicatorStart`
   // Calculate transform style for sliding effect based on `indicatorStart`
   const transformStyle = {
-    transform: `translateX(-${indicatorStart * 100}%)`,
+    transform: `translateX(-${indicatorStart * 60}px)`,
     transition: "transform 0.5s ease-in-out",
   };
   // Function to handle the previous set of indicators
@@ -44,10 +47,11 @@ export default function ProductSlider() {
       const next = (currentScene + 1) % productSliderScenes.length;
       playSceneAnimation(next, 1);
 
-      if (next >= indicatorStart + indicatorsToShow) {
-        setIndicatorStart((prev) =>
-          Math.min(prev + 1, productSliderScenes.length - indicatorsToShow),
-        );
+      // Wrap `indicatorStart` for infinite loop effect
+      if (indicatorStart + 1 >= totalScenes) {
+        setIndicatorStart(0); // Reset to start after reaching the end
+      } else {
+        setIndicatorStart(indicatorStart + 1);
       }
     }
   };
@@ -59,8 +63,11 @@ export default function ProductSlider() {
         productSliderScenes.length;
       playSceneAnimation(prev, -1);
 
-      if (prev < indicatorStart) {
-        setIndicatorStart((prev) => Math.max(prev - 1, 0));
+      // Wrap `indicatorStart` for infinite loop effect
+      if (indicatorStart - 1 < 0) {
+        setIndicatorStart(totalScenes - 1); // Wrap to the end if going before the first
+      } else {
+        setIndicatorStart(indicatorStart - 1);
       }
     }
   };
@@ -71,6 +78,10 @@ export default function ProductSlider() {
       const direction = index > currentScene ? 1 : -1; // Determine animation direction
       playSceneAnimation(index, direction);
     }
+
+    if (index >= indicatorStart + indicatorsToShow || index < indicatorStart) {
+      setIndicatorStart(index);
+    }
   };
 
   // Function to play the timeline animation for each scene
@@ -79,6 +90,8 @@ export default function ProductSlider() {
     const nextElement = sceneRefs.current[nextIndex];
 
     setIsAnimating(true);
+
+    setCurrentScene(nextIndex);
 
     const ctx = gsap.context(() => {
       //set up timeline
@@ -140,13 +153,11 @@ export default function ProductSlider() {
             stagger: 0.1,
           },
           "<+=0.2",
-        )
-        //i set the nextElement to be visible
-        .add(() => {
-          setCurrentScene(nextIndex);
-
-          // Make next element visible
-        });
+        );
+      //i set the nextElement to be visible
+      // .add(() => {
+      //   // Make next element visible
+      // });
 
       // Entrance animations
       // tl.fromTo(
@@ -369,7 +380,7 @@ export default function ProductSlider() {
       </div>
 
       {/* Product List with Featured Images */}
-      <div className="product-indicators-wrapper absolute bottom-0 left-[50%] z-[30] mb-6 flex w-fit translate-x-[-50%] items-center justify-center gap-10 rounded-full bg-tsdarkgreen px-2 py-2">
+      <div className="product-indicators-wrapper absolute bottom-0 left-[50%] z-[30] mb-6 flex w-[50%] translate-x-[-50%] items-center justify-center gap-10 rounded-full px-2 py-2">
         {/* Previous Button for Indicators */}
         <button onClick={prevScene} className="cursor-pointer">
           <Image
@@ -382,7 +393,7 @@ export default function ProductSlider() {
 
         {/* Product Indicators with Sliding Effect */}
         <div
-          className="flex overflow-hidden"
+          className="flex overflow-x-hidden"
           style={{
             width: `${indicatorsToShow * 60}px`, // Set visible width to 3 indicators
           }}

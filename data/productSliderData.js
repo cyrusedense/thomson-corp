@@ -2,7 +2,8 @@ export const productSliderScenes = [
   {
     id: 0,
     title: "Activated Ginkgo",
-    description: "Traditionally Used To Promote Blood Circulation & Health",
+    description:
+      "40mg of Ginkgo Biloba extract to improve symptoms of poor blood circulation such as numb fingers and toes, vertigo, fatigue, etc. using Japanese Activated technology.",
     images: {
       bg: "/images/product-animations/activated-ginko/activated-ginkgo-bg.png",
       circular:
@@ -19,7 +20,8 @@ export const productSliderScenes = [
   {
     id: 1,
     title: "ProBioGut",
-    description: "Fix Your Gut",
+    description:
+      "A combination of 7 billion CFUs from two clinically  supported HRB probiotics and two prebiotics to help gut function, immunity and get into shape.",
     images: {
       bg: "/images/product-animations/probiogut/probiogut-bg.png",
       product: "/images/product-animations/probiogut/probiogut.png",
@@ -32,7 +34,8 @@ export const productSliderScenes = [
   {
     id: 2,
     title: "Circulon125",
-    description: "Circulon",
+    description:
+      "125mg of Ginkgo Biloba extract to improve symptoms of poor blood circulation such as numb fingers and toes,vertigo, fatigue, etc. using Japanese Activated technology.",
     images: {
       bg: "/images/product-animations/circulon-125/circulon-bg.png",
       product: "/images/product-animations/circulon-125/circulon.png",
@@ -45,7 +48,8 @@ export const productSliderScenes = [
   {
     id: 3,
     title: "Osteopro",
-    description: "Osteopro Description",
+    description:
+      "Glucosamine sulfate for osteoarthritis.Enhanced by Fully Reacted Technology.",
     images: {
       bg: "/images/product-animations/osteopro/osteo-bg.png",
       product: "/images/product-animations/osteopro/osteo.png",
@@ -58,7 +62,8 @@ export const productSliderScenes = [
   {
     id: 4,
     title: "Livrin",
-    description: "Livrin",
+    description:
+      "300mg Milk Thistle extract from Europe to support liver health. Symptoms of poor liver function can include digestive problems, tiredness and poor skin.",
     images: {
       bg: "/images/product-animations/livrin-300/livrin-bg.png",
       product: "/images/product-animations/livrin-300/livrin.png",
@@ -71,7 +76,8 @@ export const productSliderScenes = [
   {
     id: 5,
     title: "Calmilax",
-    description: "Calmilax Desc",
+    description:
+      "Combination of imported ingredients Rafuma Extract,Kanna Extract, Activated Ginkgo Biloba Extract & Brewer's Yeast",
     images: {
       bg: "/images/product-animations/calmilax/cml-bg.png",
       product: "/images/product-animations/calmilax/cml.png",

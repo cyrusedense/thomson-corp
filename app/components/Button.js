@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 function Button({ color, text, intLink, extLink }) {
   const linkComponent = intLink ? (

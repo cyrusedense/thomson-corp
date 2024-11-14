@@ -1,0 +1,10 @@
+{
+    "HomePage": {
+        "title": "我的首页",
+        "about": "Go to the about page"
+    },
+    "AboutUs": {
+        "title": "关于我们",
+        "about": "我们的故事"
+    }
+}

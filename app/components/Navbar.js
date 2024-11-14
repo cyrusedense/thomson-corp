@@ -2,10 +2,13 @@
 import Image from "next/image";
 import Logo from "./Logo";
 import Button from "./Button";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 import { Slant as Hamburger } from "hamburger-react";
 import { useState, useEffect, useCallback } from "react";
+import LocaleSwitcher from "./localeSwitcher";
+
+import { Link } from "@/i18n/routing";
 
 const NAV_LINKS = [
   {
@@ -30,33 +33,36 @@ const NAV_LINKS = [
 // Desktop navigation links component with submenu support
 function DesktopLinks() {
   return (
-    <ul className="flex items-center gap-5 text-white">
-      {NAV_LINKS.map((link) => (
-        <li key={link.label} className="group relative py-4">
-          {/* Main Menu Link */}
-          <Link href={link.href} className="hover:text-tsyellow">
-            {link.label}
-          </Link>
+    <div className="flex w-full items-center justify-between">
+      <ul className="flex items-center gap-5 text-white">
+        {NAV_LINKS.map((link) => (
+          <li key={link.label} className="group relative py-4">
+            {/* Main Menu Link */}
+            <Link href={link.href} className="hover:text-tsyellow">
+              {link.label}
+            </Link>
 
-          {/* Submenu */}
-          {link.submenu && (
-            <ul className="pointer-events-none absolute left-0 top-full w-40 rounded-md bg-tsdarkgreen opacity-0 shadow-lg transition-all duration-300 ease-in-out group-hover:pointer-events-auto group-hover:flex group-hover:flex-col group-hover:opacity-100">
-              {link.submenu.map((sublink) => (
-                <li key={sublink.label}>
-                  <Link
-                    href={sublink.href}
-                    className="block px-4 py-2 hover:bg-tsyellow"
-                  >
-                    {sublink.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-      ))}
-      <Button intLink="/contact-us" color="yellow" text="Contact Us" />
-    </ul>
+            {/* Submenu */}
+            {link.submenu && (
+              <ul className="pointer-events-none absolute left-0 top-full w-40 rounded-md bg-tsdarkgreen opacity-0 shadow-lg transition-all duration-300 ease-in-out group-hover:pointer-events-auto group-hover:flex group-hover:flex-col group-hover:opacity-100">
+                {link.submenu.map((sublink) => (
+                  <li key={sublink.label}>
+                    <Link
+                      href={sublink.href}
+                      className="block px-4 py-2 hover:bg-tsyellow"
+                    >
+                      {sublink.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+        <Button intLink="/contact-us" color="yellow" text="Contact Us" />
+      </ul>
+      <LocaleSwitcher />
+    </div>
   );
 }
 
@@ -133,7 +139,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 z-40 flex h-[50px] w-screen items-center justify-between px-5 py-10 transition-all duration-300 ${
+      className={`fixed top-0 z-40 flex h-[50px] w-screen items-center gap-10 px-5 py-10 transition-all duration-300 ${
         hasScrolled
           ? "bg-tsdarkgreen bg-opacity-90 backdrop-blur-md"
           : "bg-transparent"
@@ -143,7 +149,7 @@ function Navbar() {
         <Logo color="white" />
       </div>
 
-      <div className="hidden md:block">
+      <div className="hidden w-full md:block">
         <DesktopLinks />
       </div>
 
