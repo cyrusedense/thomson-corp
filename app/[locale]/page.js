@@ -43,15 +43,19 @@ export default function Home() {
   useGSAP(() => {
     //initialise timeline
 
-    gsap.to(waveAnimation.current, {
-      width: "100vw",
-      duration: 2,
-    });
-
-    gsap.from(contactForm.current, {
-      translateX: "100%",
-      duration: 1,
-    });
+    gsap.fromTo(
+      waveAnimation.current,
+      {
+        width: "0px",
+        autoAlpha: 0,
+      },
+      {
+        width: "100vw",
+        duration: 3,
+        autoAlpha: 1,
+        ease: "power4.Out",
+      },
+    );
 
     // gsap.to(rotationElement.current, {
     //   translateX: "10px",
@@ -89,12 +93,12 @@ export default function Home() {
         </div>
         <div
           ref={waveAnimation}
-          className="absolute bottom-0 z-20 w-0 translate-y-[30%]"
+          className="absolute bottom-0 z-20 translate-y-[30%] opacity-0"
         >
           <Image
-            width={900}
+            width={1000}
             height={300}
-            className="w-screen bg-center"
+            className="w-full bg-center"
             alt="wave"
             src={"/images/hero-wave-1.png"}
           />
@@ -184,8 +188,8 @@ export default function Home() {
       <section className="product-section h-[700px] sm:h-[900px]">
         <ProductSlider />
       </section>
-      <section className="about-us flex justify-end bg-about-us-pattern bg-cover px-5 py-10 lg:py-20">
-        <div className="about-us-content flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-tsyellow p-10 sm:w-[50%] sm:max-w-[500px]">
+      <section className="about-us flex justify-start bg-blog-hero bg-cover bg-right px-5 py-10 lg:py-20">
+        <div className="about-us-content flex max-w-screen-xl flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-white bg-opacity-65 p-10 sm:w-[50%] sm:max-w-[500px]">
           <h1 className="text-3xl text-tsdarkgreen md:text-4xl">ABOUT US</h1>
           <p className="">
             At Thomson, we are dedicated to improving the health and well-being

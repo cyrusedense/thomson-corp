@@ -1,6 +1,6 @@
-import Button from "../../components/Button";
 import Image from "next/image";
-import BlogCard from "../../components/BlogCard";
+import BlogCard from "@/app/components/BlogCard";
+import Button from "@/app/components/Button";
 
 function Community() {
   return (

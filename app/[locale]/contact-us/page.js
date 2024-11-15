@@ -88,8 +88,8 @@ function Contact() {
         </div>
 
         <div className="my-3 flex flex-col items-center justify-center p-5">
-          <h2 className="mb-8 text-center text-[30px] font-bold text-[#004414] md:text-[35px]">
-            Work with us
+          <h2 className="mb-8 text-center text-3xl font-bold text-[#004414]">
+            Open Positions
           </h2>
 
           <div className="flex flex-col items-center gap-12 md:flex-row">
@@ -159,16 +159,13 @@ function Contact() {
       </section>
 
       <section className="mt-[10%] flex flex-col items-center justify-center">
-        <h1 className="mb-[5%] p-1 text-center text-[25px] underline md:text-[35px]">
+        <h1 className="mb-[5%] p-1 text-center text-3xl underline md:text-[35px]">
           COLLABORATIONS & PARTNERSHIPS
         </h1>
 
         <div className="m-auto flex max-w-screen-xl flex-col items-center md:flex-row">
           <div className="grid-left flex flex-col items-center gap-6 sm:basis-1/2 md:mb-[15%] md:items-start md:px-20 md:text-left">
-            <h3 className="text-[15px] text-tsdarkgreen md:text-[20px]">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </h3>
-            <p className="px-2 text-center text-[10px] text-tsdarkgreen md:px-0 md:text-left md:text-[15px]">
+            <p className="px-2 text-center text-tsdarkgreen md:px-0 md:text-left md:text-[15px]">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
               commodo ligula eget dolor. Aenean massa. Cum sociis natoque
               penatibus et magnis dis parturient montes, nascetur ridiculus mus.
