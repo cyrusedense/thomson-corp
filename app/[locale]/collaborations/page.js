@@ -1,8 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../../components/Button";
 import { partnerList } from "@/data/partnerList";
 
-function Collaborations() {
+import { useRouter } from "@/i18n/routing";
+
+function Collaborations({ params: { locale } }) {
+  console.log(locale);
+  const localizedPartnerList = partnerList[locale] || partnerList["en-my"];
+
+  console.log(localizedPartnerList);
+
   return (
     <div>
       <section className="relative min-h-[50vh] bg-collab-bg bg-cover bg-right md:min-h-[90vh]">
@@ -20,7 +29,7 @@ function Collaborations() {
           Our partners
         </h2>
         <div className="client-logo-wrapper grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] justify-items-center gap-10">
-          {partnerList.map((logo) => (
+          {localizedPartnerList.map((logo) => (
             <div key={logo} className="relative h-[150px] w-[150px]">
               <Image className="object-contain" alt="logo" fill src={logo} />
             </div>

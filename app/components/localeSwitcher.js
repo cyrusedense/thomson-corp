@@ -2,12 +2,16 @@
 
 import { useState } from "react";
 import { useLocale } from "next-intl";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 function LocaleSwitcher() {
   const router = useRouter();
-  const localActive = useLocale();
+  const currentLocale = useLocale();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const pathname = usePathname(); // Current path
+
+  const searchParams = useSearchParams(); // Current query parameters
 
   const locales = {
     "en-my": { label: "MY", flag: "🇲🇾" },
@@ -16,14 +20,22 @@ function LocaleSwitcher() {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const onLocaleChange = (locale) => {
+  const onLocaleChange = (newLocale) => {
     setMenuOpen(false); // Close menu after selection
-    router.replace(`/${locale}`);
+
+    const pathWithoutLocale = pathname.replace(`/${currentLocale}`, "");
+
+    const currentParams = searchParams.toString();
+
+    const updatedUrl = `/${newLocale}${pathWithoutLocale}${
+      currentParams ? `?${currentParams}` : ""
+    }`;
+    router.replace(updatedUrl);
   };
 
-  const activeLocale = locales[localActive];
+  const activeLocale = locales[currentLocale];
   const otherLocales = Object.keys(locales).filter(
-    (code) => code !== localActive,
+    (code) => code !== currentLocale,
   );
 
   return (
