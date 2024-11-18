@@ -80,7 +80,7 @@ body {
   align-items: center;
 }
 /* Hollow Bullet Styles */
-.swiper-pagination-bullet {
+#timeline-slider .swiper-pagination-bullet {
   width: fit-content !important;
   height: fit-content !important;
   border: none !important; /* Green border */
@@ -91,7 +91,7 @@ body {
   z-index: 5;
 }
 
-.swiper-pagination-bullet-active {
+#timeline-slider .swiper-pagination-bullet-active {
   width: 40px;
   height: 40px;
   border: 2px solid #004414; /* Green border */
@@ -183,4 +183,18 @@ body {
 
 .wave-animation {
   max-width: unset !important;
+}
+
+#sliderWithPagination {
+  padding: 20px;
+}
+
+#sliderWithPagination .swiper-pagination-bullet {
+  background-color: gray !important;
+  opacity: 1 !important;
+}
+
+#sliderWithPagination .swiper-pagination-bullet-active {
+  background-color: green !important;
+  opacity: 1 !important;
 }

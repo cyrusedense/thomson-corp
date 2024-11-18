@@ -62,7 +62,7 @@ function JobListing({ jobId, title, description }) {
             <p className="mb-6">{description}</p>
             <button
               onClick={handleSendEmail}
-              className="mr-4 rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+              className="mr-4 rounded-lg bg-tsdarkgreen px-4 py-2 text-white hover:bg-tsyellow"
             >
               Send Email
             </button>

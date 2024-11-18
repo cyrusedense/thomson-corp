@@ -28,7 +28,7 @@ function LocaleSwitcher() {
 
   return (
     <div className="flex items-center gap-5 text-white">
-      <p> You are currently browsing:</p>
+      <p> You are currently browsing in:</p>
       <div className="relative inline-block text-white">
         <div
           onClick={toggleMenu}

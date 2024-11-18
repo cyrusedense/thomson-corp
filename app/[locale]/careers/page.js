@@ -14,6 +14,9 @@ const careersImages = [
   "/images/career-flower.png",
   "/images/career-flower.png",
   "/images/career-flower.png",
+  "/images/career-flower.png",
+  "/images/career-flower.png",
+  "/images/career-flower.png",
 ];
 
 function Careers() {
@@ -37,6 +40,7 @@ function Careers() {
         </p>
         <div className="my-10">
           <Swiper
+            id="sliderWithPagination"
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={30}
             slidesPerView={3}
@@ -47,9 +51,9 @@ function Careers() {
             loop={true} // Enable infinite looping
             pagination={{
               clickable: true,
-              el: ".timeline-pagination", // Custom pagination element
-              renderBullet: (index, className) =>
-                `<div class="${className} bullet-container"><span class="bullet"></span><span class="year">${milestones[index].year}</span></div>`,
+              // el: ".timeline-pagination", // Custom pagination element
+              // renderBullet: (index, className) =>
+              //   `<div class="${className} bullet-container"><span class="bullet"></span><span class="year">${milestones[index].year}</span></div>`,
             }}
             //   breakpoints={{
             //     0: {

@@ -18,6 +18,7 @@ const Milestones = () => {
         <div className="timeline-pagination"></div>
 
         <Swiper
+          id="timeline-slider"
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
