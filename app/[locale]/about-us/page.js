@@ -13,6 +13,7 @@ gsap.registerPlugin(useGSAP);
 
 import { teamMembers } from "@/data/teamMembers";
 import TeamMemberCard from "@/app/components/TeamMemberCard";
+import WaveAnimation from "@/app/components/waveAnimation";
 
 function AboutUs() {
   const featuredTeamMembers = teamMembers.slice(0, 3);
@@ -39,22 +40,15 @@ function AboutUs() {
         </div>
       </section>
 
-      <section className="timeline relative m-auto mb-20 max-w-screen-lg py-10 md:py-14 xl:py-20">
-        <Milestones />
+      <section className="timeline relative">
+        <div className="m-auto mb-20 max-w-screen-lg py-10 md:py-14 xl:py-20">
+          <Milestones />
+        </div>
+
+        <WaveAnimation />
       </section>
 
       <section className="relative px-5 py-10 md:py-14 xl:py-20">
-        <div
-          ref={aboutWaveAnimation}
-          className="absolute top-[-200px] h-[300px] w-0 scale-[125%] opacity-0"
-        >
-          <Image
-            className="object-contain"
-            alt="wave"
-            fill
-            src={"/images/solid-wave.webp"}
-          />
-        </div>
         <h1 className="mb-4 text-center text-2xl md:text-3xl">
           Mission & Vision
         </h1>
@@ -99,6 +93,7 @@ function AboutUs() {
       </section>
 
       <section className="about-us relative flex min-h-[90vh] justify-end bg-factory-bg bg-cover px-5 py-10 lg:py-20">
+        <WaveAnimation />
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-transparent via-white/0 to-white/80"></div>{" "}
         {/* White gradient overlay */} {/* White gradient overlay */}
         <div className="about-us-content relative z-10 my-20 flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10 sm:w-[50%] sm:max-w-[500px]">

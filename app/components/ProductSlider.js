@@ -5,6 +5,9 @@ import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import { productSliderScenes } from "@/data/productSliderData";
+import WaveAnimation from "./waveAnimation";
+import { FiArrowRightCircle } from "react-icons/fi";
+import { FiArrowLeftCircle } from "react-icons/fi";
 
 import useAnchorPosition from "../hooks/useAnchorPosition";
 
@@ -277,9 +280,9 @@ export default function ProductSlider() {
   }, []);
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-screen w-screen">
       {/* Slider Container */}
-      <div className="relative h-full w-full overflow-hidden">
+      <div className="relative h-full w-screen overflow-hidden">
         <Image
           alt="stage-ring"
           className="stage-ring absolute left-[50%] top-[53%] z-[16] translate-x-[-50%] translate-y-[-80%] lg:top-[55%] xl:top-[58%] 2xl:top-[55%]"
@@ -367,10 +370,10 @@ export default function ProductSlider() {
 
               {/* Text Container */}
               <div className="text-container absolute left-[5%] top-[10%] z-20 w-[30%]">
-                <h1 className="text-2xl text-tsdarkgreen xl:text-4xl">
+                <h1 className="mb-8 text-2xl text-tsdarkgreen xl:text-4xl">
                   {scene.title}
                 </h1>
-                <h3 className="text-sm text-tsdarkgreen md:text-2xl">
+                <h3 className="text-sm text-tsdarkgreen md:text-xl">
                   {scene.description}
                 </h3>
               </div>
@@ -380,15 +383,10 @@ export default function ProductSlider() {
       </div>
 
       {/* Product List with Featured Images */}
-      <div className="product-indicators-wrapper absolute bottom-0 left-[50%] z-[30] mb-6 flex w-[50%] translate-x-[-50%] items-center justify-center gap-10 rounded-full px-2 py-2">
+      <div className="product-indicators-wrapper absolute bottom-[10%] left-[50%] z-[30] flex w-[50%] translate-x-[-50%] items-center justify-center gap-10 rounded-full px-2 py-2">
         {/* Previous Button for Indicators */}
         <button onClick={prevScene} className="cursor-pointer">
-          <Image
-            src="/images/prev-arrow.png"
-            alt="Previous"
-            width={40}
-            height={40}
-          />
+          <FiArrowLeftCircle size={40} color="white" />
         </button>
 
         {/* Product Indicators with Sliding Effect */}
@@ -430,14 +428,11 @@ export default function ProductSlider() {
 
         {/* Next Button for Indicators */}
         <button onClick={nextScene} className="cursor-pointer">
-          <Image
-            src="/images/next-arrow.png"
-            alt="Next"
-            width={40}
-            height={40}
-          />
+          <FiArrowRightCircle size={40} color="white" />
         </button>
       </div>
+
+      <WaveAnimation />
     </div>
   );
 }

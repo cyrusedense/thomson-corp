@@ -34,10 +34,6 @@ body {
   transition-behavior: allow-discrete;
 } */
 
-button {
-  box-shadow: 0px 3px 6px #00000029;
-}
-
 .milestones {
   text-align: center;
   padding: 40px 20px;
@@ -183,4 +179,8 @@ button {
 .group:hover .group-hover\:flex {
   display: flex;
   transition-delay: 150ms;
+}
+
+.wave-animation {
+  max-width: unset !important;
 }

@@ -1,8 +1,11 @@
+"use client";
+
 import { FaPhone, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import ContactForm from "@/app/components/ContactForm";
 import LocationInfo from "@/app/components/Locations";
 import Image from "next/image";
 import Button from "@/app/components/Button";
+import WaveAnimation from "@/app/components/waveAnimation";
 
 function Contact() {
   return (
@@ -158,7 +161,7 @@ function Contact() {
         </div>
       </section>
 
-      <section className="mt-[10%] flex flex-col items-center justify-center">
+      <section className="relative mt-[10%] flex flex-col items-center justify-center">
         <h1 className="mb-[5%] p-1 text-center text-3xl underline md:text-[35px]">
           COLLABORATIONS & PARTNERSHIPS
         </h1>
@@ -195,6 +198,7 @@ function Contact() {
             </div>
           </div>
         </div>
+        <WaveAnimation />
       </section>
     </main>
   );
