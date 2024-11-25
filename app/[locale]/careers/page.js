@@ -19,7 +19,12 @@ const careersImages = [
   "/images/career-flower.png",
 ];
 
-function Careers() {
+function Careers({ params: { locale } }) {
+  console.log(locale);
+  const localizedjobList = jobs[locale] || jobs["en-my"];
+
+  console.log(localizedjobList);
+
   return (
     <div>
       <section className="relative min-h-[50vh] bg-careers-hero bg-cover bg-right md:min-h-[70vh]">
@@ -84,15 +89,8 @@ function Careers() {
         <h1 className="mb-5 text-4xl">Job Openings</h1>
         <p className="text-xl">Click for application details</p>
         <div className="joblistings mt-10">
-          {jobs.map((job) => {
-            return (
-              <JobListing
-                key={job.id}
-                jobId={job.id}
-                title={job.title}
-                description={job.description}
-              />
-            );
+          {localizedjobList.map((job) => {
+            return <JobListing key={job.id} job={job} />;
           })}
         </div>
       </section>

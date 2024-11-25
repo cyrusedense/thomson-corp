@@ -4,43 +4,43 @@ import { useState, useEffect, useRef } from "react";
 
 import Image from "next/image";
 
-const years = [
-  {
-    year: 2018,
-    content: "This is content for 2010",
-    imageUrl: "/images/placeholder-profile.jpeg",
-  },
-  {
-    year: 2019,
-    content: "This is content for 2012",
-    imageUrl: "/images/placeholder-profile.jpeg",
-  },
-  {
-    year: 2020,
-    content: "This is content for 2014",
-    imageUrl: "/images/placeholder-profile.jpeg",
-  },
-  {
-    year: 2021,
-    content: "This is content for 2016",
-    imageUrl: "/images/placeholder-profile.jpeg",
-  },
-  {
-    year: 2022,
-    content: "This is content for 2018",
-    imageUrl: "/images/placeholder-profile.jpeg",
-  },
-  {
-    year: 2023,
-    content: "This is content for 2020",
-    imageUrl: "/images/placeholder-profile.jpeg",
-  },
-  {
-    year: 2024,
-    content: "This is content for 2022",
-    imageUrl: "/images/placeholder-profile.jpeg",
-  },
-];
+// const years = [
+//   {
+//     year: 2018,
+//     content: "This is content for 2010",
+//     imageUrl: "/images/placeholder-profile.jpeg",
+//   },
+//   {
+//     year: 2019,
+//     content: "This is content for 2012",
+//     imageUrl: "/images/placeholder-profile.jpeg",
+//   },
+//   {
+//     year: 2020,
+//     content: "This is content for 2014",
+//     imageUrl: "/images/placeholder-profile.jpeg",
+//   },
+//   {
+//     year: 2021,
+//     content: "This is content for 2016",
+//     imageUrl: "/images/placeholder-profile.jpeg",
+//   },
+//   {
+//     year: 2022,
+//     content: "This is content for 2018",
+//     imageUrl: "/images/placeholder-profile.jpeg",
+//   },
+//   {
+//     year: 2023,
+//     content: "This is content for 2020",
+//     imageUrl: "/images/placeholder-profile.jpeg",
+//   },
+//   {
+//     year: 2024,
+//     content: "This is content for 2022",
+//     imageUrl: "/images/placeholder-profile.jpeg",
+//   },
+// ];
 
 export default function Timeline() {
   const [activeIndex, setActiveIndex] = useState(0);

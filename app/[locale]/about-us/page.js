@@ -16,6 +16,7 @@ import TeamMemberCard from "@/app/components/TeamMemberCard";
 import WaveAnimation from "@/app/components/waveAnimation";
 
 function AboutUs() {
+  
   const featuredTeamMembers = teamMembers.slice(0, 3);
 
   const t = useTranslations("AboutUs");
