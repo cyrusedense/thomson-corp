@@ -5,8 +5,8 @@ import Image from "next/image";
 function Leadership() {
   return (
     <div>
-      <section className="relative min-h-[50vh] bg-leadership-hero bg-cover bg-right md:min-h-[70vh]">
-        <div className="hero-text-wrapper absolute top-[50%] translate-y-[-50%] p-5">
+      <section className="relative flex min-h-[50vh] items-center bg-leadership-hero bg-cover bg-right md:min-h-[50vh]">
+        <div className="hero-text-wrapper m-auto w-screen max-w-screen-2xl p-5">
           <h1 className="mb-4 text-4xl text-white md:text-6xl">Our Team</h1>
           <p className="text-xl text-white">
             The passionate people behind the scenes

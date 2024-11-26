@@ -15,10 +15,9 @@ const Milestones = () => {
     <section className="milestones">
       <h2 className="mb-8 text-4xl text-tsdarkgreen">Our Story</h2>
       <div className="swiper-arranger">
-        <div className="timeline-pagination"></div>
+        <div id="timeline-slider" className="timeline-pagination"></div>
 
         <Swiper
-          id="timeline-slider"
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}

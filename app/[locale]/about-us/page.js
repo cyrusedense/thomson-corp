@@ -16,7 +16,6 @@ import TeamMemberCard from "@/app/components/TeamMemberCard";
 import WaveAnimation from "@/app/components/waveAnimation";
 
 function AboutUs() {
-  
   const featuredTeamMembers = teamMembers.slice(0, 3);
 
   const t = useTranslations("AboutUs");
@@ -33,8 +32,8 @@ function AboutUs() {
 
   return (
     <main>
-      <section className="relative min-h-[50vh] bg-about-hero bg-cover bg-right md:min-h-[70vh]">
-        <div className="hero-text-wrapper absolute top-[50%] translate-y-[-50%] p-5">
+      <section className="relative flex min-h-[50vh] items-center bg-about-hero bg-cover bg-right md:min-h-[50vh]">
+        <div className="hero-text-wrapper m-auto w-screen max-w-screen-2xl p-5">
           {/* <h1>{t("title")}</h1> */}
           <h1 className="mb-4 text-4xl text-white md:text-6xl">About Us</h1>
           <p className="text-xl text-white">Where Health Matters</p>
@@ -73,7 +72,7 @@ function AboutUs() {
         </div>
       </section>
 
-      <section>
+      <section className="pb-10 md:pb-14 xl:pb-20">
         <h1 className="mb-4 text-center text-2xl md:text-3xl">Our Leaders</h1>
         <p className="mb-5 px-5 text-center">
           We are led by a team of qualified experts, passionate about building a
@@ -93,32 +92,34 @@ function AboutUs() {
         </div>
       </section>
 
-      <section className="about-us relative flex min-h-[90vh] justify-end bg-factory-bg bg-cover px-5 py-10 lg:py-20">
+      <section className="about-us relative min-h-[90vh] bg-factory-bg bg-cover py-10 lg:py-20">
         <WaveAnimation />
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-transparent via-white/0 to-white/80"></div>{" "}
         {/* White gradient overlay */} {/* White gradient overlay */}
-        <div className="about-us-content relative z-10 my-20 flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10 sm:w-[50%] sm:max-w-[500px]">
-          <h1 className="text-3xl text-tsdarkgreen md:text-4xl">
-            FACTORY FACILITIES
-          </h1>
-          <p className="">
-            At Thomson, we are GMP certified by the Ministry of Health Malaysia,
-            ensuring strict standards for cleanliness and consistency. Our
-            facility uses state-of-the-art German machinery from Fette, Bosch,
-            and Uhlmann, known for superior quality. <br />
-            <br />
-            In our QC lab, we perform:
-            <br />- Dissolution Testing: Ensures ingredients dissolve
-            efficiently for better absorption.
-            <br />- HPLC Testing: Verifies ingredient identity, checks for
-            adulteration, and ensures quality.
-            <br />
-            <br />
-            We believe these two tests are crucial to maintaining the
-            high-quality standards of all Thomson products, ensuring our
-            commitment to excellence.
-          </p>
-          <Button intLink={"/about-us"} color={"yellow"} text={"Read More"} />
+        <div className="m-auto flex max-w-screen-xl justify-end">
+          <div className="about-us-content relative z-10 my-20 flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-[#ffffff79] p-10 sm:w-[50%] sm:max-w-[500px]">
+            <h1 className="text-3xl text-tsdarkgreen md:text-4xl">
+              FACTORY FACILITIES
+            </h1>
+            <p className="">
+              At Thomson, we are GMP certified by the Ministry of Health
+              Malaysia, ensuring strict standards for cleanliness and
+              consistency. Our facility uses state-of-the-art German machinery
+              from Fette, Bosch, and Uhlmann, known for superior quality. <br />
+              <br />
+              In our QC lab, we perform:
+              <br />- Dissolution Testing: Ensures ingredients dissolve
+              efficiently for better absorption.
+              <br />- HPLC Testing: Verifies ingredient identity, checks for
+              adulteration, and ensures quality.
+              <br />
+              <br />
+              We believe these two tests are crucial to maintaining the
+              high-quality standards of all Thomson products, ensuring our
+              commitment to excellence.
+            </p>
+            <Button intLink={"/about-us"} color={"yellow"} text={"Read More"} />
+          </div>
         </div>
       </section>
     </main>

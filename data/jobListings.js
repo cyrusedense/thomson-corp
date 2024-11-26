@@ -4,19 +4,19 @@ export const jobs = {
       id: 1,
       title: "Sales Executive",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sed, ipsum itaque praesentium, provident officia eligendi cupiditate voluptate consequuntur numquam quasi neque cum obcaecati autem soluta. Ut eveniet doloribus repellat.",
+        "MY JOB-1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sed, ipsum itaque praesentium, provident officia eligendi cupiditate voluptate consequuntur numquam quasi neque cum obcaecati autem soluta. Ut eveniet doloribus repellat.",
     },
     {
       id: 2,
       title: "Roadshow Promoter",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sed, ipsum itaque praesentium, provident officia eligendi cupiditate voluptate consequuntur numquam quasi neque cum obcaecati autem soluta. Ut eveniet doloribus repellat.",
+        "MY JOB-2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sed, ipsum itaque praesentium, provident officia eligendi cupiditate voluptate consequuntur numquam quasi neque cum obcaecati autem soluta. Ut eveniet doloribus repellat.",
     },
     {
       id: 3,
       title: "Product Manager",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sed, ipsum itaque praesentium, provident officia eligendi cupiditate voluptate consequuntur numquam quasi neque cum obcaecati autem soluta. Ut eveniet doloribus repellat.",
+        " MY JOB-3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat sed, ipsum itaque praesentium, provident officia eligendi cupiditate voluptate consequuntur numquam quasi neque cum obcaecati autem soluta. Ut eveniet doloribus repellat.",
     },
     {
       id: 4,
@@ -29,7 +29,7 @@ export const jobs = {
   "en-sg": [
     {
       id: 1,
-      title: "Sales Promoter",
+      title: "Sales Executive",
       description:
         "We are seeking passionate and driven individuals to join our team as Roadshow Sales Promoters in the health supplement industry. Join us in providing high-quality health supplement products that aim to empower individuals to live their healthiest and best lives.",
 

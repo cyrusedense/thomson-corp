@@ -139,18 +139,20 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 z-40 flex h-[50px] w-screen items-center gap-10 px-5 py-10 transition-all duration-300 ${
+      className={`fixed top-0 z-40 m-auto flex h-[50px] w-screen items-center justify-between gap-10 px-5 py-10 transition-all duration-300 ${
         hasScrolled
           ? "bg-tsdarkgreen bg-opacity-90 backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
-      <div className="logo-wrapper">
-        <Logo color="white" />
-      </div>
+      <div className="mx-auto flex w-screen max-w-screen-2xl justify-between gap-10">
+        <div className="logo-wrapper">
+          <Logo color="white" />
+        </div>
 
-      <div className="hidden w-full md:block">
-        <DesktopLinks />
+        <div className="hidden w-full md:block">
+          <DesktopLinks />
+        </div>
       </div>
 
       <div className="z-10 md:hidden">
