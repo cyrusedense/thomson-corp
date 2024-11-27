@@ -1,7 +1,12 @@
-import React from "react";
 import Button from "@/app/components/Button";
 
+import { FiArrowLeftCircle } from "react-icons/fi";
+
 import { jobs } from "@/data/jobListings";
+
+import { Link } from "@/i18n/routing";
+
+import JobDetailSection from "@/app/components/JobDetailSection";
 
 function normalizeString(str) {
   return str.trim().toLowerCase().replace(/\s+/g, "-");
@@ -28,61 +33,53 @@ function JobDetails({ params: { locale, jobTitle } }) {
 
   return (
     <div>
-      <section className="relative flex min-h-[50vh] items-center bg-community-hero bg-cover bg-right md:min-h-[50vh]">
-        <div className="hero-text-wrapper m-auto w-screen max-w-screen-2xl">
+      <section className="relative flex min-h-[50vh] items-center bg-careers-hero bg-cover bg-right md:min-h-[50vh]">
+        <div className="hero-text-wrapper m-auto w-screen max-w-screen-2xl px-5">
           <h1 className="mb-4 text-4xl text-white md:text-6xl">
             {jobDetail.title}
           </h1>
         </div>
       </section>
-      <section className="job-content m-auto max-w-screen-xl py-10 md:py-14 xl:py-20">
+
+      <div className="m-auto max-w-screen-xl pt-10">
+        <Link
+          className="group flex items-center gap-5 text-xl"
+          href={"/careers"}
+        >
+          <div className="transition-transform group-hover:scale-110">
+            <FiArrowLeftCircle size={45} color="#004414" />
+          </div>
+          <p className="transition-all group-hover:underline">
+            View All Job Openings
+          </p>
+        </Link>
+      </div>
+
+      <div className="job-content m-auto max-w-screen-lg px-5 py-10 md:py-14 xl:py-20">
         <section className="mb-5">
-          <h1 className="mb-5 text-3xl text-tsdarkgreen">{jobDetail.title}</h1>
+          <h1 className="mb-5 text-4xl text-tsdarkgreen">{jobDetail.title}</h1>
           <h3>{jobDetail.description}</h3>
         </section>
 
-        {jobDetail.highlights && (
-          <section className="mb-5">
-            <h1 className="mb-5 text-3xl text-tsdarkgreen">Job Highlights</h1>
-            {jobDetail.highlights?.map((highlight) => (
-              <li key={highlight}>{highlight}</li>
-            ))}
-          </section>
-        )}
+        <JobDetailSection title="Highlights" list={jobDetail.highlights} />
 
-        {jobDetail.jobDesc && (
-          <section className="mb-5">
-            <h1 className="mb-5 text-3xl text-tsdarkgreen">Job Description</h1>
-            {jobDetail.jobDesc?.map((desc) => (
-              <li key={desc}>{desc}</li>
-            ))}
-          </section>
-        )}
+        <JobDetailSection title="Job Description" list={jobDetail.jobDesc} />
 
-        {jobDetail.jobReq && (
-          <section className="mb-5">
-            <h1 className="mb-5 text-3xl text-tsdarkgreen">Job Requirements</h1>
-            {jobDetail.jobReq?.map((req) => (
-              <li key={req}>{req}</li>
-            ))}
-          </section>
-        )}
+        <JobDetailSection title="Job Requirements" list={jobDetail.jobReq} />
 
-        {jobDetail.other && (
-          <section className="mb-5">
-            <h1 className="mb-5 text-3xl text-tsdarkgreen">Other</h1>
-            {jobDetail.other?.map((req) => (
-              <li key={req}>{req}</li>
-            ))}
-          </section>
-        )}
+        <JobDetailSection title="Other" list={jobDetail.other} />
 
         {jobDetail.email && (
           <button className="mr-4 rounded-lg bg-tsdarkgreen px-4 py-2 text-white hover:bg-tsyellow">
-            Send Email
+            <a
+              href={`mailto:${jobDetail.email}?subject=Application for ${jobDetail.title}`}
+              class="button"
+            >
+              Apply via Email
+            </a>
           </button>
         )}
-      </section>
+      </div>
     </div>
   );
 }
