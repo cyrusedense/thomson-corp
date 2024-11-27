@@ -41,32 +41,41 @@ function JobDetails({ params: { locale, jobTitle } }) {
           <h3>{jobDetail.description}</h3>
         </section>
 
-        <section className="mb-5">
-          <h1 className="mb-5 text-3xl text-tsdarkgreen">Job Highlights</h1>
-          {jobDetail.highlights.map((highlight) => (
-            <li key={highlight}>{highlight}</li>
-          ))}
-        </section>
+        {jobDetail.highlights && (
+          <section className="mb-5">
+            <h1 className="mb-5 text-3xl text-tsdarkgreen">Job Highlights</h1>
+            {jobDetail.highlights?.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </section>
+        )}
 
-        <section className="mb-5">
-          <h1 className="mb-5 text-3xl text-tsdarkgreen">Job Description</h1>
-          {jobDetail.jobDesc.map((desc) => (
-            <li key={desc}>{desc}</li>
-          ))}
-        </section>
-        <section className="mb-5">
-          <h1 className="mb-5 text-3xl text-tsdarkgreen">Job Requirements</h1>
-          {jobDetail.jobReq.map((req) => (
-            <li key={req}>{req}</li>
-          ))}
-        </section>
+        {jobDetail.jobDesc && (
+          <section className="mb-5">
+            <h1 className="mb-5 text-3xl text-tsdarkgreen">Job Description</h1>
+            {jobDetail.jobDesc?.map((desc) => (
+              <li key={desc}>{desc}</li>
+            ))}
+          </section>
+        )}
 
-        <section className="mb-5">
-          <h1 className="mb-5 text-3xl text-tsdarkgreen">Other</h1>
-          {jobDetail.other.map((req) => (
-            <li key={req}>{req}</li>
-          ))}
-        </section>
+        {jobDetail.jobReq && (
+          <section className="mb-5">
+            <h1 className="mb-5 text-3xl text-tsdarkgreen">Job Requirements</h1>
+            {jobDetail.jobReq?.map((req) => (
+              <li key={req}>{req}</li>
+            ))}
+          </section>
+        )}
+
+        {jobDetail.other && (
+          <section className="mb-5">
+            <h1 className="mb-5 text-3xl text-tsdarkgreen">Other</h1>
+            {jobDetail.other?.map((req) => (
+              <li key={req}>{req}</li>
+            ))}
+          </section>
+        )}
 
         {jobDetail.email && (
           <button className="mr-4 rounded-lg bg-tsdarkgreen px-4 py-2 text-white hover:bg-tsyellow">

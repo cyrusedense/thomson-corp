@@ -23,7 +23,7 @@ function JobListing({ job }) {
     const locale = router.locale || "en-my"; // Fallback to a default locale if not set
     const normalizedTitle = title.trim().toLowerCase().replace(/\s+/g, "-"); // Normalize title for URL
 
-    router.push(`/${locale}/careers/${normalizedTitle}`);
+    router.push(`/careers/${normalizedTitle}`);
   };
 
   return (
