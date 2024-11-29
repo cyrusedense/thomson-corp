@@ -106,19 +106,8 @@ function AboutUs() {
               Malaysia, ensuring strict standards for cleanliness and
               consistency. Our facility uses state-of-the-art German machinery
               from Fette, Bosch, and Uhlmann, known for superior quality. <br />
-              <br />
-              In our QC lab, we perform:
-              <br />- Dissolution Testing: Ensures ingredients dissolve
-              efficiently for better absorption.
-              <br />- HPLC Testing: Verifies ingredient identity, checks for
-              adulteration, and ensures quality.
-              <br />
-              <br />
-              We believe these two tests are crucial to maintaining the
-              high-quality standards of all Thomson products, ensuring our
-              commitment to excellence.
             </p>
-            <Button intLink={"/about-us"} color={"yellow"} text={"Read More"} />
+            <Button intLink={"/factory"} color={"yellow"} text={"Read More"} />
           </div>
         </div>
       </section>
