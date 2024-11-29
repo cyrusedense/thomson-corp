@@ -28,10 +28,8 @@ const ContactForm = () => {
           <h1 className="text-[40px] text-tsdarkgreen sm:text-[50px]">
             Get In Touch
           </h1>
-          <p className="max-w-[80%] px-2 text-center text-tsdarkgreen sm:px-0 md:text-left">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes,
+          <p className="max-w-[80%] px-2 text-center text-2xl text-tsdarkgreen sm:px-0 md:text-left">
+            We will be in touch within 2-5 working days
           </p>
         </div>
         <div className="grid-right z-10 mt-8 h-auto w-full px-10 md:mt-0 md:w-[1000px] md:px-0 lg:relative lg:right-[-15%]">

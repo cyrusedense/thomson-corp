@@ -1,32 +1,33 @@
-import React from "react";
 import { GrLocation } from "react-icons/gr";
 
 function LocationInfo() {
   return (
     <main>
-      {/* Apply centering styles only for mobile */}
-      <section className="flex w-full flex-col items-center p-5 md:m-[5%] md:h-[168px] md:w-[767px] md:flex-row md:items-start md:p-5">
-        <div className="mb-4 flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#F9B002] md:mb-0 md:h-[67px] md:w-[68.39px]">
-          <GrLocation className="h-[25px] w-[25px] text-white md:h-[35px] md:w-[35px]" />
+      <section className="addresses m-auto flex max-w-screen-xl items-start gap-5 px-5 py-10">
+        <div className="w-fit rounded-full bg-tsyellow p-4">
+          <GrLocation size={35} color="white" />{" "}
         </div>
-        <div className="flex w-[80%] flex-col md:ml-5 md:flex-row md:items-start md:space-x-16">
-          <div className="mb-5 flex w-full flex-col text-center md:mb-0 md:max-w-[50%] md:text-left">
-            <h1 className="text-[30px] md:text-[30px]">Location</h1>
-            <h2 className="text-[16px] md:text-[20px]">
-              Sales & Marketing Office:
-            </h2>
-            <p className="px-4 text-[14px] md:px-0 md:text-[15px]">
-              C-06-07, Sunway Nexis, No. 1, Jalan PJU 5/1, Kota Damansara, 47810
-              Petaling Jaya, Malaysia
-            </p>
-          </div>
+        <div className="address-wrapper">
+          <h3 className="text-2xl">Location</h3>
 
-          <div className="flex w-full flex-col text-center md:mt-[45px] md:max-w-[50%] md:text-left">
-            <h2 className="text-[16px] md:text-[20px]">Factory:</h2>
-            <p className="px-4 text-[14px] md:px-0 md:text-[15px]">
-              No. 5 & 7, Jalan TSB 6, Taman Industri Sungai Buloh, 47000 Sungai
-              Buloh, Malaysia
-            </p>
+          <div className="w-screen sm:flex sm:gap-20">
+            <div className="mb-5">
+              <h4 className="text-xl">Sales and Marketing Office</h4>
+              <p>
+                {" "}
+                C-06-07, Sunway Nexis, <br /> No. 1, Jalan PJU 5/1, <br />
+                Kota Damansara, <br />
+                47810 Petaling Jaya, Malaysia
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-xl">Factory</h4>
+              <p>
+                No. 5 & 7, Jalan TSB 6, <br />
+                Taman Industri Sungai Buloh, <br /> 47000 Sungai Buloh, Malaysia
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -48,3 +49,28 @@ function LocationInfo() {
 }
 
 export default LocationInfo;
+
+{
+  /* Apply centering styles only for mobile */
+}
+<section className="m-auto flex w-full max-w-screen-xl flex-col items-center p-5 md:flex-row md:items-start md:p-5">
+  <div className="mb-4 flex h-[50px] w-[50px] items-center justify-center rounded-full bg-[#F9B002] md:mb-0 md:h-[67px] md:w-[68.39px]"></div>
+  <div className="flex w-[80%] flex-col md:ml-5 md:flex-row md:items-start md:space-x-16">
+    <div className="mb-5 flex w-full flex-col text-center md:mb-0 md:max-w-[50%] md:text-left">
+      <h1 className="text-[30px] md:text-[30px]">Location</h1>
+      <h2 className="text-[16px] md:text-[20px]">Sales & Marketing Office:</h2>
+      <p className="px-4 text-[14px] md:px-0 md:text-[15px]">
+        C-06-07, Sunway Nexis, No. 1, Jalan PJU 5/1, Kota Damansara, 47810
+        Petaling Jaya, Malaysia
+      </p>
+    </div>
+
+    <div className="flex w-full flex-col text-center md:text-left">
+      <h2 className="text-[16px] md:text-[20px]">Factory:</h2>
+      <p className="px-4 text-[14px] md:px-0 md:text-[15px]">
+        No. 5 & 7, Jalan TSB 6, Taman Industri Sungai Buloh, 47000 Sungai Buloh,
+        Malaysia
+      </p>
+    </div>
+  </div>
+</section>;

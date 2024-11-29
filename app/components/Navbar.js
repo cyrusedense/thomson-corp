@@ -17,6 +17,7 @@ const NAV_LINKS = [
     submenu: [
       { href: "/leadership-team", label: "Leadership Team" },
       { href: "/careers", label: "Careers" },
+      { href: "/factory", label: "Factory Facilities" },
     ],
   },
   { href: "/products", label: "Our Products" },

@@ -5,8 +5,8 @@ import Button from "@/app/components/Button";
 function Community() {
   return (
     <div>
-      <section className="relative min-h-[50vh] bg-community-hero bg-cover bg-right md:min-h-[70vh]">
-        <div className="hero-text-wrapper absolute top-[50%] translate-y-[-50%] p-5">
+      <section className="relative flex min-h-[50vh] items-center bg-community-hero bg-cover bg-right md:min-h-[50vh]">
+        <div className="hero-text-wrapper m-auto w-screen max-w-screen-2xl px-5">
           <h1 className="mb-4 text-4xl text-white md:text-6xl">Community</h1>
           <p className="text-xl text-white">
             Thomson&apos;s commitment to society
@@ -32,10 +32,8 @@ function Community() {
 
         <div className="m-auto max-w-screen-lg py-10 md:py-14 lg:py-20">
           <h1 className="mb-6 text-center text-4xl">ROADSHOW & EVENTS</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-            magni quidem, sit fuga illum mollitia, dolorum aperiam facere eum
-            rem esse? Est obcaecati nemo nostrum, magnam culpa quaerat a iste?
+          <p className="text-center text-2xl">
+            Watch this space for our latest events
           </p>
         </div>
 
@@ -64,13 +62,13 @@ function Community() {
           />
         </div>
       </section>
-      <section className="relative aspect-[16/9] w-full">
+      {/* <section className="relative aspect-[16/9] w-full">
         <Image
           className="object-cover"
           fill
           src={"/images/promo-banner.webp"}
         />
-      </section>
+      </section> */}
     </div>
   );
 }

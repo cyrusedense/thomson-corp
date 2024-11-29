@@ -14,8 +14,8 @@ function Collaborations({ params: { locale } }) {
 
   return (
     <div>
-      <section className="relative min-h-[50vh] bg-collab-bg bg-cover bg-right md:min-h-[90vh]">
-        <div className="hero-text-wrapper absolute top-[50%] translate-y-[-50%] p-5">
+      <section className="relative flex min-h-[50vh] items-center bg-collab-bg bg-cover bg-right md:min-h-[50vh]">
+        <div className="hero-text-wrapper m-auto w-screen max-w-screen-2xl">
           <h1 className="mb-8 max-w-[500px] text-4xl text-white md:text-6xl">
             Collaborations and Partnerships
           </h1>

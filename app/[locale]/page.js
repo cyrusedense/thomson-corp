@@ -190,28 +190,30 @@ export default function Home() {
         <ProductSlider />
       </section>
       <section className="about-us flex justify-start bg-blog-hero bg-cover bg-right px-5 py-10 lg:py-20">
-        <div className="about-us-content flex max-w-screen-xl flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-white bg-opacity-65 p-10 sm:w-[50%] sm:max-w-[500px]">
-          <h1 className="text-3xl text-tsdarkgreen md:text-4xl">ABOUT US</h1>
-          <p className="">
-            At Thomson, we are dedicated to improving the health and well-being
-            of our customers through natural solutions. For over 30 years, we
-            have been a trusted name, helping customers to enhance their overall
-            quality of life. <br />
-            <br />
-            Our customers consistently share stories of relief from chronic
-            issues and improved vitality, with many recommending our products to
-            friends and family. We are proud to be a part of countless journeys
-            toward better health, offering reliable, natural support for
-            everyday wellness.
-          </p>
-          <Button intLink={"/about-us"} text={"Read More"} />
+        <div className="about-us-inner m-auto w-screen max-w-screen-xl">
+          <div className="about-us-content flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-white bg-opacity-65 p-10 sm:w-[50%] sm:max-w-[500px]">
+            <h1 className="text-3xl text-tsdarkgreen md:text-4xl">ABOUT US</h1>
+            <p className="">
+              At Thomson, we are dedicated to improving the health and
+              well-being of our customers through natural solutions. For over 30
+              years, we have been a trusted name, helping customers to enhance
+              their overall quality of life. <br />
+              <br />
+              Our customers consistently share stories of relief from chronic
+              issues and improved vitality, with many recommending our products
+              to friends and family. We are proud to be a part of countless
+              journeys toward better health, offering reliable, natural support
+              for everyday wellness.
+            </p>
+            <Button intLink={"/about-us"} text={"Read More"} />
 
-          <Image
-            width={157}
-            height={60}
-            alt="halal-logos"
-            src={"/images/halal-logos.png"}
-          />
+            <Image
+              width={157}
+              height={60}
+              alt="halal-logos"
+              src={"/images/halal-logos.png"}
+            />
+          </div>
         </div>
       </section>
       <section className="relative bg-home-bottom-bg bg-contain py-14 text-white">
@@ -219,11 +221,11 @@ export default function Home() {
           <h1 className="text-center text-3xl text-tsdarkgreen md:text-4xl">
             RESOURCES
           </h1>
-          <p className="text-center text-tsdarkgreen">
+          <p className="text-center text-2xl text-tsdarkgreen">
             Read Articles from our panel of experts on health topics
           </p>
 
-          <div className="blog-wrapper m-auto grid max-w-screen-lg gap-6 md:grid-cols-3">
+          <div className="blog-wrapper m-auto my-10 grid max-w-screen-xl gap-6 md:grid-cols-3">
             {featuredBlogs.map((featuredBlog) => (
               <BlogCard
                 color={"green"}
@@ -246,7 +248,7 @@ export default function Home() {
           </div>
 
           <h1 className="mb-4 text-center text-3xl text-tsdarkgreen md:text-4xl">
-            Contact Us
+            CONTACT US
           </h1>
 
           <div className="m-auto flex max-w-screen-xl flex-row flex-wrap items-center justify-between">
@@ -313,8 +315,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="m-auto max-w-screen-xl py-10 md:py-14 lg:py-20">
-            <h1 className="mb-5 text-center text-4xl text-tsdarkgreen">
+          <div className="m-auto w-screen max-w-screen-xl py-10 md:py-14 lg:py-20">
+            <h1 className="mb-5 text-center text-4xl uppercase text-tsdarkgreen">
               Location
             </h1>
 
@@ -354,7 +356,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <WaveAnimation />
+        {/* <WaveAnimation /> */}
       </section>
     </main>
   );

@@ -12,16 +12,16 @@ function Page() {
 
   return (
     <div>
-      <section className="relative min-h-[50vh] bg-product-bg bg-cover bg-right md:min-h-[70vh]">
-        <div className="hero-text-wrapper absolute top-[50%] translate-y-[-50%] p-5">
+      <section className="relative flex min-h-[50vh] items-center bg-product-bg bg-cover bg-right md:min-h-[50vh]">
+        <div className="hero-text-wrapper m-auto w-screen max-w-screen-2xl px-5">
           <h1 className="mb-4 text-4xl text-white md:text-6xl">Our Products</h1>
           <p className="text-xl text-white">
             Everything you need to supercharge your health
           </p>
         </div>
       </section>
-      <section className="py-10 md:py-14 xl:py-20">
-        <h1 className="mb-5 text-center text-4xl">Products</h1>
+      <section>
+        {/* <h1 className="mb-5 text-center text-5xl">Products</h1> */}
 
         {products.map((product, index) => (
           <section
@@ -56,10 +56,7 @@ function Page() {
                 </h2>
                 <ul className="mb-5 ml-4">
                   {product.benefitList.map((benefit) => (
-                    <li
-                      className="mb-1 list-outside list-disc text-sm"
-                      key={benefit}
-                    >
+                    <li className="mb-5 list-outside list-disc" key={benefit}>
                       {benefit}
                     </li>
                   ))}
