@@ -62,19 +62,21 @@ function Loyalty() {
       </section>
 
       <section className="h-auto gap-5 bg-ginkgo bg-cover py-10 md:py-14 xl:py-20">
-        <h1 className="mb-5 text-center text-4xl font-bold text-[#195729] md:text-5xl md:text-[50px]">
-          Why Join Us?
-        </h1>
+        <div className="m-auto max-w-screen-lg px-5">
+          <h1 className="mb-5 text-center text-4xl font-bold text-[#195729] md:text-left md:text-5xl md:text-[50px]">
+            Why Join Us?
+          </h1>
+        </div>
 
-        <div className="m-auto flex max-w-screen-lg flex-wrap justify-center">
-          <div>
+        <div className="m-auto flex max-w-screen-lg flex-wrap justify-center gap-10 py-10">
+          {/* <div>
             <Image
               src={"/images/loyalty-icons/member-discounts.png"}
               alt="discounts"
               width={240}
               height={241}
             />
-          </div>
+          </div> */}
           <div>
             <Image
               src={"/images/loyalty-icons/welcome-rewards.png"}
@@ -115,14 +117,18 @@ function Loyalty() {
               height={241}
             />
           </div>
-          <div>
-            <Image
-              src={"/images/loyalty-icons/welcome-rewards.png"}
-              alt="welcome-rewards"
-              width={240}
-              height={241}
-            />
-          </div>
+        </div>
+
+        <div className="m-auto max-w-screen-lg px-5 pb-10">
+          <h1 className="mb-5 text-center text-4xl font-bold text-[#195729] md:text-left md:text-5xl md:text-[50px]">
+            Enjoy More Savings
+          </h1>
+          <p>
+            Enjoy more savings when you buy more! Feel free to join our Thomson
+            Family too to receive additional loyalty points and redeem exclusive
+            rewards! It’s our way of thanking you for your support! <br />{" "}
+            <br /> Sign up today and start saving more!
+          </p>
         </div>
 
         <div className="m-auto mt-10 max-w-screen-lg justify-between px-5 sm:flex">
@@ -171,45 +177,36 @@ function Loyalty() {
               },
               {
                 id: 2,
-                question: "How to Earn Points",
-                answer:
-                  "Submit Receipts, Perform Survey & Review or Refer a Friend!",
+                question: "How to Submit Receipts",
+                answer: "",
                 screens: [
                   {
                     url: "/videos/2-1.mp4",
                     caption: "Submit Receipt",
                   },
-                  {
-                    url: "/videos/2-2.mp4",
-                    caption: "Perform Survey",
-                  },
-                  {
-                    url: "/videos/2-3.mp4",
-                    caption: "Refer a Friend",
-                  },
                 ],
               },
               {
                 id: 3,
-                question: "How to Redeem Rewards",
-                answer:
-                  "Redeem Rewards with Member Points or Redeem Member Discount voucher online",
+                question: "Share Your Thomson Experience",
+                answer: "Share your testimonial to receive more points",
                 screens: [
                   {
-                    url: "/videos/3-1.mp4",
-                    caption: "Claim Vouchers",
+                    url: "/videos/2-2.mp4",
+                    caption: "Share Your Experience",
                   },
+                ],
+              },
+
+              {
+                id: 4,
+                question: "How to Refer a Friend!",
+                answer:
+                  "Refer a friend and you both can enjoy referral points after their first Thomson purchase",
+                screens: [
                   {
-                    url: "/videos/3-2.mp4",
-                    caption: "Copy Code & Go to Store",
-                  },
-                  {
-                    url: "/videos/3-3.mp4",
-                    caption: "Press Check Out",
-                  },
-                  {
-                    url: "/videos/3-4.mp4",
-                    caption: "Apply Code & Pay",
+                    url: "/videos/2-3.mp4",
+                    caption: "Refer a Friend",
                   },
                 ],
               },

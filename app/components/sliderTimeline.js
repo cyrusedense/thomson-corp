@@ -21,9 +21,9 @@ const Milestones = () => {
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
-          autoplay={{
-            delay: 5000,
-          }}
+          // autoplay={{
+          //   delay: 5000,
+          // }}
           navigation
           loop={true} // Enable infinite looping
           pagination={{
