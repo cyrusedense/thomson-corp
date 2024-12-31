@@ -361,6 +361,14 @@ function Loyalty() {
             />
             <SingleFAQ
               question={
+                "What do I need to do to earn 2x points after purchasing in the Thomson Official Store?"
+              }
+              answer={
+                "Nothing! Upon checkout in our official sg-shop.thomsonhealth.com store, points will be automatically credited to your registered Thomson Member Account. (Please note: 2x Reward Points only applies to purchases made in Thomson Official Store sg-shop@thomsonhealth.com)."
+              }
+            />
+            <SingleFAQ
+              question={
                 "Why are the points not reflected immediately after submission?"
               }
               answer={
@@ -378,7 +386,7 @@ function Loyalty() {
             <SingleFAQ
               question={"How do I earn the “Refer a Friend” points?"}
               answer={
-                "Please proceed to the Refer a Friend page and provide your friend with the Referral code. Once your friend has applied the referral code, he/she would have to submit a receipt of any purchase of any Thomson SKU through his/her Thomson Family Loyalty Program and you will both be rewarded the referral points. Note: These referral points will be rewarded to you for each subsequent new referral. For more info : How to refer a friend"
+                "Please proceed to the Refer a Friend page and provide your friend with the Referral code. Once your friend has applied the referral code, he/she would have to submit a receipt of any purchase of any Thomson SKU through his/her Thomson Family Loyalty Program and you will both be rewarded the referral points. Note: These referral points will be rewarded to you for each subsequent new referral. <a class='text-tsgreen font-bold underline' href='https://thomson-health-sg.eber.co/user/referral'> Click here to refer a friend now <a/> "
               }
             />
 
