@@ -129,6 +129,22 @@ function Loyalty() {
             rewards! It’s our way of thanking you for your support! <br />{" "}
             <br /> Sign up today and start saving more!
           </p>
+
+          <Image
+            className="my-10 w-full sm:hidden"
+            src={"/images/loyalty-table-mobile.png"}
+            width={1000}
+            height={500}
+            alt="loyalty-table-desktop"
+          ></Image>
+
+          <Image
+            className="my-10 hidden sm:block xl:w-[120%] xl:max-w-[120%] xl:translate-x-[-10%]"
+            src={"/images/loyalty-table-desktop.png"}
+            width={1000}
+            height={500}
+            alt="loyalty-table-desktop"
+          ></Image>
         </div>
 
         <div className="m-auto mt-10 max-w-screen-lg justify-between px-5 sm:flex">
@@ -296,7 +312,7 @@ function Loyalty() {
             <SingleFAQ
               question={"Is there any fee to join Family?"}
               answer={
-                "None at all. In fact, you also do not need to make a purchase to join. How can I add this app into my home page? We strongly recommend that you add Thomson Family onto your homescreen, upon which re-login is not necessary for your ease."
+                "None at all. In fact, you also do not need to make a purchase to join."
               }
             />
             <SingleFAQ
@@ -331,7 +347,9 @@ function Loyalty() {
               question={
                 "How many points do I get for purchasing Thomson products?"
               }
-              answer={"Earn 1 point for every $1 spent."}
+              answer={
+                "Earn 1 point for every $1 spent in <a href='https://sg-shop.thomsonhealth.com/collections/all' class='text-tsgreen font-bold underline'>Thomson Official Store</a>."
+              }
             />
             <SingleFAQ
               question={
