@@ -1,3 +1,5 @@
+import { roadshowEvents } from "@/data/roadshowEvents";
+
 import Image from "next/image";
 import BlogCard from "@/app/components/BlogCard";
 import Button from "@/app/components/Button";
@@ -38,28 +40,16 @@ function Community() {
         </div>
 
         <div className="blog-wrapper m-auto grid max-w-screen-lg gap-6 text-white md:grid-cols-3">
-          <BlogCard
-            extUrl={"/"}
-            color={"green"}
-            title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
-            author="Benjamin Lim"
-            featuredImage={"/images/test-blog-img.png"}
-          />
-
-          <BlogCard
-            extUrl={"/"}
-            title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
-            author="Benjamin Lim"
-            featuredImage={"/images/test-blog-img.png"}
-          />
-
-          <BlogCard
-            color="green"
-            extUrl={"/"}
-            title="Why Gut Health Matters: Thomson Health’s Probiotic Solutions"
-            author="Benjamin Lim"
-            featuredImage={"/images/test-blog-img.png"}
-          />
+          {roadshowEvents.map((roadshowEvent) => (
+            <BlogCard
+              extUrl={roadshowEvent.extUrl}
+              color={roadshowEvent.color}
+              title={roadshowEvent.title}
+              author={roadshowEvent.author}
+              featuredImage={roadshowEvent.featuredImage}
+              key={roadshowEvent.title}
+            />
+          ))}
         </div>
       </section>
       {/* <section className="relative aspect-[16/9] w-full">

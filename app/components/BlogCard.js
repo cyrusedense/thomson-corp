@@ -21,7 +21,7 @@ function BlogCard({ title, author, date, color, featuredImage, extUrl }) {
             color === "green" ? "bg-tsdarkgreen" : "bg-tsyellow"
           } p-5`}
         >
-          <h1 className="min-h-[75px]">{title}</h1>
+          <h1 className="line-clamp-3 min-h-[75px]">{title}</h1>
 
           <div className="flex w-full flex-row justify-between">
             <div>
