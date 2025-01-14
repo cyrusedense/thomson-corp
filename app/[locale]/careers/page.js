@@ -35,7 +35,7 @@ function Careers({ params: { locale } }) {
         </div>
       </section>
 
-      <section className="m-auto max-w-screen-xl px-5 py-10 md:py-14 xl:py-20">
+      {/* <section className="m-auto max-w-screen-xl px-5 py-10 md:py-14 xl:py-20">
         <h1 className="mb-5 text-center text-4xl">Company Profile</h1>
         <p className="m-auto max-w-[80%]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quod
@@ -83,9 +83,10 @@ function Careers({ params: { locale } }) {
             ))}
           </Swiper>
         </div>
-      </section>
+      </section> */}
 
-      <section className="careers m-auto max-w-screen-xl px-5 pb-10 md:pb-14 xl:pb-20">
+      <section className="careers m-auto max-w-screen-xl px-5 py-10 md:pb-14 xl:pb-20">
+        {/* <section className="careers m-auto max-w-screen-xl px-5 pb-10 md:pb-14 xl:pb-20"> */}
         <h1 className="mb-5 text-4xl">Job Openings</h1>
         <p className="text-xl">Click for application details</p>
         <div className="joblistings mt-10">
