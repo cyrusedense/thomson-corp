@@ -14,7 +14,7 @@ function Leadership() {
         </div>
       </section>
       <section className="px-5 py-10 md:py-14 lg:py-20">
-        <div className="leadership-intro mx-auto mb-5 max-w-screen-xl sm:flex">
+        {/* <div className="leadership-intro mx-auto mb-5 max-w-screen-xl sm:flex">
           <div className="mb-5 text-3xl font-bold text-tsdarkgreen sm:basis-1/2">
             {" "}
             Lorem, ipsum dolor sit amet consectetur
@@ -25,7 +25,7 @@ function Leadership() {
             commodi quos itaque deleniti sunt. Quisquam molestiae autem, fuga
             eaque eligendi dolorum?
           </div>
-        </div>
+        </div> */}
 
         <div className="mx-auto mt-20 grid max-w-screen-xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <div className="first-div flex h-[454px] w-full flex-col justify-around rounded-[56px] rounded-br-[0px] bg-tsyellow p-[10%]">
