@@ -61,9 +61,7 @@ export default function ProductSlider() {
 
   const prevScene = () => {
     if (!isAnimating) {
-      const prev =
-        (currentScene - 1 + productSliderScenes.length) %
-        productSliderScenes.length;
+      const prev = (currentScene - 1 + productSliderScenes.length) % productSliderScenes.length;
       playSceneAnimation(prev, -1);
 
       // Wrap `indicatorStart` for infinite loop effect
@@ -146,10 +144,7 @@ export default function ProductSlider() {
           },
         )
         .to(
-          [
-            currentElement.querySelector(".text-container"),
-            currentElement.querySelector(".human-image"),
-          ],
+          [currentElement.querySelector(".text-container"), currentElement.querySelector(".human-image")],
           {
             autoAlpha: 0,
             duration: 0.5,
@@ -204,10 +199,7 @@ export default function ProductSlider() {
         )
         // Synchronized spring animation for circular and banner
         .fromTo(
-          [
-            nextElement.querySelector(".product-circular"),
-            nextElement.querySelector(".product-banner"),
-          ],
+          [nextElement.querySelector(".product-circular"), nextElement.querySelector(".product-banner")],
           {
             autoAlpha: 0,
             scale: 0,
@@ -293,13 +285,7 @@ export default function ProductSlider() {
             width: anchorPosition.width * 1.05,
           }}
         />
-        <Image
-          alt="stage-shadow"
-          className="stage-shadow absolute bottom-0 z-[18] h-[48%] w-full object-cover object-top sm:h-[45%] 2xl:h-[48%]"
-          width={2000}
-          height={1000}
-          src={"/images/stage-shadow.png"}
-        />
+        <Image alt="stage-shadow" className="stage-shadow absolute bottom-0 z-[18] h-[48%] w-full object-cover object-top sm:h-[45%] 2xl:h-[48%]" width={2000} height={1000} src={"/images/stage-shadow.png"} />
 
         {productSliderScenes.map((scene, index) => {
           return (
@@ -314,9 +300,7 @@ export default function ProductSlider() {
                 width={300}
                 height={300}
                 alt="product-banner"
-                src={
-                  "/images/product-animations/activated-ginko/activated-ginkgo-banner.png"
-                }
+                src={"/images/product-animations/activated-ginko/activated-ginkgo-banner.png"}
                 style={{
                   width: anchorPosition.width * 0.5,
                 }}
@@ -336,23 +320,10 @@ export default function ProductSlider() {
               />
 
               {/* Product Image */}
-              <Image
-                ref={productImageRef}
-                src={scene.images.product}
-                alt="product"
-                width={800}
-                height={800}
-                className="product-image z-20 w-[60vw] object-contain lg:w-[550px]"
-              />
+              <Image ref={productImageRef} src={scene.images.product} alt="product" width={800} height={800} className="product-image z-20 w-[60vw] object-contain lg:w-[550px]" />
 
               {/* Background Image */}
-              <Image
-                width={2000}
-                height={800}
-                alt="background"
-                src={scene.images.bg}
-                className="bg-image absolute h-full w-full object-cover"
-              />
+              <Image width={2000} height={800} alt="background" src={scene.images.bg} className="bg-image absolute h-full w-full object-cover" />
               {/* Human Image */}
               <Image
                 src={scene.images.human}
@@ -370,65 +341,29 @@ export default function ProductSlider() {
 
               {/* Text Container */}
               <div className="text-container absolute left-[5%] top-[10%] z-20 w-[30%]">
-                <h1 className="mb-8 text-2xl text-tsdarkgreen xl:text-4xl">
-                  {scene.title}
-                </h1>
-                <h3 className="text-sm text-tsdarkgreen md:text-xl">
-                  {scene.description}
-                </h3>
+                <h1 className="mb-8 text-2xl text-tsdarkgreen xl:text-4xl">{scene.title}</h1>
+                <h3 className="text-sm text-tsdarkgreen md:text-xl">{scene.description}</h3>
               </div>
             </div>
           ); // Anchor to the product image
         })}
       </div>
 
-      {/* Product List with Featured Images */}
-      <div className="product-indicators-wrapper absolute bottom-[10%] left-[50%] z-[30] flex w-[50%] translate-x-[-50%] items-center justify-center gap-10 rounded-full px-2 py-2">
-        {/* Previous Button for Indicators */}
-        <button onClick={prevScene} className="cursor-pointer">
-          <FiArrowLeftCircle size={40} color="white" />
+      <div className="absolute bottom-[10%] left-1/2 z-30 flex h-auto w-3/4 -translate-x-1/2 flex-row items-center justify-between 2xl:w-1/2">
+        <button onClick={prevScene} className="z-[31] text-tsdarkgreen">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-12">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
         </button>
-
-        {/* Product Indicators with Sliding Effect */}
-        <div
-          className="flex overflow-x-hidden"
-          style={{
-            width: `${indicatorsToShow * 60}px`, // Set visible width to 3 indicators
-          }}
-        >
-          <div
-            className="flex space-x-4"
-            style={transformStyle} // Apply transform for sliding
-          >
-            {productSliderScenes.map((scene, index) => (
-              <div
-                key={scene.id}
-                onClick={() => goToScene(index)}
-                className={`relative cursor-pointer rounded-[56px] p-2 transition-all duration-300 ${
-                  currentScene === index ? "scale-110" : "scale-90"
-                }`}
-                style={{
-                  width: currentScene === index ? "60px" : "40px",
-                  height: currentScene === index ? "60px" : "40px",
-                }}
-              >
-                <div className="absolute inset-0 flex items-center justify-center rounded-full bg-white">
-                  <Image
-                    src={scene.images.featured}
-                    alt={scene.title}
-                    width={60}
-                    height={60}
-                    className="rounded-full object-cover"
-                  />
-                </div>
-              </div>
-            ))}
+        {productSliderScenes.map((scene, index) => (
+          <div key={index}>
+            <Image src={scene.images.featured} alt={scene.title} width={192} height={192} className={`mx-auto transform rounded-full object-cover transition-all duration-150 ease-in-out ${currentScene === index ? "scale-150" : "opacity-85 blur-[1px] brightness-90"}`} />
           </div>
-        </div>
-
-        {/* Next Button for Indicators */}
-        <button onClick={nextScene} className="cursor-pointer">
-          <FiArrowRightCircle size={40} color="white" />
+        ))}
+        <button onClick={nextScene} className="z-[31] text-tsdarkgreen">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-12">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg>
         </button>
       </div>
 
