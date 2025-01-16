@@ -1,7 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-
 import Image from "next/image";
 import Button from "../../components/Button";
 
@@ -9,33 +7,6 @@ import { FiArrowRight } from "react-icons/fi";
 import SingleFAQ from "../../components/SingleFAQ";
 
 function Loyalty() {
-  useEffect(() => {
-    if (window.location.pathname.endsWith("loyalty")) {
-      document.querySelector("nav").style.display = "none";
-
-      if (document.querySelector("#yellowDivFix") === null && document.querySelector("#greenDivFix") === null) {
-        let yellowDiv = document.createElement("div");
-        yellowDiv.id = "yellowDivFix";
-        yellowDiv.classList.add("bg-tsyellow", "w-100", "h-14");
-
-        let greenDiv = document.createElement("div");
-        greenDiv.id = "greenDivFix";
-        greenDiv.classList.add("bg-tsgreen", "w-100", "h-4");
-
-        document.querySelector("nav").parentElement.insertBefore(yellowDiv, document.querySelector("nav"));
-        document.querySelector("nav").parentElement.insertBefore(greenDiv, document.querySelector("nav"));
-      }
-    }
-
-    window.navigation.addEventListener("navigate", (event) => {
-      if (!window.location.pathname.endsWith("loyalty")) {
-        if (document.querySelector("nav").style.display === "none") document.querySelector("nav").style.display = "block";
-        if (document.querySelector("#yellowDivFix") !== null) document.querySelector("#yellowDivFix").remove();
-        if (document.querySelector("#greenDivFix") !== null) document.querySelector("#greenDivFix").remove();
-      }
-    });
-  });
-
   return (
     <main className="bg-[#f7f7f7]">
       <section className="loyalty-hero py-10 md:py-14 xl:py-20">
