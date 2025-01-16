@@ -111,8 +111,6 @@ function Navbar() {
 
   const closeMenu = useCallback(() => setOpen(false), []);
 
-  const pathname = usePathname();
-
   useEffect(() => {
     const handleScroll = () => {
       setHasScrolled(window.scrollY > 50);
@@ -122,11 +120,11 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (pathname.endsWith("loyalty")) {
+  if (["loyalty", "factory-tour"].some((path) => usePathname().endsWith(path))) {
     return (
       <div>
         <div id="yellowDivFix" className="w-100 h-14 bg-tsyellow"></div>
-        <div id="greenDivFix" className="w-100 h-4 bg-tsgreen"></div>
+        <div id="greenDivFix" className="w-100 h-4 bg-tsdarkgreen"></div>
       </div>
     );
   } else {
