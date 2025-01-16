@@ -125,8 +125,8 @@ function Navbar() {
   if (pathname.endsWith("loyalty")) {
     return (
       <div>
-        <div id="yellowDivFix" class="w-100 h-14 bg-tsyellow"></div>
-        <div id="greenDivFix" class="w-100 h-4 bg-tsgreen"></div>
+        <div id="yellowDivFix" className="w-100 h-14 bg-tsyellow"></div>
+        <div id="greenDivFix" className="w-100 h-4 bg-tsgreen"></div>
       </div>
     );
   } else {
