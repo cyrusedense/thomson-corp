@@ -1,10 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./pages/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}", "./app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       backgroundImage: {
@@ -25,6 +21,8 @@ module.exports = {
         "leadership-hero": "url(/images/leadership-bg-hero.webp)",
         "careers-hero": "url(/images/careers.webp)",
         "facilities-hero": "url(/images/hero-bgs/hero-bg-facilities.webp)",
+
+        "factory-tour-lab": "url(/images/factory-tour/lab.jpg)",
       },
       colors: {
         background: "var(--background)",
