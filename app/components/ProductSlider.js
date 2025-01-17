@@ -215,13 +215,26 @@ export default function ProductSlider() {
       gsap.set(sceneRefs.current[currentScene], { opacity: 1 });
     });
 
-    let resizeTimer;
-
     window.onresize = () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        window.location.reload();
-      }, 1000);
+      document.querySelectorAll(".human-image").forEach((el) => {
+        el.style.transform = "";
+      });
+
+      document.querySelectorAll(".bg-image").forEach((el) => {
+        el.style.transform = "";
+      });
+
+      document.querySelectorAll(".product-image").forEach((el) => {
+        el.style.transform = "";
+      });
+
+      document.querySelectorAll(".product-circular").forEach((el) => {
+        el.style.transform = "";
+      });
+
+      document.querySelectorAll(".product-banner").forEach((el) => {
+        el.style.transform = "";
+      });
     };
 
     return () => ctx.revert(); // Clean up on component unmount
@@ -257,16 +270,18 @@ export default function ProductSlider() {
               <Image src={scene.images.human} alt="human" width={1813} height={1675} className="human-image absolute right-0 top-0 z-[24] w-1/3 -translate-x-[45%] translate-y-1/2 scale-75" />
 
               {/* Text Container */}
-              <div className="text-container absolute left-0 top-0 z-20 translate-x-[5%] translate-y-[30%] lg:translate-y-[40%] xl:translate-y-[70%] 2xl:translate-y-[90%]">
-                <h1 className="mb-8 text-2xl text-tsdarkgreen xl:text-4xl">{scene.title}</h1>
-                <h3 className="max-w-[22%] text-xs text-tsdarkgreen md:text-sm lg:text-xl">{scene.description}</h3>
+              <div className="text-container absolute left-0 top-0 z-20 translate-x-[5%] translate-y-[10%] sm:translate-y-[20%] md:translate-y-[30%] lg:translate-y-[40%] xl:translate-y-[70%] 2xl:translate-y-[90%]">
+                <div className="flex flex-col gap-1 md:gap-5">
+                  <h1 className="text-lg text-tsdarkgreen sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">{scene.title}</h1>
+                  <h3 className="max-w-[22%] text-[0.5rem] leading-3 text-tsdarkgreen sm:text-xs md:text-sm lg:text-xl">{scene.description}</h3>
+                </div>
               </div>
             </div>
           ); // Anchor to the product image
         })}
 
-        <div className="absolute top-0 z-50 w-full translate-y-[800%] lg:translate-y-[750%]">
-          <div className="mx-auto flex h-auto w-3/5 flex-row items-center justify-between">
+        <div className="absolute bottom-0 z-30 w-full -translate-y-[100%]">
+          <div className="mx-auto flex h-auto w-4/5 flex-row items-center justify-between">
             <button onClick={goToPrevScene} className="z-[31] text-tsdarkgreen">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8 md:size-10 lg:size-12">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
