@@ -6,16 +6,7 @@ import PropTypes from "prop-types";
 import { useRouter } from "@/i18n/routing";
 
 function JobListing({ job }) {
-  const {
-    jobId,
-    title,
-    description,
-    highlights,
-    jobDesc,
-    jobReq,
-    other,
-    email,
-  } = job;
+  const { jobId, title, description, highlights, jobDesc, jobReq, other, email } = job;
 
   const router = useRouter();
 
@@ -29,11 +20,12 @@ function JobListing({ job }) {
   return (
     <div>
       <div className="flex items-center justify-between border-b-2 p-2 sm:p-6">
-        <h1 className="text-2xl">{title}</h1>
-        <button
-          className="rounded-lg bg-tsdarkgreen px-3 py-2 text-white hover:bg-tsyellow"
-          onClick={handleButtonClick}
-        >
+        <div className="space-y-2">
+          <h2 className="text-2xl">{title}</h2>
+          <p>{description}</p>
+        </div>
+
+        <button className="flex-shrink-0 rounded-lg bg-tsdarkgreen px-3 py-2 text-white hover:bg-tsyellow" onClick={handleButtonClick}>
           View More
         </button>
       </div>
