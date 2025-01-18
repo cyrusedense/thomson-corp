@@ -52,13 +52,13 @@ function JobDetails({ params: { locale, jobTitle } }) {
           <h3>{jobDetail.description}</h3>
         </section>
 
-        <JobDetailSection title="Highlights" list={jobDetail.highlights} />
+        {jobDetail.highlights.length !== 0 && <JobDetailSection title="Highlights" list={jobDetail.highlights} />}
 
-        <JobDetailSection title="Job Description" list={jobDetail.jobDesc} />
+        {jobDetail.jobDesc.length !== 0 && <JobDetailSection title="Job Description" list={jobDetail.jobDesc} />}
 
-        <JobDetailSection title="Job Requirements" list={jobDetail.jobReq} />
+        {jobDetail.jobReq.length !== 0 && <JobDetailSection title="Job Requirements" list={jobDetail.jobReq} />}
 
-        <JobDetailSection title="Other" list={jobDetail.other} />
+        {jobDetail.other.length !== 0 && <JobDetailSection title="Other" list={jobDetail.other} />}
 
         {jobDetail.email && (
           <button className="mr-4 rounded-lg bg-tsdarkgreen px-4 py-2 text-white hover:bg-tsyellow">
