@@ -26,7 +26,7 @@ function Loyalty() {
             </button>
             <p className="text-center text-tsgreen">It&apos;s 100% Free!</p>
           </div>
-          <Image className="h-full w-full object-cover object-left md:col-span-2 md:col-start-3 md:row-span-6 md:row-start-1" alt="thomson-loyalty-discounts" width={800} height={800} src={"/images/hero-bgs/loyalty-hero-img.webp"} />
+          <Image className="h-full w-full object-cover object-left md:col-span-2 md:col-start-3 md:row-span-6 md:row-start-1" alt="thomson-loyalty-discounts" width={800} height={800} src={"/images/hero-bgs/loyalty-hero-img.png"} />
           <div className="md:col-span-4 md:col-start-1 md:row-start-6">
             <p className="px-5 text-center text-sm text-tsgreen md:text-lg">
               Earn points when you buy Thomson products, anywhere! <br /> No membership fee. Long point expiry. No downgrades!
