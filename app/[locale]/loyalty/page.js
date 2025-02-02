@@ -43,29 +43,29 @@ function Loyalty() {
           <h1 className="mb-5 text-center text-4xl font-bold text-[#195729] md:text-left md:text-5xl md:text-[50px]">Why Join Us?</h1>
         </div>
 
-        <div className="m-auto flex max-w-screen-lg flex-wrap justify-center gap-10 py-10">
+        <div className="m-auto flex max-w-screen-sm flex-wrap justify-center gap-10 py-10">
           {/* <div>
             <Image
               src={"/images/loyalty-icons/member-discounts.png"}
               alt="discounts"
               width={240}
-              height={241}
+              height={240}
             />
           </div> */}
           <div>
-            <Image src={"/images/loyalty-icons/welcome-rewards.png"} alt="loyalty" width={240} height={241} />
+            <Image src={"/images/loyalty-icons/welcome-rewards.png"} alt="loyalty" width={160} height={160} />
           </div>
           <div>
-            <Image src={"/images/loyalty-icons/loyalty-points.png"} alt="points" width={240} height={241} />
+            <Image src={"/images/loyalty-icons/loyalty-points.png"} alt="points" width={160} height={160} />
           </div>
           <div>
-            <Image src={"/images/loyalty-icons/refer-a-friend.png"} alt="friend-referral" width={240} height={241} />
+            <Image src={"/images/loyalty-icons/refer-a-friend.png"} alt="friend-referral" width={160} height={160} />
           </div>
           <div>
-            <Image src={"/images/loyalty-icons/birthday-month.png"} alt="birthday-reward" width={240} height={241} />
+            <Image src={"/images/loyalty-icons/birthday-month.png"} alt="birthday-reward" width={160} height={160} />
           </div>
           <div>
-            <Image src={"/images/loyalty-icons/survey-and-review.png"} alt="survey-rewards" width={240} height={241} />
+            <Image src={"/images/loyalty-icons/survey-and-review.png"} alt="survey-rewards" width={160} height={160} />
           </div>
         </div>
 
@@ -75,7 +75,7 @@ function Loyalty() {
             Enjoy more savings when you buy more! Feel free to join our Thomson Family too to receive additional loyalty points and redeem exclusive rewards! It’s our way of thanking you for your support! <br /> <br /> Sign up today and start saving more!
           </p>
 
-          <Image className="my-2 w-full sm:hidden" src={"/images/loyalty-table-mobile.png"} width={1000} height={500} alt="loyalty-table-desktop"></Image>
+          <Image className="my-2 w-full sm:hidden" src={"/images/loyalty-table-mobile.jpg"} width={1000} height={500} alt="loyalty-table-desktop"></Image>
 
           <Image className="my-2 hidden sm:block xl:w-[120%] xl:max-w-[120%] xl:translate-x-[-10%]" src={"/images/loyalty-table-desktop.png"} width={1000} height={500} alt="loyalty-table-desktop"></Image>
         </div>
@@ -111,7 +111,7 @@ function Loyalty() {
                   },
                   {
                     url: "/videos/1-2.mp4",
-                    caption: "Use Email / Mobile Numbers",
+                    caption: "Use Email / Mobile Number",
                   },
                   {
                     url: "/videos/1-3.mp4",
@@ -209,7 +209,7 @@ function Loyalty() {
 
             <SingleFAQ question={"How do I earn Welcome points?"} answer={"Upon signing up into our Thomson Family Loyalty Program, your welcome points will be automatically accorded to your account."} />
 
-            <SingleFAQ question={"How many points do I get for purchasing Thomson products?"} answer={"Earn 2 points for every $1 spent in <a href='https://sg-shop.thomsonhealth.com/collections/all' target='_blank' class='text-tsgreen font-bold underline'>our sg-shop.thomsonhealth.com Official Store</a>. Earn 1 point for every $1 spent on Thomson products bought in any other store in Singapore."} />
+            <SingleFAQ question={"How many points do I get for purchasing Thomson products?"} answer={"Earn 2 points for every $1 spent in our <a href='https://sg-shop.thomsonhealth.com/collections/all' target='_blank' class='text-tsgreen font-bold underline'>sg-shop.thomsonhealth.com Official Store</a>. Earn 1 point for every $1 spent on Thomson products bought in any other store in Singapore."} />
 
             <SingleFAQ question={"What do I need to do to earn 2x points after purchasing in the Thomson Official Store?"} answer={"Nothing! Upon checkout in our official sg-shop.thomsonhealth.com store, points will be automatically credited to your registered Thomson Member Account. (Please note: 2x Reward Points only applies to purchases made in Thomson Official Store sg-shop@thomsonhealth.com)."} />
 
