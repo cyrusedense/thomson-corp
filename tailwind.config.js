@@ -22,7 +22,7 @@ module.exports = {
         "careers-hero": "url(/images/careers.webp)",
         "facilities-hero": "url(/images/hero-bgs/hero-bg-facilities.webp)",
 
-        "factory-tour-lab": "url(/images/factory-tour/lab.jpg)",
+        "factory-tour-lab": "url(/images/factory-tour/factory.webp)",
       },
       colors: {
         background: "var(--background)",

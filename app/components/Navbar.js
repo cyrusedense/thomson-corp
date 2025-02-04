@@ -122,7 +122,7 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (["loyalty", "factory-tour"].some((path) => pathname.endsWith(path))) {
+  if (["loyalty"].some((path) => pathname.endsWith(path))) {
     return (
       <div>
         <div id="yellowDivFix" className="w-100 h-14 bg-tsyellow"></div>
