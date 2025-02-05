@@ -168,7 +168,7 @@ export default function FactoryTour() {
 
       <div className={`fixed inset-0 z-50 bg-black bg-opacity-50 ${isModalOpen ? "block" : "hidden"}`}>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative grid w-full max-w-7xl grid-cols-1 gap-1 rounded-xl bg-white p-10">
+          <div className="relative grid max-h-screen w-full max-w-7xl grid-cols-1 gap-1 overflow-y-auto rounded-xl bg-white p-10">
             <button onClick={() => setIsModalOpen(false)} className="absolute right-5 top-5 text-3xl text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
               &times;
             </button>
