@@ -43,7 +43,7 @@ function Loyalty() {
           <h1 className="mb-5 text-center text-4xl font-bold text-[#195729] md:text-left md:text-5xl md:text-[50px]">Why Join Us?</h1>
         </div>
 
-        <div className="m-auto flex max-w-screen-sm flex-wrap justify-center gap-10 py-10">
+        <div className="m-auto flex max-w-screen-md flex-wrap justify-center gap-10 py-10">
           {/* <div>
             <Image
               src={"/images/loyalty-icons/member-discounts.png"}
@@ -90,6 +90,8 @@ function Loyalty() {
             </button>
 
             <Button extLink={"https://thomson-health-sg.eber.co/"} color={"yellow"} text={"SIGN UP NOW"} />
+
+            <Button extLink={"https://sg-shop.thomsonhealth.com/collections/all"} color={"yellow"} text={"VISIT STORE"} />
           </div>
         </div>
       </section>
