@@ -61,9 +61,9 @@ function Loyalty() {
           <div>
             <Image src={"/images/loyalty-icons/refer-a-friend.png"} alt="friend-referral" width={160} height={160} />
           </div>
-          <div>
+          {/* <div>
             <Image src={"/images/loyalty-icons/birthday-month.png"} alt="birthday-reward" width={160} height={160} />
-          </div>
+          </div> */}
           <div>
             <Image src={"/images/loyalty-icons/survey-and-review.png"} alt="survey-rewards" width={160} height={160} />
           </div>
@@ -221,7 +221,7 @@ function Loyalty() {
 
             <SingleFAQ question={"How do I earn the “Refer a Friend” points?"} answer={"Please proceed to the Refer a Friend page and provide your friend with the Referral code. Once your friend has applied the referral code, he/she would have to submit a receipt of any purchase of any Thomson SKU through his/her Thomson Family Loyalty Program and you will both be rewarded the referral points. Note: These referral points will be rewarded to you for each subsequent new referral. <br />For more info: <button class='text-tsgreen font-bold underline' onclick='document.querySelector(`#howto4`).setAttribute(`open`, ``);window.location.href = `#howto4`'> How to refer a friend <button/>. "} />
 
-            <SingleFAQ question={"How do I earn the Birthday Month 2x points?"} answer={"In the month of your birthday, you will be rewarded 2x points for your submitted purchase receipts (date of the receipt submitted has to be within the month of your birthday), i.e. if your birthday month is in July, your receipts submitted has to include Thomson purchases made in the month of July."} />
+            {/* <SingleFAQ question={"How do I earn the Birthday Month 2x points?"} answer={"In the month of your birthday, you will be rewarded 2x points for your submitted purchase receipts (date of the receipt submitted has to be within the month of your birthday), i.e. if your birthday month is in July, your receipts submitted has to include Thomson purchases made in the month of July."} /> */}
           </div>
         </div>
       </section>
