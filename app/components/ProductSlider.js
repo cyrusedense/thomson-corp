@@ -56,7 +56,10 @@ export default function ProductSlider() {
     const ctx = gsap.context(() => {
       //set up timeline
       const tl = gsap.timeline({
-        onComplete: () => setIsAnimating(false), // Reset animation state on complete
+        onComplete: () => {
+          setIsAnimating(false);
+          fixRender();
+        }, // Reset animation state on complete
       });
       // Initial setup - only set opacity for container, not children
       // i set my nextElement, which is based on the nextIndex state that is passed into the playScene
@@ -208,6 +211,32 @@ export default function ProductSlider() {
     };
   };
 
+  function fixRender() {
+    document.querySelectorAll(".human-image").forEach((el) => {
+      el.style.transform = "";
+    });
+
+    document.querySelectorAll(".bg-image").forEach((el) => {
+      el.style.transform = "";
+    });
+
+    document.querySelectorAll(".product-image").forEach((el) => {
+      el.style.transform = "";
+    });
+
+    document.querySelectorAll(".product-circular").forEach((el) => {
+      el.style.transform = "";
+    });
+
+    document.querySelectorAll(".product-banner").forEach((el) => {
+      el.style.transform = "";
+    });
+
+    document.querySelectorAll(".text-container").forEach((el) => {
+      el.style.transform = "";
+    });
+  }
+
   // Initialize the first scene (make sure it's visible) and create context for animations
 
   useEffect(() => {
@@ -215,27 +244,7 @@ export default function ProductSlider() {
       gsap.set(sceneRefs.current[currentScene], { opacity: 1 });
     });
 
-    window.onresize = () => {
-      document.querySelectorAll(".human-image").forEach((el) => {
-        el.style.transform = "";
-      });
-
-      document.querySelectorAll(".bg-image").forEach((el) => {
-        el.style.transform = "";
-      });
-
-      document.querySelectorAll(".product-image").forEach((el) => {
-        el.style.transform = "";
-      });
-
-      document.querySelectorAll(".product-circular").forEach((el) => {
-        el.style.transform = "";
-      });
-
-      document.querySelectorAll(".product-banner").forEach((el) => {
-        el.style.transform = "";
-      });
-    };
+    window.addEventListener("resize", fixRender);
 
     return () => ctx.revert(); // Clean up on component unmount
   }, []);
@@ -270,10 +279,10 @@ export default function ProductSlider() {
               <Image src={scene.images.human} alt="human" width={1813} height={1675} className="human-image absolute right-0 top-0 z-[24] w-1/3 -translate-x-[45%] translate-y-1/2 scale-75" />
 
               {/* Text Container */}
-              <div className="text-container absolute left-0 top-0 z-20 translate-x-[5%] translate-y-[10%] sm:translate-y-[20%] md:translate-y-[30%] lg:translate-y-[40%] xl:translate-y-[70%] 2xl:translate-y-[90%]">
+              <div className="text-container absolute left-0 top-0 z-20 w-[22%] translate-x-[10%] translate-y-[30%] sm:translate-y-[20%] md:translate-y-[30%] lg:translate-y-[40%] xl:translate-y-[70%] 2xl:translate-y-[90%]">
                 <div className="flex flex-col gap-1 md:gap-5">
-                  <h1 className="text-lg text-tsdarkgreen sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">{scene.title}</h1>
-                  <h3 className="max-w-[22%] text-[0.5rem] leading-3 text-tsdarkgreen sm:text-xs md:text-sm lg:text-xl">{scene.description}</h3>
+                  <h1 className="text-lg leading-4 text-tsdarkgreen sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">{scene.title}</h1>
+                  <p className="w-fit text-[0.5rem] leading-3 text-tsdarkgreen sm:text-xs md:text-xs lg:text-base">{scene.description}</p>
                 </div>
               </div>
             </div>
@@ -306,8 +315,6 @@ export default function ProductSlider() {
           </div>
         </div>
       </div>
-
-      <WaveAnimation />
     </div>
   );
 }

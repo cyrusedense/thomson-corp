@@ -46,7 +46,7 @@ const milestones = [
   },
   {
     year: 2023,
-    description: `Started 2nd GMP-certified factory in Singapore to cater to the Singapore and regional market.`,
+    description: `Started a GMP-compliant factory in Singapore to cater to the Singapore and regional market.`,
     imageUrl: "/images/timeline-images/2023-sg-factory.jpg",
   },
 ];

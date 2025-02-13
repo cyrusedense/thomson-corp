@@ -1,21 +1,79 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function FactoryTour() {
   const [isSingle, setIsSingle] = useState(true);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [selectedDate, setSelectedDate] = useState("9 April 2025, Wednesday");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    if (!data["date"]) {
+      alert("Please select a date");
+      return;
+    }
+
+    if (data["date"] !== "9 April 2025, Wednesday" && data["date"] !== "16 April 2025, Wednesday") {
+      alert("Invalid date selected");
+      return;
+    }
+
+    if (!data["pax"]) {
+      alert("Please select the number of people attending");
+      return;
+    }
+
+    if (data["pax"] !== "1" && data["pax"] !== "2") {
+      alert("Invalid number of people attending");
+      return;
+    }
+
+    if (!data["full-name-1"] || !data["contact-number-1"] || !data["email-address-1"]) {
+      alert("Please fill in all fields for Attendee 1");
+      return;
+    }
+
+    if (!isSingle && (!data["full-name-2"] || !data["contact-number-2"] || !data["email-address-2"])) {
+      alert("Please fill in all fields for Attendee 2");
+      return;
+    }
+
+    fetch("https://proxy.wwwavy.com/thomson-corporate/factory-tour/submit.php", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+      .then((response) => {
+        response.json();
+        setIsModalOpen(true);
+        form.reset();
+      })
+      .catch((error) => {
+        alert("An error occurred. Please try again later.");
+      });
+  };
 
   return (
     <>
       <div className="relative h-full bg-factory-tour-lab bg-cover bg-center">
-        <div className="mx-auto max-w-[120rem] lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-          <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-5 lg:px-0 lg:pb-48 lg:pt-40">
-            <div className="mx-auto max-w-lg lg:mx-0">
+        <div className="mx-auto max-w-[120rem] xl:grid xl:grid-cols-12 xl:gap-x-8 xl:px-8">
+          <div className="px-6 pb-24 pt-10 sm:pb-32 xl:col-span-6 xl:px-0 xl:pb-48 xl:pt-40">
+            <div className="mx-auto max-w-5xl xl:mx-0">
               <h1 className="mt-24 text-pretty text-3xl font-semibold tracking-tight text-white sm:mt-10 sm:text-5xl">What Your Eyes Cannot See</h1>
               <p className="mt-8 text-pretty text-lg font-medium text-white sm:text-xl/8">Come and take a look inside our Thomson Health SG GMP Compliant Facility and see how we at Thomson strive to create quality tested supplements for you and your loved ones.</p>
+              <video className="mt-10 h-full w-full rounded-lg" controls>
+                <source src="/videos/Thomson Health Singapore Intro.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
               <div className="mt-10">
                 <a href="https://sg.thomsonhealth.com/quality-assurance/" target="_blank" className="rounded-md bg-tsyellow px-16 py-2.5 text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tsyellow">
                   Learn More
@@ -23,8 +81,8 @@ export default function FactoryTour() {
               </div>
             </div>
           </div>
-          <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-48 lg:pt-40">
-            <form method="POST" className="mx-auto max-w-7xl rounded-l-[5rem] rounded-r-xl bg-tsdarkgreen px-5 py-5 lg:max-w-none">
+          <div className="px-6 pb-24 pt-10 sm:pb-32 xl:col-span-6 xl:px-0 xl:pb-48 xl:pt-40">
+            <form onSubmit={handleSubmit} method="POST" className="mx-auto max-w-7xl rounded-l-[5rem] rounded-r-xl bg-tsdarkgreen px-5 py-5 lg:max-w-none">
               <div className="rounded-l-[5rem] rounded-r-xl border-4 border-white px-12 py-16 text-lg text-white">
                 <div className="w-full gap-y-3">
                   <h1 className="text-pretty text-5xl font-semibold tracking-tight text-white">Thomson Health SG</h1>
@@ -99,14 +157,14 @@ export default function FactoryTour() {
                         <label htmlFor="full-name-1" className="sr-only">
                           Full Name
                         </label>
-                        <input id="full-name-1" name="full-name-1" type="text" placeholder="Name" autoComplete="name" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
+                        <input required id="full-name-1" name="full-name-1" type="text" placeholder="Name" autoComplete="name" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
                       </div>
 
                       <div className="col-span-2 w-full xl:col-span-1">
                         <label htmlFor="contact-number-1" className="sr-only">
                           Contact Number
                         </label>
-                        <input id="contact-number-1" name="contact-number-1" type="text" placeholder="Contact Number" autoComplete="tel" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm" />
+                        <input required id="contact-number-1" name="contact-number-1" type="tel" placeholder="Contact Number" autoComplete="tel" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm" />
                       </div>
                     </div>
 
@@ -115,7 +173,7 @@ export default function FactoryTour() {
                         <label htmlFor="email-address-1" className="sr-only">
                           Email Address
                         </label>
-                        <input id="email-address-1" name="email-address-1" type="email" placeholder="Email" autoComplete="email" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
+                        <input required id="email-address-1" name="email-address-1" type="email" placeholder="Email" autoComplete="email" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
                         <p className="text-sm italic">(Booking details will be sent to this email address)</p>
                       </div>
                     </div>
@@ -130,14 +188,14 @@ export default function FactoryTour() {
                           <label htmlFor="full-name-2" className="sr-only">
                             Full Name
                           </label>
-                          <input id="full-name-2" name="full-name-2" type="text" placeholder="Name" autoComplete="name" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
+                          <input required id="full-name-2" name="full-name-2" type="text" placeholder="Name" autoComplete="name" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
                         </div>
 
                         <div className="col-span-2 w-full xl:col-span-1">
                           <label htmlFor="contact-number-2" className="sr-only">
                             Contact Number
                           </label>
-                          <input id="contact-number-2" name="contact-number-2" type="text" placeholder="Contact Number" autoComplete="tel" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm" />
+                          <input required id="contact-number-2" name="contact-number-2" type="tel" placeholder="Contact Number" autoComplete="tel" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm" />
                         </div>
                       </div>
 
@@ -146,7 +204,7 @@ export default function FactoryTour() {
                           <label htmlFor="email-address-2" className="sr-only">
                             Email Address
                           </label>
-                          <input id="email-address-2" name="email-address-2" type="email" placeholder="Email" autoComplete="email" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
+                          <input required id="email-address-2" name="email-address-2" type="email" placeholder="Email" autoComplete="email" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
                         </div>
                       </div>
                     </div>
@@ -155,7 +213,7 @@ export default function FactoryTour() {
 
                 <div className="mt-16 grid grid-cols-1">
                   <div className="mx-auto">
-                    <button type="button" onClick={(e) => setIsModalOpen(true)} className="rounded-md bg-tsyellow px-16 py-2.5 text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tsyellow">
+                    <button type="submit" className="rounded-md bg-tsyellow px-16 py-2.5 text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tsyellow">
                       Book Now
                     </button>
                   </div>

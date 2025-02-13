@@ -1,27 +1,21 @@
 export const productSliderScenes = [
   {
     id: 0,
-    title: "Activated Ginkgo",
-    description:
-      "40mg of Ginkgo Biloba extract to improve symptoms of poor blood circulation such as numb fingers and toes, vertigo, fatigue, etc. using Japanese Activated technology.",
+    title: "Activated Ginkgo Extract 40mg (AGE)",
+    description: "40mg of ACTIVATED Ginkgo Biloba extract used to improve symptoms of poor blood circulation such as numb fingers and toes, poor memory, vertigo, fatigue, etc. 40mg strength per tablet for small-distributed doses through your day.",
     images: {
       bg: "/images/product-animations/activated-ginko/activated-ginkgo-bg.png",
-      circular:
-        "/images/product-animations/activated-ginko/activated-ginkgo-blood.png",
+      circular: "/images/product-animations/activated-ginko/activated-ginkgo-blood.png",
       product: "/images/product-animations/activated-ginko/activated_ginko.png",
-      human:
-        "/images/product-animations/activated-ginko/activated-ginkgo-human.png",
-      banner:
-        "/images/product-animations/activated-ginko/activated-ginkgo-banner.png",
-      featured:
-        "/images/product-animations/activated-ginko/activated_ginko.png", // New featured image
+      human: "/images/product-animations/activated-ginko/activated-ginkgo-human.png",
+      banner: "/images/product-animations/activated-ginko/activated-ginkgo-banner.png",
+      featured: "/images/product-animations/activated-ginko/activated_ginko.png", // New featured image
     },
   },
   {
     id: 1,
-    title: "ProBioGut",
-    description:
-      "A combination of 7 billion CFUs from two clinically  supported HRB probiotics and two prebiotics to help gut function, immunity and get into shape.",
+    title: "ProbioGut",
+    description: "A combination of 7 billion CFUs from two clinically-supported HRB probiotics and two prebiotics to help gut function, immunity and maintaining a healthy body weight.",
     images: {
       bg: "/images/product-animations/probiogut/probiogut-bg.png",
       product: "/images/product-animations/probiogut/probiogut.png",
@@ -34,8 +28,7 @@ export const productSliderScenes = [
   {
     id: 2,
     title: "Circulon125",
-    description:
-      "125mg of Ginkgo Biloba extract to improve symptoms of poor blood circulation such as numb fingers and toes,vertigo, fatigue, etc. using Japanese Activated technology.",
+    description: "High strength of 125mg of ACTIVATED Ginkgo Biloba extract used to improve symptoms of poor blood circulation such as numb fingers and toes, poor memory, vertigo, fatigue, etc. 3x strength of Thomson Activated Ginkgo Extract in 1 tablet for convenient daily dosing.",
     images: {
       bg: "/images/product-animations/circulon-125/circulon-bg.png",
       product: "/images/product-animations/circulon-125/circulon.png",
@@ -47,9 +40,8 @@ export const productSliderScenes = [
   },
   {
     id: 3,
-    title: "Osteopro",
-    description:
-      "Glucosamine sulfate for osteoarthritis.Enhanced by Fully Reacted Technology.",
+    title: "OsteoPro",
+    description: "Fully-Reacted 300mg Glucosamine Sulfate to promote healthy joints and cartilage.",
     images: {
       bg: "/images/product-animations/osteopro/osteo-bg.png",
       product: "/images/product-animations/osteopro/osteo.png",
@@ -62,8 +54,7 @@ export const productSliderScenes = [
   {
     id: 4,
     title: "Livrin",
-    description:
-      "300mg Milk Thistle extract from Europe to support liver health. Symptoms of poor liver function can include digestive problems, tiredness and poor skin.",
+    description: "300mg Milk Thistle extract from Europe to support liver health. Symptoms of poor liver function can include digestive problems, tiredness and poor skin.",
     images: {
       bg: "/images/product-animations/livrin-300/livrin-bg.png",
       product: "/images/product-animations/livrin-300/livrin.png",
@@ -75,9 +66,8 @@ export const productSliderScenes = [
   },
   {
     id: 5,
-    title: "Calmilax",
-    description:
-      "Combination of imported ingredients Rafuma Extract,Kanna Extract, Activated Ginkgo Biloba Extract & Brewer's Yeast",
+    title: "CalmiLax",
+    description: "Combination of imported ingredients: Rafuma Extract, Kanna Extract, Activated Ginkgo Biloba Extract & Brewer's Yeast",
     images: {
       bg: "/images/product-animations/calmilax/cml-bg.png",
       product: "/images/product-animations/calmilax/cml.png",
@@ -90,7 +80,7 @@ export const productSliderScenes = [
   {
     id: 6,
     title: "Xbido",
-    description: "Xbido Desc",
+    description: "Combination blend of patented and clinically-tested Tongkat Ali Extract and Rafuma Extract, Activated Ginkgo Biloba Extract, and Red Panax Ginseng Extract for Sports Performance and Vitality",
     images: {
       bg: "/images/product-animations/xbido/xbd-bg.png",
       product: "/images/product-animations/xbido/xbd.png",

@@ -1,20 +1,21 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { useRouter } from "@/i18n/routing";
 
 function JobListing({ job }) {
-  const { jobId, title, description, highlights, jobDesc, jobReq, other, email } = job;
+  const locale = useLocale();
+  const { id, title, description, highlights, jobDesc, jobReq, other, email } = job;
 
   const router = useRouter();
 
   const handleButtonClick = () => {
-    const locale = router.locale || "en-my"; // Fallback to a default locale if not set
     const normalizedTitle = title.trim().toLowerCase().replace(/\s+/g, "-"); // Normalize title for URL
 
-    router.push(`/careers/${normalizedTitle}`);
+    router.push(`/careers/${locale}--${id}`);
   };
 
   return (
@@ -35,7 +36,7 @@ function JobListing({ job }) {
 
 JobListing.propTypes = {
   job: PropTypes.shape({
-    jobId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     highlights: PropTypes.array,

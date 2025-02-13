@@ -9,6 +9,7 @@ import SingleFAQ from "../../components/SingleFAQ";
 function Loyalty() {
   return (
     <main className="bg-[#f7f7f7]">
+      <section className="h-20 bg-tsdarkgreen"></section>
       <section className="loyalty-hero py-10 md:py-14 xl:py-20">
         <div className="relative grid min-h-[80vh] gap-5 md:grid-cols-4 md:grid-rows-6">
           <div className="hidden-grid-block hidden md:block"></div>
@@ -72,7 +73,7 @@ function Loyalty() {
         <div className="m-auto max-w-screen-lg px-5 pb-2">
           <h1 className="mb-5 text-center text-4xl font-bold text-[#195729] md:text-left md:text-5xl md:text-[50px]">Enjoy up to 40% Savings!</h1>
           <p>
-            Enjoy more savings when you buy more! Feel free to join our Thomson Family too to receive additional loyalty points and redeem exclusive rewards! It’s our way of thanking you for your support! <br /> <br /> Sign up today and start saving more!
+            Enjoy more savings when you buy more! Feel free to join our Thomson Family to receive additional loyalty points and redeem exclusive rewards! It’s our way of thanking you for your support! <br /> <br /> Sign up today and start saving more!
           </p>
 
           <Image className="my-2 w-full sm:hidden" src={"/images/loyalty-table-mobile.jpg"} width={1000} height={500} alt="loyalty-table-desktop"></Image>
@@ -160,7 +161,7 @@ function Loyalty() {
                 <summary className="flex cursor-pointer items-center justify-between p-0 text-2xl font-medium text-[#195729] xl:text-3xl">
                   <h2 className="text-tsdarkgreen">{question}</h2>
                   <div className="rounded-full p-1 text-[#195729] shadow-md">
-                    <svg className="h-6 w-6 text-[#195729] transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="h-6 w-6 rotate-180 text-[#195729] transition-transform duration-300 group-open:rotate-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
                     </svg>
                   </div>

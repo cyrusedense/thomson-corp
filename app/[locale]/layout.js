@@ -44,9 +44,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
       <NextIntlClientProvider messages={messages}>
-        <body
-          className={`${lato.className} ${highTide.variable} overflow-x-hidden`}
-        >
+        <body className={`${lato.className} ${highTide.variable} overflow-x-hidden`}>
           <Navbar />
           {children}
           <Footer />

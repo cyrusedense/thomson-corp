@@ -8,23 +8,17 @@ import { Link } from "@/i18n/routing";
 
 import JobDetailSection from "@/app/components/JobDetailSection";
 
-function normalizeString(str) {
-  return str.trim().toLowerCase().replace(/\s+/g, "-");
-}
-
 function JobDetails({ params: { locale, jobTitle } }) {
-  const localizedjobList = jobs[locale] || jobs["en-my"];
+  const localizedjobList = jobs[jobTitle.split("--")[0]];
 
-  const normalizedJobTitle = normalizeString(jobTitle);
-
-  const filteredList = localizedjobList.filter((job) => normalizeString(job.title) === normalizedJobTitle);
+  const filteredList = localizedjobList.filter((job) => job.id == jobTitle.split("--")[1]);
 
   const jobDetail = filteredList[0];
 
   if (!jobDetail) {
     return (
       <div className="flex min-h-[50vh] items-center justify-center">
-        <h1 className="text-2xl text-red-500">Job not found.</h1>
+        <h1 className="text-2xl text-red-500">{localizedjobList[0].title}</h1>
       </div>
     );
   }

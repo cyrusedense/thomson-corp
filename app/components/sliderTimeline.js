@@ -29,8 +29,7 @@ const Milestones = () => {
           pagination={{
             clickable: true,
             el: ".timeline-pagination", // Custom pagination element
-            renderBullet: (index, className) =>
-              `<div class="${className} bullet-container"><span class="bullet"></span><span class="year">${milestones[index].year}</span></div>`,
+            renderBullet: (index, className) => `<div class="${className} bullet-container"><span class="bullet"></span><span class="year">${milestones[index].year}</span></div>`,
           }}
           //   breakpoints={{
           //     0: {
@@ -45,24 +44,10 @@ const Milestones = () => {
           {milestones.map((milestone, index) => (
             <SwiperSlide key={index} className="milestone-card p-6">
               <h3 className="text-tsdarkgreen">{milestone.year}</h3>
-              <p
-                style={{ whiteSpace: "pre-line" }}
-                className="m-auto mb-6 max-w-[700px] text-justify"
-              >
+              <p style={{ whiteSpace: "pre-line" }} className="m-auto mb-6 max-w-[700px] text-justify">
                 {milestone.description}
               </p>
-              <Image
-                className="aspect-video w-full object-contain object-center"
-                alt={milestone.imageUrl
-                  .split("/")
-                  .pop()
-                  .split(".")
-                  .slice(0, -1)
-                  .join(".")}
-                width="500"
-                height="500"
-                src={milestone.imageUrl}
-              />
+              <Image className="aspect-video w-full object-contain object-center" alt={milestone.imageUrl.split("/").pop().split(".").slice(0, -1).join(".")} width="500" height="500" src={milestone.imageUrl} />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -14,11 +14,11 @@ import BlogCard from "../components/BlogCard";
 import ProductSlider from "../components/ProductSlider";
 
 import { featuredBlogs } from "@/data/featuredBlogs";
-import WaveAnimation from "../components/waveAnimation";
+import Wave from "@/app/components/Wave";
 
 gsap.registerPlugin(useGSAP);
 
-export default function Home() {
+export default function Home({ params: { locale } }) {
   const t = useTranslations("HomePage");
   // const [count, setCount] = useState(0);
 
@@ -70,242 +70,86 @@ export default function Home() {
 
   return (
     <main ref={container}>
-      <section className="hero relative h-[50vh] sm:h-[70vh]">
-        <div className="">
-          <div className="absolute left-[5%] top-[50%] z-10 translate-y-[-50%]">
-            {/* <h1>{t("title")}</h1> */}
-            <h1 className="font-hightide text-5xl text-white sm:text-[150px]">
-              Redefining
-            </h1>
-            <h2 className="text-3xl text-white sm:text-5xl">
-              {" "}
-              Health and Wellness for a Better You
-            </h2>
+      <section className="relative isolate overflow-hidden pt-14">
+        <video className="absolute inset-0 -z-10 size-full object-cover" autoPlay muted playsInline loop src="/videos/brand-story.mp4"></video>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto py-32 sm:py-48 lg:py-56">
+            <div className="text-left">
+              <h1 className="text-balance font-hightide text-5xl tracking-tight text-white sm:text-[150px]">Redefining</h1>
+              <p className="mt-1 text-pretty text-3xl text-white sm:text-5xl">Health and Wellness for a Better You</p>
+            </div>
           </div>
-
-          <video
-            className="absolute h-full w-full object-cover"
-            autoPlay
-            muted
-            playsInline
-            loop
-            src="/videos/brand-story.mp4"
-          ></video>
-        </div>
-        <div
-          ref={waveAnimation}
-          className="absolute bottom-0 z-20 translate-y-[30%] opacity-0"
-        >
-          <Image
-            width={1000}
-            height={300}
-            className="w-full bg-center"
-            alt="wave"
-            src={"/images/hero-wave-1.png"}
-          />
         </div>
       </section>
 
-      {/* hidden */}
-      {/* <section className="product-section h-[50vh] md:h-[100vh]">
-        <div className="product-frame relative h-full w-full py-10 md:py-14 lg:py-20">
-          <Image
-            fill
-            className="z-10 object-cover"
-            // width={500}
-            // height={500}
-            alt="background"
-            src={
-              "/images/product-animations/activated-ginko/activated-ginkgo-bg.png"
-            }
-          />
-          <Image
-            alt="stage-ring"
-            className="absolute z-[18] w-[50%] translate-x-[50%]"
-            width={300}
-            height={300}
-            src={"/images/product-animations/stage-ring.png"}
-          />
-          <Image
-            alt="stage-shadow"
-            className="absolute bottom-0 z-20 max-h-[300px] w-full object-cover object-top"
-            width={300}
-            height={300}
-            src={"/images/product-animations/stage-with-shadow.png"}
-          />
+      <Wave />
 
-          <div className="absolute left-[5%] z-20 w-[30%]">
-            <h1 className="text-3xl text-tsdarkgreen xl:text-4xl">
-              Activated Ginkgo
-            </h1>
-            <h3 className="text-tsdarkgreen md:text-2xl">
-              Traditionally Used To Promote Blood Circulation & Health
-            </h3>
-          </div>
-
-          <Image
-            width={300}
-            height={300}
-            alt="product"
-            className="absolute left-[50%] z-20 h-[50%] w-[40%] translate-x-[-50%] translate-y-[20%] object-cover"
-            src={
-              "/images/product-animations/activated-ginko/activated_ginko.png"
-            }
-          />
-
-          <Image
-            width={300}
-            height={400}
-            alt="human"
-            className="absolute right-[-50px] z-20 h-[50%] w-[40%] translate-y-[50%] object-cover"
-            src={
-              "/images/product-animations/activated-ginko/activated-ginkgo-human.png"
-            }
-          />
-
-          <Image
-            ref={infoAnimation}
-            width={300}
-            height={400}
-            alt="product-info"
-            className="absolute bottom-[40%] left-[19%] z-[19] w-[25%]"
-            src={
-              "/images/product-animations/activated-ginko/activated-ginkgo-banner.png"
-            }
-          />
-
-          <Image
-            ref={rotationElement}
-            alt="blood"
-            className="absolute right-[27%] z-20 max-h-[300px] w-[20%] transform-gpu object-contain object-top"
-            width={200}
-            height={200}
-            src={
-              "/images/product-animations/activated-ginko/activated-ginkgo-blood.png"
-            }
-          />
-        </div>
-      </section> */}
       <section className="product-section relative">
         <ProductSlider />
       </section>
+
+      <Wave />
+
       <section className="about-us flex justify-start bg-blog-hero bg-cover bg-right px-5 py-10 lg:py-20">
         <div className="about-us-inner m-auto w-screen max-w-screen-xl">
           <div className="about-us-content flex flex-col items-start gap-5 rounded-l-[56px] rounded-r-[56px] rounded-t-[56px] rounded-br-[0px] bg-white bg-opacity-65 p-10 sm:w-[50%] sm:max-w-[500px]">
             <h1 className="text-3xl text-tsdarkgreen md:text-4xl">ABOUT US</h1>
             <p className="">
-              At Thomson, we are dedicated to improving the health and
-              well-being of our customers through natural solutions. For over 30
-              years, we have been a trusted name, helping customers to enhance
-              their overall quality of life. <br />
+              At Thomson, we are dedicated to improving the health and well-being of our customers through natural solutions. For over 38 years, we have been a trusted name, helping customers to enhance their overall quality of life. <br />
               <br />
-              Our customers consistently share stories of relief from chronic
-              issues and improved vitality, with many recommending our products
-              to friends and family. We are proud to be a part of countless
-              journeys toward better health, offering reliable, natural support
-              for everyday wellness.
+              Our customers consistently share stories of relief from chronic issues and improved vitality, with many recommending our products to friends and family. We are proud to be a part of countless journeys toward better health, offering reliable and natural support for everyday wellness.
             </p>
             <Button intLink={"/about-us"} text={"Read More"} />
 
-            <Image
-              width={157}
-              height={60}
-              alt="halal-logos"
-              src={"/images/halal-logos.png"}
-            />
+            {locale === "en-sg" ? "" : <Image width={157} height={60} alt="halal-logos" src={"/images/halal-logos.png"} />}
           </div>
         </div>
       </section>
+
       <section className="relative bg-home-bottom-bg bg-contain py-14 text-white">
         <div className="flex flex-col gap-5 px-5">
-          <h1 className="text-center text-3xl text-tsdarkgreen md:text-4xl">
-            RESOURCES
-          </h1>
-          <p className="text-center text-2xl text-tsdarkgreen">
-            Read Articles from our panel of experts on health topics
-          </p>
+          <h1 className="text-center text-3xl text-tsdarkgreen md:text-4xl">RESOURCES</h1>
+          <p className="text-center text-2xl text-tsdarkgreen">Read Articles from our panel of experts on health topics</p>
 
           <div className="blog-wrapper m-auto my-10 grid max-w-screen-xl gap-6 md:grid-cols-3">
             {featuredBlogs.map((featuredBlog) => (
-              <BlogCard
-                color={"green"}
-                key={featuredBlog.title}
-                title={featuredBlog.title}
-                author={featuredBlog.author}
-                featuredImage={featuredBlog.imageUrl}
-                extUrl={featuredBlog.extUrl}
-              />
+              <BlogCard color={"green"} key={featuredBlog.title} title={featuredBlog.title} author={featuredBlog.author} featuredImage={featuredBlog.imageUrl} extUrl={featuredBlog.extUrl} />
             ))}
           </div>
 
           <div className="mb-10 w-fit self-center md:mb-14 lg:mb-20">
             {" "}
-            <Button
-              color={"yellow"}
-              text={"See More"}
-              extLink={"https://herbalrevival.life/article/"}
-            />
+            <Button color={"yellow"} text={"See More"} extLink={"https://herbalrevival.life/article/"} />
           </div>
 
-          <h1 className="mb-4 text-center text-3xl text-tsdarkgreen md:text-4xl">
-            CONTACT US
-          </h1>
+          <h1 className="mb-4 text-center text-3xl text-tsdarkgreen md:text-4xl">CONTACT US</h1>
 
           <div className="m-auto flex max-w-screen-xl flex-row flex-wrap items-center justify-between">
             <div className="grid-left mb-6 flex flex-col items-center gap-6 sm:basis-[40%] md:items-start md:px-20">
-              <h1 className="hidden text-4xl text-tsdarkgreen md:block">
-                Ask Us Questions
-              </h1>
-              <p className="text-center text-tsdarkgreen md:text-left">
-                For further inquiries, please visit our {"Contact Us"} page and
-                complete the full form. Our team will assist you promptly.
-              </p>
-              <Button
-                intLink={"/about-us"}
-                color={"yellow"}
-                text={"See More"}
-              />
+              <h1 className="hidden text-4xl text-tsdarkgreen md:block">Ask Us Questions</h1>
+              <p className="text-center text-tsdarkgreen md:text-left">For further inquiries, please visit our {"Contact Us"} page and complete the full form. Our team will do our best to assist you.</p>
+              <Button intLink={"/contact-us"} color={"yellow"} text={"Contact Us"} />
             </div>
             <div ref={contactForm} className="grid-right w-full sm:basis-[55%]">
               <div className="outer-div h-full rounded-l-[56px] rounded-tr-[56px] bg-tsdarkgreen p-2">
                 <div className="inner-div h-full w-full rounded-l-[48px] rounded-tr-[48px] border-[1px] border-white py-10 pl-4 pr-5 sm:pl-14 sm:pr-10">
                   <div className="flex flex-col gap-6">
                     <div className="flex items-center">
-                      <h1 className="text-3xl text-tsyellow md:text-4xl">
-                        Stay Updated with Thomson Health
-                      </h1>
-                      <Image
-                        className="h-[80px] object-cover"
-                        alt="thomson-cross"
-                        width={56}
-                        height={80}
-                        src={"/images/CI-icon.png"}
-                      />
+                      <h1 className="text-3xl text-tsyellow md:text-4xl">Stay Updated with Thomson Health</h1>
+                      <Image className="h-[80px] object-cover" alt="thomson-cross" width={56} height={80} src={"/images/CI-icon.png"} />
                     </div>
 
                     <h3>Subscribe to Our Newsletter</h3>
 
-                    <p className="text-sm md:text-lg">
-                      Be the first to know about new promotions, exclusive
-                      events, and product launches. Get health tips, wellness
-                      insights, and special offers delivered straight to your
-                      inbox. Stay connected with Thomson Health!
-                    </p>
+                    <p className="text-sm md:text-lg">Be the first to know about new promotions, exclusive events, and product launches. Get health tips, wellness insights, and special offers delivered straight to your inbox. Stay connected with Thomson Health!</p>
 
                     <form action="">
                       <div className="flex justify-between rounded-[10px] bg-white p-2">
-                        <input
-                          type="text"
-                          className="w-[70%] p-2 text-tsdarkgreen"
-                        />
+                        <input type="text" className="w-[70%] p-2 text-tsdarkgreen" />
                         <label htmlFor="email"></label>
                         <div className="">
                           {" "}
-                          <Button
-                            color="yellow"
-                            text={"Subscribe"}
-                            link={"/"}
-                          />
+                          <Button color="yellow" text={"Subscribe"} link={"/"} />
                         </div>
                       </div>
                     </form>
@@ -316,44 +160,83 @@ export default function Home() {
           </div>
 
           <div className="m-auto w-screen max-w-screen-xl py-10 md:py-14 lg:py-20">
-            <h1 className="mb-5 text-center text-4xl uppercase text-tsdarkgreen">
-              Location
-            </h1>
+            <h1 className="mb-5 text-center text-4xl uppercase text-tsdarkgreen">Location</h1>
 
-            <div className="gap-10 rounded-t-[56px] rounded-bl-[56px] bg-tsdarkgreen p-10 sm:flex">
-              <div className="location-left mb-6 w-full sm:basis-1/2">
-                <h4 className="text-xl">Malaysia Sales & Marketing Office</h4>
-                <div>
-                  <div className="address">
-                    C-06-07, Sunway Nexis,No. 1, Jalan PJU 5/1,Kota
-                    Damansara,47810 Petaling Jaya, Malaysia
+            {locale === "en-sg" ? (
+              <div className="gap-10 rounded-t-[56px] rounded-bl-[56px] bg-tsdarkgreen p-10 sm:flex">
+                <div className="location-left mb-6 w-full sm:basis-1/2">
+                  <h4 className="text-xl">Singapore Office</h4>
+                  <div>
+                    <div className="address mt-4">
+                      5 Kaki Bukit Road 1,
+                      <br />
+                      #03-07 Eunos Technolink,
+                      <br />
+                      Singapore 415936
+                    </div>
+                    <div className="contact mt-4">
+                      Contact: +65 6612 1359
+                      <br />
+                      WhatsApp: +65 6612 1359
+                      <br />
+                      Email: enquiry.sg@thomsonhealth.com
+                    </div>
                   </div>
-                  <div className="contact">
-                    Contact: +603–6150 5818 WhatsApp: +6012-878 6438
-                    Email: enquiry@thomson.com.my
+                </div>
+                <div className="location-right w-full border-white sm:basis-1/2 sm:border-l-2 sm:pl-10">
+                  <h4 className="text-xl">Factory</h4>
+                  <div>
+                    <div className="address mt-4">
+                      7 Kaki Bukit Road 1,
+                      <br />
+                      #01-06 Eunos Technolink,
+                      <br />
+                      Singapore 415937
+                    </div>
+                    <div className="contact mt-4">{/* Contact: +603-6157 4818 <br /> */}</div>
                   </div>
                 </div>
               </div>
-              <div className="location-right w-full border-white sm:basis-1/2 sm:border-l-2 sm:pl-10">
-                <h4 className="text-xl">Factory</h4>
-                <div>
-                  <div className="address">
-                    C-06-07, Sunway Nexis,
-                    <br />
-                    No. 1, Jalan PJU 5/1,
-                    <br />
-                    Kota Damansara,
-                    <br />
-                    47810 Petaling Jaya, Malaysia
+            ) : (
+              <div className="gap-10 rounded-t-[56px] rounded-bl-[56px] bg-tsdarkgreen p-10 sm:flex">
+                <div className="location-left mb-6 w-full sm:basis-1/2">
+                  <h4 className="text-xl">Malaysia Sales & Marketing Office</h4>
+                  <div>
+                    <div className="address mt-4">
+                      C-06-07, Sunway Nexis,
+                      <br />
+                      No. 1, Jalan PJU 5/1,
+                      <br />
+                      Kota Damansara,
+                      <br />
+                      47810 Petaling Jaya, Malaysia
+                    </div>
+                    <div className="contact mt-4">
+                      Contact: +603-6150 5818
+                      <br />
+                      WhatsApp: +6012-878 6438
+                      <br />
+                      Email: enquiry@thomson.com.my
+                    </div>
                   </div>
-                  <div className="contact">
-                    Contact: +603–6150 5818 <br />
-                    WhatsApp: +6012-878 6438 <br />
-                    Email: enquiry@thomson.com.my
+                </div>
+                <div className="location-right w-full border-white sm:basis-1/2 sm:border-l-2 sm:pl-10">
+                  <h4 className="text-xl">Factory</h4>
+                  <div>
+                    <div className="address mt-4">
+                      No. 5 & 7, Jalan TSB 6,
+                      <br />
+                      Taman Industri Sungai Buloh,
+                      <br />
+                      47000 Sungai Buloh, Malaysia
+                    </div>
+                    <div className="contact mt-4">
+                      Contact: +603-6157 4818 <br />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
         {/* <WaveAnimation /> */}

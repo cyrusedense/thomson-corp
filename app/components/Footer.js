@@ -22,7 +22,7 @@ function Footer() {
 
   const purchaseLinks = [
     { href: "/products", label: "Our Products" },
-    { href: "https://sg-shop.thomsonhealth.com/collections/all", label: "Buy Online" },
+    { href: locale === "en-sg" ? "https://sg-shop.thomsonhealth.com/collections/all" : "https://my-shop.thomsonhealth.com/collections/all", label: "Buy Online" },
   ];
 
   return (
@@ -38,7 +38,7 @@ function Footer() {
         {/* Column 2 - Quick Links */}
 
         <div>
-          <h4 className="mb-2">Quick Links</h4>
+          <h4 className="mb-2 underline">Quick Links</h4>
           <div className="footer-column-two flex gap-6">
             <div className="footer-column-two-left">
               <ul>
