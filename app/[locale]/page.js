@@ -82,13 +82,13 @@ export default function Home({ params: { locale } }) {
         </div>
       </section>
 
-      <Wave />
+      <Wave top={"ffb101"} bottom={"ffffff"} />
 
       <section className="product-section relative">
         <ProductSlider />
       </section>
 
-      <Wave />
+      <Wave top={"ecf2f1"} bottom={"ababab"} />
 
       <section className="about-us flex justify-start bg-blog-hero bg-cover bg-right px-5 py-10 lg:py-20">
         <div className="about-us-inner m-auto w-screen max-w-screen-xl">

@@ -14,20 +14,7 @@ export const productSliderScenes = [
   },
   {
     id: 1,
-    title: "ProbioGut",
-    description: "A combination of 7 billion CFUs from two clinically-supported HRB probiotics and two prebiotics to help gut function, immunity and maintaining a healthy body weight.",
-    images: {
-      bg: "/images/product-animations/probiogut/probiogut-bg.png",
-      product: "/images/product-animations/probiogut/probiogut.png",
-      circular: "/images/product-animations/probiogut/probiogut-circular.png",
-      human: "/images/product-animations/probiogut/probiogut-human.png",
-      banner: "/images/product-animations/probiogut/probiogut-banner.png",
-      featured: "/images/product-animations/probiogut/probiogut.png", // New featured image
-    },
-  },
-  {
-    id: 2,
-    title: "Circulon125",
+    title: "Circulon 125",
     description: "High strength of 125mg of ACTIVATED Ginkgo Biloba extract used to improve symptoms of poor blood circulation such as numb fingers and toes, poor memory, vertigo, fatigue, etc. 3x strength of Thomson Activated Ginkgo Extract in 1 tablet for convenient daily dosing.",
     images: {
       bg: "/images/product-animations/circulon-125/circulon-bg.png",
@@ -39,7 +26,7 @@ export const productSliderScenes = [
     },
   },
   {
-    id: 3,
+    id: 2,
     title: "OsteoPro",
     description: "Fully-Reacted 300mg Glucosamine Sulfate to promote healthy joints and cartilage.",
     images: {
@@ -52,7 +39,7 @@ export const productSliderScenes = [
     },
   },
   {
-    id: 4,
+    id: 3,
     title: "Livrin",
     description: "300mg Milk Thistle extract from Europe to support liver health. Symptoms of poor liver function can include digestive problems, tiredness and poor skin.",
     images: {
@@ -62,6 +49,19 @@ export const productSliderScenes = [
       human: "/images/product-animations/livrin-300/livrin-human.png",
       banner: "/images/product-animations/livrin-300/livrin-banner.png",
       featured: "/images/product-animations/livrin-300/livrin.png", // New featured image
+    },
+  },
+  {
+    id: 4,
+    title: "ProbioGut",
+    description: "A combination of 7 billion CFUs from two clinically-supported HRB probiotics and two prebiotics to help gut function, immunity and maintaining a healthy body weight.",
+    images: {
+      bg: "/images/product-animations/probiogut/probiogut-bg.png",
+      product: "/images/product-animations/probiogut/probiogut.png",
+      circular: "/images/product-animations/probiogut/probiogut-circular.png",
+      human: "/images/product-animations/probiogut/probiogut-human.png",
+      banner: "/images/product-animations/probiogut/probiogut-banner.png",
+      featured: "/images/product-animations/probiogut/probiogut.png", // New featured image
     },
   },
   {

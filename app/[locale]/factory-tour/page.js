@@ -8,60 +8,6 @@ export default function FactoryTour() {
 
   const [selectedDate, setSelectedDate] = useState("9 April 2025, Wednesday");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    if (!data["date"]) {
-      alert("Please select a date");
-      return;
-    }
-
-    if (data["date"] !== "9 April 2025, Wednesday" && data["date"] !== "16 April 2025, Wednesday") {
-      alert("Invalid date selected");
-      return;
-    }
-
-    if (!data["pax"]) {
-      alert("Please select the number of people attending");
-      return;
-    }
-
-    if (data["pax"] !== "1" && data["pax"] !== "2") {
-      alert("Invalid number of people attending");
-      return;
-    }
-
-    if (!data["full-name-1"] || !data["contact-number-1"] || !data["email-address-1"]) {
-      alert("Please fill in all fields for Attendee 1");
-      return;
-    }
-
-    if (!isSingle && (!data["full-name-2"] || !data["contact-number-2"] || !data["email-address-2"])) {
-      alert("Please fill in all fields for Attendee 2");
-      return;
-    }
-
-    fetch("https://proxy.wwwavy.com/thomson-corporate/factory-tour/submit.php", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    })
-      .then((response) => {
-        response.json();
-        setIsModalOpen(true);
-        form.reset();
-      })
-      .catch((error) => {
-        alert("An error occurred. Please try again later.");
-      });
-  };
-
   return (
     <>
       <div className="relative h-full bg-factory-tour-lab bg-cover bg-center">
@@ -71,7 +17,7 @@ export default function FactoryTour() {
               <h1 className="mt-24 text-pretty text-3xl font-semibold tracking-tight text-white sm:mt-10 sm:text-5xl">What Your Eyes Cannot See</h1>
               <p className="mt-8 text-pretty text-lg font-medium text-white sm:text-xl/8">Come and take a look inside our Thomson Health SG GMP Compliant Facility and see how we at Thomson strive to create quality tested supplements for you and your loved ones.</p>
               <video className="mt-10 h-full w-full rounded-lg" controls>
-                <source src="/videos/Thomson Health Singapore Intro.mp4" type="video/mp4" />
+                <source src="/videos/Thomson Health Singapore Intro.webm" type="video/webm" />
                 Your browser does not support the video tag.
               </video>
               <div className="mt-10">
@@ -81,145 +27,12 @@ export default function FactoryTour() {
               </div>
             </div>
           </div>
-          <div className="px-6 pb-24 pt-10 sm:pb-32 xl:col-span-6 xl:px-0 xl:pb-48 xl:pt-40">
-            <form onSubmit={handleSubmit} method="POST" className="mx-auto max-w-7xl rounded-l-[5rem] rounded-r-xl bg-tsdarkgreen px-5 py-5 lg:max-w-none">
-              <div className="rounded-l-[5rem] rounded-r-xl border-4 border-white px-12 py-16 text-lg text-white">
-                <div className="w-full gap-y-3">
-                  <h1 className="text-pretty text-5xl font-semibold tracking-tight text-white">Thomson Health SG</h1>
-                  <h1 className="text-pretty text-6xl font-bold tracking-tight text-white">Factory Tour</h1>
-                  <div className="mt-10 grid grid-cols-2 justify-evenly gap-x-3 gap-y-10">
-                    <div className="col-span-2 w-full xl:col-span-1">
-                      <label htmlFor="date" className="block font-bold">
-                        Date
-                      </label>
-                      <div className="mt-2 grid grid-cols-1">
-                        <select onChange={(e) => setSelectedDate(e.target.value)} id="date" name="date" className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-transparent">
-                          <option className="text-black">9 April 2025, Wednesday</option>
-                          <option className="text-black">16 April 2025, Wednesday</option>
-                        </select>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end sm:size-4">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="col-span-2 w-full xl:col-span-1">
-                      <label htmlFor="time" className="block font-bold">
-                        Time
-                      </label>
-                      <div className="mt-2 grid grid-cols-1">
-                        <p className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-transparent">9:30AM - 12:00PM</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-10 grid grid-cols-2 justify-evenly gap-x-3 gap-y-10">
-                    <div className="col-span-2 w-full xl:col-span-1">
-                      <label htmlFor="pax" className="block font-bold">
-                        Number of People Attending
-                      </label>
-                      <div className="mt-2 grid grid-cols-1">
-                        <select
-                          onChange={(e) => {
-                            setIsSingle(e.target.value === "1" ? true : false);
-                          }}
-                          id="pax"
-                          name="pax"
-                          className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-transparent"
-                        >
-                          <option className="text-black" value={"1"}>
-                            1
-                          </option>
-                          <option className="text-black" value={"2"}>
-                            2
-                          </option>
-                        </select>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end sm:size-4">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="col-span-2 w-full xl:col-span-1">
-                      <p className="block font-bold">Address</p>
-                      <div className="flex flex-col">
-                        <p className="mt-2">Kaki Bukit, Singapore.</p>
-                        <p className="text-sm italic">(Exact address will be emailed to you upon booking confirmation)</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-10">
-                    <p className="block font-bold underline">Attendee 1</p>
-
-                    <div className="mt-5 grid grid-cols-2 justify-evenly gap-x-3 gap-y-5">
-                      <div className="col-span-2 w-full xl:col-span-1">
-                        <label htmlFor="full-name-1" className="sr-only">
-                          Full Name
-                        </label>
-                        <input required id="full-name-1" name="full-name-1" type="text" placeholder="Name" autoComplete="name" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
-                      </div>
-
-                      <div className="col-span-2 w-full xl:col-span-1">
-                        <label htmlFor="contact-number-1" className="sr-only">
-                          Contact Number
-                        </label>
-                        <input required id="contact-number-1" name="contact-number-1" type="tel" placeholder="Contact Number" autoComplete="tel" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm" />
-                      </div>
-                    </div>
-
-                    <div className="mt-5 grid grid-cols-2 justify-evenly gap-x-3">
-                      <div className="col-span-2 flex w-full flex-col">
-                        <label htmlFor="email-address-1" className="sr-only">
-                          Email Address
-                        </label>
-                        <input required id="email-address-1" name="email-address-1" type="email" placeholder="Email" autoComplete="email" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
-                        <p className="text-sm italic">(Booking details will be sent to this email address)</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {!isSingle && (
-                    <div className="mt-10">
-                      <p className="block font-bold underline">Attendee 2</p>
-
-                      <div className="mt-5 grid grid-cols-2 justify-evenly gap-x-3 gap-y-5">
-                        <div className="col-span-2 w-full xl:col-span-1">
-                          <label htmlFor="full-name-2" className="sr-only">
-                            Full Name
-                          </label>
-                          <input required id="full-name-2" name="full-name-2" type="text" placeholder="Name" autoComplete="name" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
-                        </div>
-
-                        <div className="col-span-2 w-full xl:col-span-1">
-                          <label htmlFor="contact-number-2" className="sr-only">
-                            Contact Number
-                          </label>
-                          <input required id="contact-number-2" name="contact-number-2" type="tel" placeholder="Contact Number" autoComplete="tel" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm" />
-                        </div>
-                      </div>
-
-                      <div className="mt-5 grid grid-cols-2 justify-evenly gap-x-3">
-                        <div className="col-span-2 w-full">
-                          <label htmlFor="email-address-2" className="sr-only">
-                            Email Address
-                          </label>
-                          <input required id="email-address-2" name="email-address-2" type="email" placeholder="Email" autoComplete="email" className="block w-full border-0 border-b bg-transparent px-4 py-3 text-white placeholder-gray-300 shadow-sm focus-visible:border-0" />
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="mt-16 grid grid-cols-1">
-                  <div className="mx-auto">
-                    <button type="submit" className="rounded-md bg-tsyellow px-16 py-2.5 text-lg font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tsyellow">
-                      Book Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </form>
+          <div className="flex flex-col items-center px-6 pb-24 pt-10 sm:pb-32 xl:col-span-6 xl:px-0 xl:pb-48 xl:pt-40">
+            <div className="w-full bg-tsdarkgreen p-4">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeKxghldV2EJKkY0EbC8fmNGcjhetXVIWPIH_2Duw5ePukt8A/viewform?embedded=true" className="overflow-hidden" width="100%" height="800" frameBorder="0" marginHeight="0" marginWidth="0">
+                Loading…
+              </iframe>
+            </div>
           </div>
         </div>
       </div>

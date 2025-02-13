@@ -17,9 +17,9 @@ function Community({ params: { locale } }) {
         {locale === "en-sg" ? (
           <div className="loyalty-summary mx-auto max-w-screen-lg overflow-hidden sm:flex sm:pt-0">
             <div className="flex flex-col items-center justify-center gap-5 bg-tsdarkgreen p-10 text-center text-white sm:rounded-tl-[56px]">
-              <h1 className="text-center text-4xl">EBER LOYALTY REWARDS</h1>
+              <h1 className="text-center text-4xl">Thomson Family Rewards</h1>
               <p className="text-xl">Exclusive perks for our loyal customers!</p>
-              <Button color="yellow" intLink={"/loyalty"} text="Learn More" />
+              <Button color="yellow" extLink={"/" + locale + "/loyalty"} text="Learn More" />
             </div>
 
             <Image className="z-10 max-h-[400px] w-full basis-1/2 rounded-none object-cover sm:rounded-r-[56px] sm:object-cover" alt="family-health" width="500" height="500" src="/images/eber-banner-img.webp" />
@@ -30,7 +30,14 @@ function Community({ params: { locale } }) {
 
         <div className="m-auto max-w-screen-lg py-10 md:py-14 lg:py-20">
           <h1 className="mb-6 text-center text-4xl">ROADSHOW & EVENTS</h1>
-          <p className="text-center text-2xl">Watch this space for our latest events</p>
+          {/* <p className="text-center text-2xl">
+            Check out our{" "}
+            <a href="https://www.instagram.com/thomsonhealth_sg/" className="underline">
+              Instagram
+            </a>{" "}
+            page for information on our latest and upcoming roadshow and events
+          </p> */}
+          <iframe src="https://www.instagram.com/thomsonhealth_sg/embed" className="mx-auto" width="100%" height="500" frameBorder="0" scrolling="no" allowtransparency="true"></iframe>
         </div>
 
         <div className="m-auto max-w-screen-lg py-10 md:py-14 lg:py-20">

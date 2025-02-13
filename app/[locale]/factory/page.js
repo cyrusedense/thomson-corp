@@ -28,6 +28,14 @@ function Factory({ params: { locale } }) {
               This test can detect <li>the identity of a natural ingredient, which determines whether any adulteration has occurred</li>
               <li>the quality of the ingredients tested</li>
             </div>
+
+            {locale === "en-sg" ? (
+              <a href="/en-sg/factory-tour" target="_blank" className="mt-8 inline-block rounded-full bg-tsdarkgreen px-6 py-3 text-white shadow-md hover:bg-tsgreen">
+                Book Now
+              </a>
+            ) : (
+              ""
+            )}
           </div>
         </section>
       </div>

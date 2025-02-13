@@ -29,7 +29,7 @@ function Careers({ params: { locale } }) {
       <section className="careers m-auto max-w-screen-xl px-5 py-10 md:pb-14 xl:pb-20">
         {/* <section className="careers m-auto max-w-screen-xl px-5 pb-10 md:pb-14 xl:pb-20"> */}
         <h1 className="mb-5 text-4xl">Job Openings</h1>
-        <p className="text-xl">Click "View More" for application details</p>
+        <p className="text-xl">Click &ldquo;View More&rdquo; for application details</p>
         <p className="mt-3 italic">Showing job openings based in: {locale === "en-sg" ? "Singapore" : "Malaysia"}</p>
 
         <div className="joblistings mt-10">

@@ -289,7 +289,7 @@ export default function ProductSlider() {
           ); // Anchor to the product image
         })}
 
-        <div className="absolute bottom-0 z-30 w-full -translate-y-[100%]">
+        <div className="absolute bottom-0 z-[9999] w-full -translate-y-[100%]">
           <div className="mx-auto flex h-auto w-4/5 flex-row items-center justify-between">
             <button onClick={goToPrevScene} className="z-[31] text-tsdarkgreen">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8 md:size-10 lg:size-12">
