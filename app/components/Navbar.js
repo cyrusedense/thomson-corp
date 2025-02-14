@@ -118,7 +118,7 @@ function MobileMenu({ isOpen, closeMenu }) {
   };
 
   return (
-    <div className={`absolute right-0 top-0 w-[60%] md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"} flex min-h-screen flex-col items-center justify-center rounded-br-[56px] rounded-tl-[56px] bg-tsdarkgreen p-10 py-20 text-white transition-transform duration-500`}>
+    <div className={`absolute right-0 top-0 w-[60%] lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"} flex min-h-screen flex-col items-center justify-center rounded-br-[56px] rounded-tl-[56px] bg-tsdarkgreen p-10 py-20 text-white transition-transform duration-500`}>
       <ul className="w-full space-y-6 text-center text-white">
         {locale === "en-sg"
           ? SG_NAV_LINKS.map((link, index) => (
@@ -167,6 +167,8 @@ function MobileMenu({ isOpen, closeMenu }) {
           <Button clickFunction={closeMenu} link="/contact-us" color="yellow" text="Contact Us" />
         </li>
       </ul>
+      <div className="mt-10"></div>
+      <LocaleSwitcher />
     </div>
   );
 }
@@ -195,12 +197,12 @@ function Navbar() {
           <Logo color="white" />
         </div>
 
-        <div className="hidden w-full md:block">
+        <div className="hidden w-full lg:block">
           <DesktopLinks />
         </div>
       </div>
 
-      <div className="z-10 md:hidden">
+      <div className="z-10 lg:hidden">
         <Hamburger toggled={isOpen} toggle={setOpen} rounded color="white" size={38} direction="right" />
       </div>
 

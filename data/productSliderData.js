@@ -67,7 +67,7 @@ export const productSliderScenes = [
   {
     id: 5,
     title: "CalmiLax",
-    description: "Contains formulation of Patented and Flagship ingredients: Patented Rafuma and Kanna Extract, Flagship Activated Ginkgo Biloba Extract.",
+    description: "Contains formulation of Patented and Flagship ingredients: Patented Rafuma and Kanna Extract, Flagship Activated Ginkgo Biloba Extract to promote relaxation and sleep quality.",
     images: {
       bg: "/images/product-animations/calmilax/cml-bg.png",
       product: "/images/product-animations/calmilax/cml.png",
