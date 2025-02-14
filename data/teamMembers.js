@@ -5,6 +5,7 @@ export const teamMembers = [
     name: "Michael Lim",
     title: "Managing Director/Founder",
     featured: true,
+    description: "Mr. Lim, the founder of Herbal Revival, has been pivotal in the company’s growth since 1987. His strategic move into high-quality health supplements in 1996 propelled the company to industry leadership in Malaysia. Committed to excellence, he forges partnerships with reputable suppliers, ensuring clinically proven raw materials and premium ingredients. His leadership, alongside the management team, drives business strategies and aligns the company’s vision and mission for sustained growth. Through innovation and entrepreneurship, Mr. Lim has positioned Thomson as a distinguished name in the herbal and health supplement industry.",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const teamMembers = [
     name: "Lynn Tan",
     title: "Finance Director",
     featured: false,
+    description: "Madam Lynn brought along her wealth of more than 20 years of experience in the field of accounting, finance and business administration. She worked with several well-established companies in Singapore and Malaysia. She is a member of the Association of Accounting Technicians, UK. As one of the pioneer in the company, she has played a major role in contributing towards the success of the company.",
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const teamMembers = [
     name: "Benjamin Lim",
     title: "Director",
     featured: true,
+    description: "Benjamin, a 2010 pharmacy graduate from Curtin University, Australia, gained valuable experience in Western Australia before returning to Malaysia. He joined Thomson in 2012 as a product manager, specializing in product development, training, public health talks, and GMP audits. Promoted to marketing manager in 2016, he spearheaded advertising and marketing across Malaysia, Singapore, and Indonesia while maintaining a strong role in product development, manufacturing, and quality control. A recognized industry expert, he has been featured on CNN, Metro TV Indonesia, Astro, and Melody FM. A registered pharmacist in Australia and Malaysia, he is an active member of Malaysian Pharmaceutical Society (MPS), Malaysian Organisation of Pharmaceutical Industries (MOPI) and Malaysian Dietary Supplement Association (MADSA).",
   },
 
   {
@@ -27,6 +30,7 @@ export const teamMembers = [
     name: "Bernadine Lim",
     title: "Singapore Marketing Manager",
     featured: true,
+    description: "Bernadine graduated from Curtin University, Australia, in 2012 with a bachelor’s degree in physiotherapy. Driven by a passion for community health, she gained over a decade of experience at Singapore’s Tan Tock Seng Hospital, Farrer Park Hospital, and private clinics, spanning ICU to home physiotherapy. In 2023, she joined Thomson to impact lives through trusted supplements. As head of marketing and sales for Thomson Singapore, she also supports R&D with her expertise. A registered AHPC physiotherapist, she has been featured on CNA 938, contributed to New Straits Times, and delivered medical talks, advocating for healthier living through quality supplements.",
   },
   {
     id: 5,
@@ -34,6 +38,7 @@ export const teamMembers = [
     name: "Sam Kuan",
     title: "Factory Manager",
     featured: false,
+    description: "Mr Sam Kuan graduated from Universiti Tunku Abdul Rahman with Bachelor of Commerce (Hons.) Accounting in 2012. He was a member of Association of Certified Chartered Accounts and is currently a member of Institute of Singapore Chartered Accountants. He has accumulated 10 years of experience in auditing (both internal and external), regulatory compliance, internal control and finance. He joined THPL in June 2022 as the Factory Manager, being the main contact person for setting up the manufacturing facility and daily operations.",
   },
 
   {
@@ -42,6 +47,7 @@ export const teamMembers = [
     name: "Goh Yann Jen",
     title: "Senior QC Manager",
     featured: false,
+    description: "Ms. Lian Hooi San holds a bachelor's degree in food science and nutrition from Universiti Malaysia Sabah and a master’s in clinical nutrition from Universiti Kebangsaan Malaysia. As an expert in product management, development, and regulatory affairs, she also serves as an internal GMP auditor at Thomson Health. Her experience spans healthcare marketing, product development, and quality assurance in the food ingredient sector. Passionate about public health, she actively conducts product training, roadshows, and public talks while making guest appearances on TV. With a strong scientific background, she is dedicated to advancing trusted, high-quality health and nutrition solutions.",
   },
   {
     id: 7,
@@ -49,6 +55,7 @@ export const teamMembers = [
     name: "Lian Hooi San",
     title: "Product Manager",
     featured: false,
+    description: "Goh Yann Jen has been a key figure at Herbal Revival Sdn. Bhd. for nearly 25 years, serving as Senior QC Manager since 2000. With a B.Sc. (Hons) in Chemistry from Universiti Malaya and an M.Sc. in Analytical and Instrumental Chemistry, she ensures rigorous, top-notch quality control at every stage of production. Overseeing QC lab operations, she upholds the highest standards, solidifying Herbal Revival’s reputation for excellence. She also actively contributes to our R&D efforts, driving innovation and product enhancement. Her expertise, leadership, and dedication to continuous improvement make her an invaluable asset to the company and the health supplement industry.",
   },
   {
     id: 8,
@@ -56,5 +63,6 @@ export const teamMembers = [
     name: "Tan Joh Han",
     title: "Production Manager",
     featured: false,
+    description: "Mr Tan Joh Han graduated with a Diploma in Electronic Engineering from Federal Institute of Technology (1st Class) and joined the team since 1999 as a production technician. He rose the ranks to production executive and, in year 2017, was promoted to Production Manager. He is responsible for overseeing the entire manufacturing process, ensuring efficient and timely manufacturing of all products. Mr Tan also ensures that all production processes comply with GMP (Good Manufacturing Practices) standards, working with the quality control (QC) team to ensure the highest product quality, from raw materials to the finished product.",
   },
 ];

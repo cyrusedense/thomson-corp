@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     productTitle: "Activated Ginkgo Extract 40mg",
-    benefitList: ["40mg of Activated Ginkgo Biloba Extract", "Improves Blood Circulation and Brain Health", "Uses Japanese Activated technology for enhanced absorption"],
+    benefitList: ["40mg of Activated Ginkgo Biloba Extract (for small-distributed doses through your day)", "Improves Blood Circulation and Brain Health", "Uses Japanese Activated technology for enhanced absorption"],
     productUrl: "https://sg-shop.thomsonhealth.com/products/thomson-activated-ginkgo-extract",
     textColor: "#004414",
     productImageMY: "/images/product-page/product-page-img/product-AGE.webp",
@@ -12,7 +12,7 @@ export const products = [
   {
     id: 2,
     productTitle: "Circulon 125",
-    benefitList: ["125mg of Activated Ginkgo Biloba Extract", "Improves Blood Circulation and Brain Health", "Uses Japanese Activated technology for enhanced absorption"],
+    benefitList: ["125mg of Activated Ginkgo Biloba Extract (high strength in 1 tablet for convenient daily dosage)", "Improves Blood Circulation and Brain Health", "Uses Japanese Activated technology for enhanced absorption"],
     productUrl: "https://sg-shop.thomsonhealth.com/products/thomson-circulon-125",
     textColor: "#5A702A",
     productImageMY: "/images/product-page/product-page-img/product-CCL.webp",

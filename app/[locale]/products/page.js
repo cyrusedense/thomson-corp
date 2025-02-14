@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 import { products } from "@/data/products";
 import { reviews } from "@/data/reviews";
-import WaveAnimation from "@/app/components/waveAnimation";
+import Wave from "@/app/components/Wave";
 
 function Page({ params: { locale } }) {
   const router = useRouter();
@@ -96,8 +96,9 @@ function Page({ params: { locale } }) {
             ))}
           </div>
         </div>
-        <WaveAnimation />
       </section>
+
+      <Wave />
     </div>
   );
 }

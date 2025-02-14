@@ -20,53 +20,12 @@ gsap.registerPlugin(useGSAP);
 
 export default function Home({ params: { locale } }) {
   const t = useTranslations("HomePage");
-  // const [count, setCount] = useState(0);
-
-  // function increment() {
-  //   setCount((prev) => prev + 1);
-  //   setCount((prev) => prev + 1);
-  // }
 
   const router = useRouter();
-  //animations
 
-  //wave animation
-  const waveAnimation = useRef();
-
-  //contact animations
   const contactForm = useRef();
 
-  //container for scoping
   const container = useRef();
-
-  //GSAP
-
-  useGSAP(() => {
-    //initialise timeline
-
-    gsap.fromTo(
-      waveAnimation.current,
-      {
-        width: "0px",
-        autoAlpha: 0,
-      },
-      {
-        width: "100vw",
-        duration: 3,
-        autoAlpha: 1,
-        ease: "power4.Out",
-      },
-    );
-
-    // gsap.to(rotationElement.current, {
-    //   translateX: "10px",
-    //   translateY: "20px",
-    //   repeat: -1,
-    //   yoyo: true,
-    //   duration: 5,
-    //   ease: "none",
-    // });
-  });
 
   return (
     <main ref={container}>
@@ -82,13 +41,13 @@ export default function Home({ params: { locale } }) {
         </div>
       </section>
 
-      <Wave top={"ffb101"} bottom={"ffffff"} />
+      <Wave />
 
       <section className="product-section relative">
         <ProductSlider />
       </section>
 
-      <Wave top={"ecf2f1"} bottom={"ababab"} />
+      <Wave />
 
       <section className="about-us flex justify-start bg-blog-hero bg-cover bg-right px-5 py-10 lg:py-20">
         <div className="about-us-inner m-auto w-screen max-w-screen-xl">
@@ -239,7 +198,6 @@ export default function Home({ params: { locale } }) {
             )}
           </div>
         </div>
-        {/* <WaveAnimation /> */}
       </section>
     </main>
   );

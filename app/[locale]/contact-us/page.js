@@ -5,7 +5,7 @@ import ContactForm from "@/app/components/ContactForm";
 import LocationInfo from "@/app/components/Locations";
 import Image from "next/image";
 import Button from "@/app/components/Button";
-import WaveAnimation from "@/app/components/waveAnimation";
+import Wave from "@/app/components/Wave";
 
 function Contact({ params: { locale } }) {
   return (
@@ -70,7 +70,9 @@ function Contact({ params: { locale } }) {
         <ContactForm />
       </section>
 
-      <section className="mb-[5%]">
+      <Wave />
+
+      <section className="pt-[5%]">
         <LocationInfo />
       </section>
 

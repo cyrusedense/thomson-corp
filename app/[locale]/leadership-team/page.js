@@ -5,7 +5,7 @@ import Image from "next/image";
 function Leadership() {
   return (
     <div>
-      <section className="relative flex min-h-[50vh] items-center bg-leadership-hero bg-cover bg-top md:min-h-[50vh]">
+      <section className="relative flex min-h-[50vh] items-center bg-leadership-hero bg-top md:min-h-[50vh]">
         <div className="hero-text-wrapper m-auto w-screen max-w-screen-2xl p-5">
           <h1 className="mb-4 text-4xl text-white md:text-6xl">Our Team</h1>
           <p className="text-xl text-white">The passionate people behind the scenes</p>
@@ -25,7 +25,7 @@ function Leadership() {
           </div>
         </div> */}
 
-        <div className="mx-auto mt-20 grid max-w-screen-xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-20 grid max-w-screen-xl gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="first-div flex h-[454px] w-full flex-col justify-around rounded-[56px] rounded-br-[0px] bg-tsyellow p-[10%]">
             <div className="flex justify-between">
               <h1 className="text-3xl font-bold text-white">Our Team</h1>

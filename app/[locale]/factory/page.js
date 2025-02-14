@@ -12,7 +12,7 @@ function Factory({ params: { locale } }) {
       </section>
 
       <div className="m-auto max-w-screen-xl px-5 py-10 md:py-14 lg:py-20">
-        <p className="mb-8">{locale === "en-sg" ? "At Thomson Health Singapore, our factory is GMP compliant by the Health Scient Authority. Equipped with an ISO 8 cleanroom, we are able to ensure strict standards of manufacturing cleanliness and consistency. Our facility uses state-of-the art machinery to produce health supplements of the highest quality." : "We at Thomson are Good Manufacturing Practice (GMP) certified by the Ministry of Health Malaysia. This means that Thomson must adhere to strict procedures to ensure cleanliness and consistency. Our manufacturing facility employs state-of-the-art machineries including German brands such as Fette, Bosch and Uhlmann, brands known for producing machines of the highest quality."}</p>
+        <p className="mb-8">{locale === "en-sg" ? "At Thomson Health Singapore, our factory is GMP compliant by the Health Science Authority. Equipped with an ISO 8 cleanroom, we are able to ensure strict standards of manufacturing cleanliness and consistency. Our facility uses state-of-the art machinery to produce health supplements of the highest quality." : "We at Thomson are Good Manufacturing Practice (GMP) certified by the Ministry of Health Malaysia. This means that Thomson must adhere to strict procedures to ensure cleanliness and consistency. Our manufacturing facility employs state-of-the-art machineries including German brands such as Fette, Bosch and Uhlmann, brands known for producing machines of the highest quality."}</p>
 
         <section className="gap-10 sm:flex">
           <div className="factory-left basis-1/2">

@@ -28,7 +28,7 @@ export const productSliderScenes = [
   {
     id: 2,
     title: "OsteoPro",
-    description: "Fully-Reacted 300mg Glucosamine Sulfate to promote healthy joints and cartilage.",
+    description: "Contains 300mg Glucosamine Sulfate (Fully Reacted Glucosamine Sulfate to enhance absorption) to promote healthy joints and cartilage.",
     images: {
       bg: "/images/product-animations/osteopro/osteo-bg.png",
       product: "/images/product-animations/osteopro/osteo.png",
@@ -54,7 +54,7 @@ export const productSliderScenes = [
   {
     id: 4,
     title: "ProbioGut",
-    description: "A combination of 7 billion CFUs from two clinically-supported HRB probiotics and two prebiotics to help gut function, immunity and maintaining a healthy body weight.",
+    description: "A combination of 7 billion CFUs from two clinically-supported HRB probiotics and two prebiotics to help gut function, immunity and maintaining healthy body weight.",
     images: {
       bg: "/images/product-animations/probiogut/probiogut-bg.png",
       product: "/images/product-animations/probiogut/probiogut.png",
@@ -67,7 +67,7 @@ export const productSliderScenes = [
   {
     id: 5,
     title: "CalmiLax",
-    description: "Combination of imported ingredients: Rafuma Extract, Kanna Extract, Activated Ginkgo Biloba Extract & Brewer's Yeast",
+    description: "Contains formulation of Patented and Flagship ingredients: Patented Rafuma and Kanna Extract, Flagship Activated Ginkgo Biloba Extract.",
     images: {
       bg: "/images/product-animations/calmilax/cml-bg.png",
       product: "/images/product-animations/calmilax/cml.png",
@@ -80,7 +80,7 @@ export const productSliderScenes = [
   {
     id: 6,
     title: "Xbido",
-    description: "Combination blend of patented and clinically-tested Tongkat Ali Extract and Rafuma Extract, Activated Ginkgo Biloba Extract, and Red Panax Ginseng Extract for Sports Performance and Vitality",
+    description: "Combination blend of patented and clinically-tested Tongkat Ali Extract and Rafuma Extract, Activated Ginkgo Biloba Extract, and Red Panax Ginseng Extract for Sports Performance and Vitality.",
     images: {
       bg: "/images/product-animations/xbido/xbd-bg.png",
       product: "/images/product-animations/xbido/xbd.png",

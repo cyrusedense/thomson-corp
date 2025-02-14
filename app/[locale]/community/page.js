@@ -18,7 +18,7 @@ function Community({ params: { locale } }) {
           <div className="loyalty-summary mx-auto max-w-screen-lg overflow-hidden sm:flex sm:pt-0">
             <div className="flex flex-col items-center justify-center gap-5 bg-tsdarkgreen p-10 text-center text-white sm:rounded-tl-[56px]">
               <h1 className="text-center text-4xl">Thomson Family Rewards</h1>
-              <p className="text-xl">Exclusive perks for our loyal customers!</p>
+              <p className="text-xl">Enjoy exclusive perks for our loyal customers!</p>
               <Button color="yellow" extLink={"/" + locale + "/loyalty"} text="Learn More" />
             </div>
 
