@@ -57,7 +57,7 @@ export default function Home({ params: { locale } }) {
 
   return (
     <main ref={container}>
-      <section className="relative isolate overflow-hidden pt-14">
+      <section className="relative isolate overflow-hidden pb-[15%] pt-14">
         <video className="absolute inset-0 -z-10 size-full object-cover" autoPlay muted playsInline loop src="/videos/brand-story.mp4"></video>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto py-32 sm:py-48 lg:py-56">
@@ -71,7 +71,7 @@ export default function Home({ params: { locale } }) {
 
       <Wave />
 
-      <section className="product-section relative">
+      <section className="product-section relative mt-[5%]">
         <ProductSlider />
       </section>
 

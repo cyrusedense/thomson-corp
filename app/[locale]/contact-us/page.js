@@ -66,7 +66,7 @@ function Contact({ params: { locale } }) {
         </div>
       </section>
 
-      <section className="mb-[5%]">
+      <section className="mb-[5%] pb-[15%]">
         <ContactForm />
       </section>
 

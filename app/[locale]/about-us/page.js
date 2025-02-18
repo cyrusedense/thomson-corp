@@ -55,7 +55,7 @@ function AboutUs() {
         </div>
       </section>
 
-      <section className="pb-10 md:pb-14 xl:pb-20">
+      <section className="pb-[15%]">
         <h2 className="mb-8 text-center text-4xl text-tsdarkgreen">Our Leaders</h2>
         <p className="mb-5 px-5 text-center">We are led by a team of qualified experts, passionate about building a healthy society.</p>
         <div className="leader-wrapper m-auto my-10 grid max-w-screen-xl gap-10 sm:grid-cols-3">

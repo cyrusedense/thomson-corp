@@ -83,7 +83,7 @@ const ContactForm = () => {
                       </div>
                     ))}
                     <div className="flex flex-col">
-                      <textarea className="rounded-lg border-0 bg-white p-2 p-3 text-black placeholder-gray-400 focus:outline-none" id="message" name="message" rows="4" placeholder="Message" />
+                      <textarea className="rounded-lg border-0 bg-white p-2 text-black placeholder-gray-400 focus:outline-none" id="message" name="message" rows="4" placeholder="Message" />
                     </div>
                     <div className="flex justify-center md:justify-start">
                       {/* <button className="rounded-lg bg-yellow-500 px-[15%] py-1 font-bold text-white transition hover:bg-yellow-600">

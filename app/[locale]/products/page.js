@@ -54,7 +54,7 @@ function Page({ params: { locale } }) {
         ))}
       </section>
 
-      <section className="relative py-10 pb-10 md:py-14 xl:py-20">
+      <section className="relative pb-[15%] pt-10 md:pt-14 xl:pt-20">
         <div className="px-5">
           <h1 className="mb-8 text-center text-4xl">Customer Testimonials</h1>
 
