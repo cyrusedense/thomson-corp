@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        "contact-us": "url('/images/Contact-us.png')",
+        "contact-us": "url('/images/Contact-us.jpg')",
         "about-us-pattern": "url('/images/about-pattern.png')",
         "flower-bg-1": "url('/images/flower-bg-1.png')",
         "contact-bg-1": "url('/images/contact-bg.png')",
@@ -18,7 +18,7 @@ module.exports = {
         ginkgo: "url(/images/bg-ginkgo.png)",
         "loyalty-banner": "url(/images/loyalty-banner.webp)",
         "ginkgo-2": "url(/images/bg-ginkgo-2.webp)",
-        "leadership-hero": "url(/images/leadership.png)",
+        "leadership-hero": "url(/images/leadership-new.png)",
         "careers-hero": "url(/images/careers.webp)",
         "facilities-hero": "url(/images/hero-bgs/hero-bg-facilities.webp)",
 

@@ -7,10 +7,35 @@ import { partnerList } from "@/data/partnerList";
 import { useRouter } from "@/i18n/routing";
 
 function Collaborations({ params: { locale } }) {
-  console.log(locale);
   const localizedPartnerList = partnerList[locale] || partnerList["en-my"];
 
-  console.log(localizedPartnerList);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    if (!data["email"]) {
+      alert("Please fill in your email address");
+      return;
+    }
+
+    fetch("https://proxy.wwwavy.com/thomson-corporate/newsletter/submit.php", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
+      .then((response) => {
+        alert("Thank you for subscribing to our newsletter!");
+        form.reset();
+      })
+      .catch((error) => {
+        alert("An error occurred. Please try again later.");
+      });
+  };
 
   return (
     <div>
@@ -50,13 +75,15 @@ function Collaborations({ params: { locale } }) {
 
                   <p className="text-sm md:text-lg">Be the first to know about new promotions, exclusive events, and product launches. Get health tips, wellness insights, and special offers delivered straight to your inbox. Stay connected with Thomson Health!</p>
 
-                  <form action="">
+                  <form onSubmit={handleSubmit} method="POST">
                     <div className="flex justify-between rounded-[10px] bg-white p-2">
-                      <input type="text" className="w-[70%] p-2 text-tsdarkgreen" />
+                      <input type="email" name="email" id="email" className="w-[70%] p-2 text-tsdarkgreen" />
                       <label htmlFor="email"></label>
                       <div className="">
                         {" "}
-                        <Button color="yellow" text={"Subscribe"} />
+                        <button type="submit" className="rounded-full bg-tsyellow px-3 py-2 text-black">
+                          Subscribe
+                        </button>
                       </div>
                     </div>
                   </form>

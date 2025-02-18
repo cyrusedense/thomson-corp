@@ -170,8 +170,8 @@ function Loyalty() {
 
                 {/* screens */}
                 <div className="my-14 grid gap-6 sm:grid-cols-3 xl:grid-cols-4">
-                  {screens.map((screen) => (
-                    <div key={screen.id} className="m-auto h-[550px] max-w-[250px]">
+                  {screens.map((screen, index) => (
+                    <div key={index} className="m-auto h-[550px] max-w-[250px]">
                       <div className="relative w-full">
                         <video className="rounded-[14px] border-[4px] border-black object-cover" src={screen.url} autoPlay loop muted playsInline></video>
                       </div>

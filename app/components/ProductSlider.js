@@ -263,7 +263,7 @@ export default function ProductSlider() {
               className="absolute h-screen w-screen opacity-0" // Initially hidden
             >
               {/* Product Banner */}
-              <Image className="product-banner absolute left-0 top-0 z-20 w-1/4 translate-x-full translate-y-[220%] scale-75" width={948} height={364} alt="product-banner" src={"/images/product-animations/activated-ginko/activated-ginkgo-banner.png"} />
+              <Image className="product-banner absolute left-0 top-0 z-20 w-1/4 translate-x-full translate-y-[165%] scale-75" width={948} height={364} alt="product-banner" src={scene.images.banner} />
 
               {/* Circular */}
               <Image className="product-circular absolute right-0 top-0 z-[24] w-1/6 -translate-x-[180%] translate-y-1/2 scale-75" src={scene.images.circular} alt="circular" width={601} height={588} />
