@@ -69,7 +69,7 @@ export default function Home({ params: { locale } }) {
         </div>
       </section>
 
-      <section className="h-[12rem] bg-tsyellow sm:max-h-[40px] md:max-h-[50px] lg:max-h-[60px] xl:max-h-[70px] 2xl:max-h-[80px] min-[1860px]:max-h-none">&nbsp;</section>
+      <section className="h-[12rem] max-h-[40px] bg-tsyellow md:max-h-[50px] lg:max-h-[60px] xl:max-h-[70px] 2xl:max-h-[80px] min-[1860px]:max-h-none">&nbsp;</section>
 
       <Wave />
 
