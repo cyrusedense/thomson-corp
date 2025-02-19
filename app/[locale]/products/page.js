@@ -22,31 +22,33 @@ function Page({ params: { locale } }) {
         {/* <h1 className="mb-5 text-center text-5xl">Products</h1> */}
 
         {products.map((product, index) => (
-          <section className="relative min-h-[600px] bg-cover bg-center px-5 py-10 sm:min-h-[400px] md:py-20" key={product.id} style={{ backgroundImage: `url('${product.productBg}')` }}>
-            <Image alt="shelf" className="absolute bottom-0 left-0 z-10 h-[30%] w-full object-cover" width={1000} height={300} src={"/images/shelf.png"} />
-            <div className={`absolute bottom-[5%] z-20 flex w-[300px] flex-col-reverse items-center justify-center sm:left-[50%] sm:w-[700px] sm:translate-x-[-50%] sm:flex-row sm:gap-10 ${index % 2 ? "sm:flex-row-reverse" : ""} sm:justify-between`}>
-              <Image className="aspect-square object-cover transition sm:w-[600px]" alt={product.productTitle} width={300} height={300} src={locale === "en-sg" ? product.productImageSG : product.productImageMY} />
-              <div
-                style={{
-                  color: product.textColor ? product.textColor : "white",
-                }}
-              >
-                <h2 className="mb-5 text-2xl sm:text-4xl">{product.productTitle}</h2>
-                <ul className="mb-5 ml-4">
-                  {product.benefitList.map((benefit) => (
-                    <li className="mb-5 list-outside list-disc" key={benefit}>
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-                <div className="group relative">
-                  <button onClick={() => router.push(product.productUrl)} className="flex items-center justify-center rounded-full bg-tsyellow px-4 py-2 transition-transform group-hover:scale-105">
-                    <h4 className="text-black">Read More</h4>
-                    {/* Arrow (hidden initially, appears on hover) */}
-                    <span className="button-arrow ml-2 hidden text-black opacity-0 transition-all duration-200 ease-in-out group-hover:block group-hover:opacity-100">
-                      <FiArrowRight />
-                    </span>
-                  </button>
+          <section className="relative bg-cover bg-center" style={{ backgroundImage: `url('${product.productBg}')` }} key={product.id}>
+            <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+              <div className={"relative lg:col-span-6 " + (index % 2 === 0 ? "lg:order-2" : "lg:order-1")}>
+                <Image className="mx-auto aspect-square h-auto max-h-[500px] w-[80%] max-w-[500px] object-cover lg:absolute lg:inset-0 lg:top-1/2 lg:mx-0 lg:h-full lg:w-auto lg:-translate-y-1/2 lg:transform" alt={product.productTitle} width={300} height={300} src={locale === "en-sg" ? product.productImageSG : product.productImageMY} />
+              </div>
+              <div className={"px-6 pb-12 pt-6 sm:pb-16 lg:col-span-6 lg:px-0 lg:pb-24 lg:pt-24 xl:col-span-6 " + (index % 2 === 0 ? "lg:order-1" : "lg:order-2")}>
+                <div className="mx-auto max-w-lg lg:mx-0">
+                  <div
+                    style={{
+                      color: product.textColor ? product.textColor : "white",
+                    }}
+                  >
+                    <h1 className="mt-12 text-pretty text-5xl font-semibold tracking-tight sm:mt-10 sm:text-7xl">{product.productTitle}</h1>
+
+                    <ul className="mt-8 text-pretty text-lg font-medium sm:text-xl/8">
+                      {product.benefitList.map((benefit) => (
+                        <li className="list-outside list-disc" key={benefit}>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-10 flex items-center gap-x-6">
+                    <a href={product.productUrl} target="_blank" className="rounded-md bg-tsyellow px-3.5 py-2.5 text-base font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                      Read More
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
