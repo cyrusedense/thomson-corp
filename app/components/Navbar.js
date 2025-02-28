@@ -194,7 +194,13 @@ function Navbar() {
     <nav className={`fixed top-0 z-40 m-auto flex h-[50px] w-screen items-center justify-between gap-10 px-5 py-10 transition-all duration-300 ${hasScrolled ? "bg-tsdarkgreen bg-opacity-90 backdrop-blur-md" : "bg-transparent"}`}>
       <div className="mx-auto flex w-screen max-w-screen-2xl justify-between gap-10">
         <div className="logo-wrapper">
-          <Logo color="white" />
+          {hasScrolled ? (
+            <Logo color="white" />
+          ) : (
+            <Link href="/">
+              <Image src={"/images/thomson.webp"} alt="Logo" className="h-[44px] w-auto" width={724} height={160} />
+            </Link>
+          )}
         </div>
 
         <div className="hidden w-full lg:block">
