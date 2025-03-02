@@ -30,23 +30,12 @@ function Community({ params: { locale } }) {
 
         <div className="m-auto max-w-screen-lg py-10 md:py-14 lg:py-20">
           <h1 className="mb-6 text-center text-4xl">ROADSHOW & EVENTS</h1>
-          {/* <p className="text-center text-2xl">
-            Check out our{" "}
-            <a href="https://www.instagram.com/thomsonhealth_sg/" className="underline">
-              Instagram
-            </a>{" "}
-            page for information on our latest and upcoming roadshow and events
-          </p> */}
-          <iframe src="https://www.instagram.com/thomsonhealth_sg/embed" className="mx-auto" width="100%" height="500" frameBorder="0" scrolling="no" allowtransparency="true"></iframe>
+          {locale === "en-sg" ? <iframe src="https://www.instagram.com/thomsonhealth_sg/embed" className="mx-auto" width="100%" height="500" frameBorder="0" scrolling="no" allowtransparency="true"></iframe> : <p className="text-center text-2xl">Watch this space for future events</p>}
         </div>
 
         <div className="m-auto max-w-screen-lg py-10 md:py-14 lg:py-20">
-          <h1 className="mb-6 text-center text-4xl">ARTICLES THAT MAY INTEREST YOU</h1>
-        </div>
-        <div className="blog-wrapper m-auto grid max-w-screen-lg gap-6 text-white md:grid-cols-3">
-          {roadshowEvents.map((roadshowEvent) => (
-            <BlogCard extUrl={roadshowEvent.extUrl} color={roadshowEvent.color} title={roadshowEvent.title} author={roadshowEvent.author} featuredImage={roadshowEvent.featuredImage} key={roadshowEvent.title} />
-          ))}
+          <h1 className="mb-6 text-center text-4xl">WEBINAR & WORKSHOP</h1>
+          <p className="text-center text-2xl">Watch this space for future webinars / workshops</p>
         </div>
       </section>
       {/* <section className="relative aspect-[16/9] w-full">

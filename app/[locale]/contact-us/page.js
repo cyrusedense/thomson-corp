@@ -26,20 +26,7 @@ function Contact({ params: { locale } }) {
             </div>
             <div className="md:ml-4 md:text-start">
               <h3 className="text-[20px]">Phone</h3>
-              {locale === "en-sg" ? (
-                <p className="text-[15px]">+65 6612 1359</p>
-              ) : (
-                <div className="flex flex-col md:flex-row md:space-x-9">
-                  <div className="mb-2 flex flex-col leading-[14px]">
-                    <p className="text-[15px]">(office)</p>
-                    <p className="text-[15px]">+603-6150 5818</p>
-                  </div>
-                  <div className="flex flex-col leading-[14px]">
-                    <p className="text-[15px]">(factory)</p>
-                    <p className="text-[15px]">+603-6157 4818</p>
-                  </div>
-                </div>
-              )}
+              {locale === "en-sg" ? <p className="text-[15px]">+65 6612 1359</p> : <p className="text-[15px]">+603-6157 4818</p>}
             </div>
           </div>
 
@@ -76,7 +63,7 @@ function Contact({ params: { locale } }) {
         <LocationInfo />
       </section>
 
-      <section className="relative mt-[10%] flex flex-col items-center justify-center">
+      {/* <section className="relative mt-[10%] flex flex-col items-center justify-center">
         <h1 className="mb-[5%] p-1 text-center text-3xl underline md:text-[35px]">COLLABORATIONS & PARTNERSHIPS</h1>
 
         <div className="m-auto flex max-w-screen-xl flex-col items-center md:flex-row">
@@ -99,7 +86,7 @@ function Contact({ params: { locale } }) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

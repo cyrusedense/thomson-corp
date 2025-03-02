@@ -57,13 +57,13 @@ export default function Home({ params: { locale } }) {
 
   return (
     <main ref={container}>
-      <section className="relative isolate overflow-hidden pb-[15%] pt-14">
-        <video className="absolute inset-0 -z-10 size-full object-cover" autoPlay muted playsInline loop src="/videos/brand-story.mp4"></video>
+      <section className="relative isolate overflow-hidden">
+        <video className="absolute inset-0 -z-10 size-full object-cover" autoPlay muted playsInline loop src="/videos/brand-story.mp4?v=4"></video>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto py-32 sm:py-48 lg:py-56">
-            <div className="text-left">
-              <h1 className="text-balance font-hightide text-5xl tracking-tight text-white sm:text-[150px]">Redefining</h1>
-              <p className="mt-1 text-pretty text-3xl text-white sm:text-5xl">Health and Wellness for a Better You</p>
+          <div className="mx-auto py-32 md:py-48 lg:py-96 2xl:py-[30rem]">
+            <div className="text-center">
+              {/* <h1 className="text-balance font-hightide text-5xl tracking-tight text-white sm:text-[150px]">Redefining</h1> */}
+              <p className="mt-1 text-pretty bg-black bg-opacity-10 text-5xl font-bold text-white sm:text-7xl lg:text-8xl">38 years of experience in health supplements</p>
             </div>
           </div>
         </div>

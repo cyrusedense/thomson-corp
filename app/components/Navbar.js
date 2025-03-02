@@ -22,7 +22,7 @@ const SG_NAV_LINKS = [
       { href: "/factory", label: "Factory Facilities" },
     ],
   },
-  { href: "/products", label: "Our Products" },
+  { href: "/products", label: "Products" },
   {
     href: "/community",
     label: "Community",
@@ -31,6 +31,8 @@ const SG_NAV_LINKS = [
       { href: "/collaborations", label: "Collaborations" },
     ],
   },
+  { href: "/resources", label: "Resources" },
+  { href: "https://sg-shop.thomsonhealth.com/collections/all", label: "Shop" },
 ];
 
 const MY_NAV_LINKS = [
@@ -43,12 +45,18 @@ const MY_NAV_LINKS = [
       { href: "/factory", label: "Factory Facilities" },
     ],
   },
-  { href: "/products", label: "Our Products" },
+  { href: "/products", label: "Products" },
   {
     href: "/community",
     label: "Community",
-    submenu: [{ href: "/collaborations", label: "Collaborations" }],
+    submenu: [
+      { href: "https://my.thomsonhealth.com/thomsonfamily-loyalty-program/", label: "Loyalty Program" },
+      { href: "/collaborations", label: "Collaborations" },
+    ],
   },
+  { href: "/resources", label: "Resources" },
+  { href: "/faqs", label: "FAQs" },
+  { href: "https://my-shop.thomsonhealth.com/collections/all", label: "Shop" },
 ];
 
 // Desktop navigation links component with submenu support
@@ -57,7 +65,7 @@ function DesktopLinks() {
 
   return (
     <div className="flex w-full items-center justify-between">
-      <ul className="flex items-center gap-5 text-white">
+      <ul className="flex items-center gap-5">
         {locale === "en-sg"
           ? SG_NAV_LINKS.map((link) => (
               <li key={link.label} className="group relative py-4">
@@ -68,7 +76,7 @@ function DesktopLinks() {
 
                 {/* Submenu */}
                 {link.submenu && (
-                  <ul className="pointer-events-none absolute left-0 top-full w-40 rounded-md bg-tsdarkgreen opacity-0 shadow-lg transition-all duration-300 ease-in-out group-hover:pointer-events-auto group-hover:flex group-hover:flex-col group-hover:opacity-100">
+                  <ul className="pointer-events-none absolute left-0 top-full w-40 rounded-md bg-tsdarkgreen text-white opacity-0 shadow-lg transition-all duration-300 ease-in-out group-hover:pointer-events-auto group-hover:flex group-hover:flex-col group-hover:opacity-100">
                     {link.submenu.map((sublink) => (
                       <li key={sublink.label}>
                         <Link href={sublink.href} className="block px-4 py-2 hover:bg-tsyellow">
@@ -89,7 +97,7 @@ function DesktopLinks() {
 
                 {/* Submenu */}
                 {link.submenu && (
-                  <ul className="pointer-events-none absolute left-0 top-full w-40 rounded-md bg-tsdarkgreen opacity-0 shadow-lg transition-all duration-300 ease-in-out group-hover:pointer-events-auto group-hover:flex group-hover:flex-col group-hover:opacity-100">
+                  <ul className="pointer-events-none absolute left-0 top-full w-40 rounded-md bg-tsdarkgreen text-white opacity-0 shadow-lg transition-all duration-300 ease-in-out group-hover:pointer-events-auto group-hover:flex group-hover:flex-col group-hover:opacity-100">
                     {link.submenu.map((sublink) => (
                       <li key={sublink.label}>
                         <Link href={sublink.href} className="block px-4 py-2 hover:bg-tsyellow">
@@ -101,9 +109,11 @@ function DesktopLinks() {
                 )}
               </li>
             ))}
-        <Button intLink="/contact-us" color="yellow" text="Contact Us" />
       </ul>
-      <LocaleSwitcher />
+      <div className="flex flex-row gap-5">
+        <LocaleSwitcher />
+        <Button intLink="/contact-us" color="yellow" text="Contact Us" />
+      </div>
     </div>
   );
 }
@@ -118,7 +128,7 @@ function MobileMenu({ isOpen, closeMenu }) {
   };
 
   return (
-    <div className={`absolute right-0 top-0 w-[60%] lg:hidden ${isOpen ? "translate-x-0" : "translate-x-full"} flex min-h-screen flex-col items-center justify-center rounded-br-[56px] rounded-tl-[56px] bg-tsdarkgreen p-10 py-20 text-white transition-transform duration-500`}>
+    <div className={`absolute right-0 top-0 w-[60%] xl:hidden ${isOpen ? "translate-x-0" : "translate-x-full"} flex min-h-screen flex-col items-center justify-center rounded-br-[56px] rounded-tl-[56px] bg-tsdarkgreen p-10 py-20 text-white transition-transform duration-500`}>
       <ul className="w-full space-y-6 text-center text-white">
         {locale === "en-sg"
           ? SG_NAV_LINKS.map((link, index) => (
@@ -132,7 +142,7 @@ function MobileMenu({ isOpen, closeMenu }) {
                 {link.submenu && openSubmenu === index && (
                   <ul className="pl-8 text-white">
                     {link.submenu.map((sublink) => (
-                      <li key={sublink.label} className="py-1">
+                      <li key={sublink.label} className="py-1 text-left">
                         <Link href={sublink.href} className="hover:text-tsyellow">
                           {sublink.label}
                         </Link>
@@ -153,7 +163,7 @@ function MobileMenu({ isOpen, closeMenu }) {
                 {link.submenu && openSubmenu === index && (
                   <ul className="pl-8 text-white">
                     {link.submenu.map((sublink) => (
-                      <li key={sublink.label} className="py-1">
+                      <li key={sublink.label} className="py-1 text-left">
                         <Link href={sublink.href} className="hover:text-tsyellow">
                           {sublink.label}
                         </Link>
@@ -163,12 +173,13 @@ function MobileMenu({ isOpen, closeMenu }) {
                 )}
               </li>
             ))}
-        <li>
-          <Button clickFunction={closeMenu} link="/contact-us" color="yellow" text="Contact Us" />
-        </li>
+        <li></li>
       </ul>
       <div className="mt-10"></div>
-      <LocaleSwitcher />
+      <div className="flex flex-col gap-5">
+        <LocaleSwitcher />
+        <Button intLink="/contact-us" color="yellow" text="Contact Us" />
+      </div>
     </div>
   );
 }
@@ -191,7 +202,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 z-40 m-auto flex h-[50px] w-screen items-center justify-between gap-10 px-5 py-10 transition-all duration-300 ${hasScrolled ? "bg-tsdarkgreen bg-opacity-90 backdrop-blur-md" : "bg-transparent"}`}>
+    <nav className={`fixed top-0 z-40 m-auto flex h-[50px] w-screen items-center justify-between gap-10 px-5 py-10 backdrop-blur-md transition-all duration-300 ${hasScrolled ? "bg-tsdarkgreen" : "bg-white"}`}>
       <div className="mx-auto flex w-screen max-w-screen-2xl justify-between gap-10">
         <div className="logo-wrapper">
           {hasScrolled ? (
@@ -203,12 +214,12 @@ function Navbar() {
           )}
         </div>
 
-        <div className="hidden w-full lg:block">
+        <div className={`hidden w-full xl:block ${hasScrolled ? "text-white" : "text-black"}`}>
           <DesktopLinks />
         </div>
       </div>
 
-      <div className="z-10 lg:hidden">
+      <div className="z-10 xl:hidden">
         <Hamburger toggled={isOpen} toggle={setOpen} rounded color="white" size={38} direction="right" />
       </div>
 

@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/routing";
+import Image from "next/image";
 
 import Logo from "./Logo";
 import { useLocale } from "next-intl"; // Import useLocale for locale detection
@@ -18,6 +19,7 @@ function Footer() {
   const quickLinks = [
     { href: "/about-us", label: "About Us" },
     { href: "/community", label: "Community" },
+    { href: "#", label: "Privacy Policy" },
   ];
 
   const purchaseLinks = [
@@ -31,8 +33,19 @@ function Footer() {
         {/* Column 1 - Company Info */}
         <div className="footer-column-one flex flex-col gap-5">
           <Logo color={"white"} />
-          <p>THOMSON HEALTH PTE LTD</p>
-          <p>201710714E</p>
+          {locale === "en-sg" ? (
+            <div>
+              <p>THOMSON HEALTH PTE LTD</p>
+              <p>201710714E</p>
+            </div>
+          ) : (
+            <div>
+              <p>HERBAL REVIVAL SDN BHD</p>
+              <p>198701000341 (159007-X)</p>
+              <p className="mt-3">Proud member of MOPI and MADSA</p>
+              <Image src="/images/madsa-mopi.png" width={1920} height={543} alt="MADSA MOPI" className="max-w-60" />
+            </div>
+          )}
         </div>
 
         {/* Column 2 - Quick Links */}

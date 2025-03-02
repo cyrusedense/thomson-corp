@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import { Lato } from "next/font/google";
 import Footer from "../components/Footer";
 import localFont from "next/font/local";
+import { FaWhatsapp } from "react-icons/fa";
 
 const lato = Lato({
   weight: ["400", "700", "900"],
@@ -46,8 +47,11 @@ export default async function LocaleLayout({ children, params: { locale } }) {
       <NextIntlClientProvider messages={messages}>
         <body className={`${lato.className} ${highTide.variable} overflow-x-hidden`}>
           <Navbar />
-          {children}
+          <div className="mt-[56px]">{children}</div>
           <Footer />
+          <a href={"https://api.whatsapp.com/send?phone=" + (locale === "en-sg" ? "6566121359" : "60128786438")} className="fixed bottom-10 right-10 z-[999999] flex h-[60px] w-[60px] flex-col items-center justify-center rounded-full bg-[#25D366] text-center text-3xl text-white shadow-md" target="_blank">
+            <FaWhatsapp size={45} color="white" />
+          </a>
         </body>
       </NextIntlClientProvider>
     </html>

@@ -2,11 +2,18 @@
 
 import Image from "next/image";
 import Button from "../../components/Button";
+import { useRouter } from "next/navigation";
 
 import { FiArrowRight } from "react-icons/fi";
 import SingleFAQ from "../../components/SingleFAQ";
 
-function Loyalty() {
+function Loyalty({ params: { locale } }) {
+  const router = useRouter();
+
+  if (locale === "en-my") {
+    router.replace("https://my.thomsonhealth.com/thomsonfamily-loyalty-program/");
+  }
+
   return (
     <main className="bg-[#f7f7f7]">
       <section className="h-20 bg-tsdarkgreen"></section>

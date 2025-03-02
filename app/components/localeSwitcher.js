@@ -36,15 +36,15 @@ function LocaleSwitcher() {
   const otherLocales = Object.keys(locales).filter((code) => code !== currentLocale);
 
   return (
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-white">
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full bg-tsdarkgreen px-4 py-2 text-white">
       <p> You are currently browsing in:</p>
       <div className="relative inline-block text-white">
-        <div onClick={toggleMenu} className="flex cursor-pointer items-center gap-2 rounded p-2 hover:bg-gray-700">
+        <div onClick={toggleMenu} className="flex cursor-pointer items-center gap-2 rounded p-2 hover:bg-tsyellow">
           <Image className="h-3 w-4" width={40} height={30} src={`/images/flags/${activeLocale.flag}.svg`} alt={activeLocale.label} />
           <span>{activeLocale.label}</span>
         </div>
         {menuOpen && (
-          <div className="absolute top-full mt-2 rounded bg-gray-800 shadow-lg">
+          <div className="absolute top-full mt-2 rounded bg-tsyellow shadow-lg">
             {otherLocales.map((code) => (
               <div key={code} onClick={() => onLocaleChange(code)} className="flex cursor-pointer items-center gap-2 p-2 hover:bg-gray-700">
                 <Image className="h-3 w-4" width={40} height={30} src={`/images/flags/${locales[code].flag}.svg`} alt={locales[code].label} />

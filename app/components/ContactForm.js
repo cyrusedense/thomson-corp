@@ -68,8 +68,8 @@ const ContactForm = () => {
     <main className="relative z-[9999]">
       <div className="m-auto flex max-w-screen-xl flex-col items-center justify-between md:flex-row">
         <div className="grid-left flex flex-col items-center gap-6 sm:basis-1/2 md:mb-[15%] md:items-start md:px-20 md:text-left">
-          <h1 className="text-[40px] text-tsdarkgreen sm:text-[50px]">Get In Touch</h1>
-          <p className="max-w-[80%] px-2 text-center text-2xl text-tsdarkgreen sm:px-0 md:text-left">We will be in touch within 2-5 working days</p>
+          <h1 className="text-[40px] text-tsdarkgreen sm:text-[50px]">Contact Thomson Health</h1>
+          <p className="max-w-[80%] px-2 text-center text-2xl text-tsdarkgreen sm:px-0 md:text-left">Connect with us! Fill in the form below or WhatsApp us and we will get back to you as soon as we can.</p>
         </div>
         <div className="grid-right z-10 mt-8 h-auto w-full px-10 md:mt-0 md:w-[1000px] md:px-0 lg:relative lg:right-[-15%]">
           <div className="outer-div flex h-full items-start rounded-l-[56px] rounded-tr-[56px] bg-tsdarkgreen p-4">
@@ -83,14 +83,36 @@ const ContactForm = () => {
                       </div>
                     ))}
                     <div className="flex flex-col">
-                      <textarea className="rounded-lg border-0 bg-white p-2 text-black placeholder-gray-400 focus:outline-none" id="message" name="message" rows="4" placeholder="Message" />
+                      <select className="border-0 border-b-2 border-white bg-transparent p-2 text-white placeholder-gray-400 focus:outline-none" id="type" name="type" defaultValue={"default"}>
+                        <option className="text-black" value="default" disabled>
+                          Enquiry Type
+                        </option>
+                        <option className="text-black" value="Product Feedback">
+                          Product Feedback
+                        </option>
+                        <option className="text-black" value="Product Distribution">
+                          Product Distribution
+                        </option>
+                        <option className="text-black" value="Collaboration and Partnership">
+                          Collaboration and Partnership
+                        </option>
+                        <option className="text-black" value="Marketing">
+                          Marketing
+                        </option>
+                        <option className="text-black" value="Others">
+                          Others
+                        </option>
+                      </select>
+                    </div>
+                    <div className="flex flex-col">
+                      <textarea className="border-0 border-b-2 border-white bg-transparent p-2 text-white placeholder-gray-400 focus:outline-none" id="message" name="message" rows="4" placeholder="Message" />
                     </div>
                     <div className="flex justify-center md:justify-start">
                       {/* <button className="rounded-lg bg-yellow-500 px-[15%] py-1 font-bold text-white transition hover:bg-yellow-600">
                         Submit
                       </button> */}{" "}
                       <button type="submit" className="rounded-full bg-tsyellow px-3 py-2 text-black">
-                        Subscribe
+                        Submit
                       </button>
                     </div>
                   </form>

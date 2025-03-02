@@ -3,19 +3,21 @@
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
-import { products } from "@/data/products";
+import { myProducts, sgProducts } from "@/data/products";
 import { reviews } from "@/data/reviews";
 import Wave from "@/app/components/Wave";
 
 function Page({ params: { locale } }) {
   const router = useRouter();
 
+  const products = locale === "en-my" ? myProducts : sgProducts;
+
   return (
     <div>
       <section className="relative flex min-h-[50vh] items-center bg-product-bg bg-cover bg-right md:min-h-[50vh]">
         <div className="hero-text-wrapper m-auto w-screen max-w-screen-2xl px-5">
-          <h1 className="mb-4 text-4xl text-white md:text-6xl">Our Products</h1>
-          <p className="text-xl text-white">Everything you need to supercharge your health</p>
+          <h1 className="mb-4 text-6xl text-white lg:text-8xl">Our Products</h1>
+          <p className="text-xl text-white lg:text-3xl">{locale === "en-sg" ? "Everything you need to supercharge your health" : "Made for your health and wellness"}</p>
         </div>
       </section>
       <section>
@@ -24,18 +26,20 @@ function Page({ params: { locale } }) {
         {products.map((product, index) => (
           <section className="relative bg-cover bg-center" style={{ backgroundImage: `url('${product.productBg}')` }} key={product.id}>
             <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-              <div className={"relative lg:col-span-6 " + (index % 2 === 0 ? "lg:order-2" : "lg:order-1")}>
-                <Image className="mx-auto aspect-square h-auto max-h-[500px] w-[80%] max-w-[500px] object-cover lg:absolute lg:inset-0 lg:top-1/2 lg:mx-0 lg:h-full lg:w-auto lg:-translate-y-1/2 lg:transform" alt={product.productTitle} width={300} height={300} src={locale === "en-sg" ? product.productImageSG : product.productImageMY} />
+              <div className={"relative flex items-center lg:col-span-5 " + (index % 2 === 0 ? "lg:order-2" : "lg:order-1")}>
+                <div className="w-full">
+                  <Image className="mx-auto aspect-square h-auto w-full max-w-[500px]" alt={product.productTitle} width={300} height={300} src={product.productImage} />
+                </div>
               </div>
-              <div className={"px-6 pb-12 pt-6 sm:pb-16 lg:col-span-6 lg:px-0 lg:pb-24 lg:pt-24 xl:col-span-6 " + (index % 2 === 0 ? "lg:order-1" : "lg:order-2")}>
+              <div className={"px-6 pb-12 pt-6 sm:pb-16 lg:col-span-7 lg:px-0 lg:pb-24 lg:pt-24 " + (index % 2 === 0 ? "lg:order-1" : "lg:order-2")}>
                 <div className="mx-auto max-w-lg lg:mx-0">
                   <div
                     style={{
                       color: product.textColor ? product.textColor : "white",
                     }}
                   >
-                    <h1 className="mt-12 text-pretty text-5xl font-semibold tracking-tight sm:mt-10 sm:text-7xl">{product.productTitle}</h1>
-
+                    <h1 className="mt-12 text-pretty text-4xl font-semibold tracking-tight sm:mt-10 sm:text-6xl">{product.productTitle}</h1>
+                    <small>MAL {product.mal}</small>
                     <ul className="mt-8 text-pretty text-lg font-medium sm:text-xl/8">
                       {product.benefitList.map((benefit) => (
                         <li className="list-outside list-disc" key={benefit}>

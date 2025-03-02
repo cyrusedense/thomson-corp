@@ -1,12 +1,16 @@
 "use client"; // Mark as client component
 
+import { useLocale } from "next-intl";
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
-import { productSliderScenes } from "@/data/productSliderData";
+import { sgProductSliderScenes, myProductSliderScenes } from "@/data/productSliderData";
 
 export default function ProductSlider() {
+  const locale = useLocale();
+  const productSliderScenes = locale === "en-sg" ? sgProductSliderScenes : myProductSliderScenes;
+
   //to do sliding
 
   const [currentScene, setCurrentScene] = useState(0); // Track active scene

@@ -35,18 +35,7 @@ function LocationInfo() {
             </div>
           ) : (
             <div className="w-screen sm:flex sm:gap-20">
-              <div className="mb-5">
-                <h4 className="text-xl">Sales and Marketing Office</h4>
-                <p>
-                  {" "}
-                  C-06-07, Sunway Nexis, <br /> No. 1, Jalan PJU 5/1, <br />
-                  Kota Damansara, <br />
-                  47810 Petaling Jaya, Malaysia
-                </p>
-              </div>
-
               <div>
-                <h4 className="text-xl">Factory</h4>
                 <p>
                   No. 5 & 7, Jalan TSB 6, <br />
                   Taman Industri Sungai Buloh, <br /> 47000 Sungai Buloh, Malaysia
@@ -58,7 +47,7 @@ function LocationInfo() {
       </section>
 
       {/* Location Map Section */}
-      <section className="flex justify-center p-4">{locale === "en-sg" ? <iframe className="rounded-[8%] border shadow-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.3679084947105!2d103.8993934491263!3d1.3347056999999949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da17a57e0f4829%3A0x96bbc14a7a5ca9f7!2sThomson%20Health%20SG!5e0!3m2!1sen!2smy!4v1739382612987!5m2!1sen!2smy" width="1126" height="495" style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe> : <iframe className="rounded-[8%] border shadow-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.98658267617256!2d101.59484285370863!3d3.1512465523663953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f5552701ff5%3A0xc09c5a76ad78dc55!2sSunway%20Nexis!5e0!3m2!1sen!2smy!4v1739382754462!5m2!1sen!2smy" width="1126" height="495" style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe>}</section>
+      <section className="flex justify-center p-4">{locale === "en-sg" ? <iframe className="rounded-[8%] border shadow-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.3679084947105!2d103.8993934491263!3d1.3347056999999949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da17a57e0f4829%3A0x96bbc14a7a5ca9f7!2sThomson%20Health%20SG!5e0!3m2!1sen!2smy!4v1739382612987!5m2!1sen!2smy" width="1126" height="495" style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe> : <iframe className="rounded-[8%] border shadow-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d592.1863224468061!2d101.57059082116143!3d3.163364662409417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4fa76311737b%3A0x7b4bcb6d12a1c4d7!2sThomson%20Health%20%7C%20Herbal%20Revival%20Sdn%20Bhd%20%7C%20HQ!5e0!3m2!1sen!2smy!4v1740874503047!5m2!1sen!2smy" width="1126" height="495" style={{ border: 0 }} allowFullScreen="" loading="lazy"></iframe>}</section>
     </main>
   );
 }
