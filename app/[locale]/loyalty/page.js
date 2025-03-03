@@ -2,11 +2,18 @@
 
 import Image from "next/image";
 import Button from "../../components/Button";
+import { useRouter } from "next/navigation";
 
 import { FiArrowRight } from "react-icons/fi";
 import SingleFAQ from "../../components/SingleFAQ";
 
-function Loyalty() {
+function Loyalty({ params: { locale } }) {
+  const router = useRouter();
+
+  if (locale === "en-my") {
+    router.replace("https://my.thomsonhealth.com/thomsonfamily-loyalty-program/");
+  }
+
   return (
     <main className="bg-[#f7f7f7]">
       <section className="h-20 bg-tsdarkgreen"></section>
@@ -39,7 +46,7 @@ function Loyalty() {
         </div>
       </section>
 
-      <section className="h-auto gap-5 bg-ginkgo bg-cover py-10 md:py-14 xl:py-20">
+      <section id="section-why-join-us" className="h-auto gap-5 bg-ginkgo bg-cover py-10 md:py-14 xl:py-20">
         <div className="m-auto max-w-screen-lg px-5">
           <h1 className="mb-5 text-center text-4xl font-bold text-[#195729] md:text-left md:text-5xl md:text-[50px]">Why Join Us?</h1>
         </div>
@@ -97,94 +104,6 @@ function Loyalty() {
         </div>
       </section>
 
-      <section className="px-5 py-10 md:py-14 xl:py-20">
-        <div className="m-auto max-w-screen-lg">
-          <h1 className="mb-5 text-left text-4xl font-bold text-tsdarkgreen md:text-5xl">How To’s</h1>
-
-          <div className="">
-            {[
-              {
-                id: 1,
-                question: "How to Register",
-                answer: "Sign up with either your email or mobile number",
-                screens: [
-                  {
-                    url: "/videos/1-1.mp4",
-                    caption: "Press Sign Up",
-                  },
-                  {
-                    url: "/videos/1-2.mp4",
-                    caption: "Use Email / Mobile Number",
-                  },
-                  {
-                    url: "/videos/1-3.mp4",
-                    caption: "Fill in your Info",
-                  },
-                ],
-              },
-              {
-                id: 2,
-                question: "How to Submit Receipts",
-                answer: "",
-                screens: [
-                  {
-                    url: "/videos/2-1.mp4",
-                    caption: "Submit Receipt",
-                  },
-                ],
-              },
-              {
-                id: 3,
-                question: "Share Your Thomson Experience",
-                answer: "Share your testimonial to receive more points",
-                screens: [
-                  {
-                    url: "/videos/2-2.mp4",
-                    caption: "Share Your Experience",
-                  },
-                ],
-              },
-
-              {
-                id: 4,
-                question: "How to Refer a Friend!",
-                answer: "Refer a friend and you both can enjoy referral points after their first Thomson purchase",
-                screens: [
-                  {
-                    url: "/videos/2-3.mp4",
-                    caption: "Refer a Friend",
-                  },
-                ],
-              },
-            ].map(({ id, question, answer, screens }, index) => (
-              <details className="group mb-6 [&_summary::-webkit-details-marker]:hidden" key={id} open={index === 0} id={"howto" + id}>
-                <summary className="flex cursor-pointer items-center justify-between p-0 text-2xl font-medium text-[#195729] xl:text-3xl">
-                  <h2 className="text-tsdarkgreen">{question}</h2>
-                  <div className="rounded-full p-1 text-[#195729] shadow-md">
-                    <svg className="h-6 w-6 rotate-180 text-[#195729] transition-transform duration-300 group-open:rotate-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
-                    </svg>
-                  </div>
-                </summary>
-                <p className="mt-2 text-lg font-bold text-[#195729]">{answer}</p>
-
-                {/* screens */}
-                <div className="my-14 grid gap-6 sm:grid-cols-3 xl:grid-cols-4">
-                  {screens.map((screen, index) => (
-                    <div key={index} className="m-auto h-[550px] max-w-[250px]">
-                      <div className="relative w-full">
-                        <video className="rounded-[14px] border-[4px] border-black object-cover" src={screen.url} autoPlay loop muted playsInline></video>
-                      </div>
-                      <h3 className="my-3 text-center text-xl text-tsdarkgreen">{screen.caption}</h3>
-                    </div>
-                  ))}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-loyalty-banner bg-cover bg-center px-5 py-10 text-white md:py-14 lg:py-20">
         <h1 className="mb-5 text-center text-4xl font-bold">Be Part of the Family</h1>
         <h3 className="mb-5 text-center text-xl">Now with our new Loyalty Program! Sign up today to enjoy our benefits!</h3>
@@ -193,9 +112,97 @@ function Loyalty() {
         </div>
       </section>
 
-      <section className="min-h-[50vh] bg-ginkgo-2 bg-contain bg-center px-5 py-10 md:py-14 lg:py-20">
+      <section id="section-faq" className="min-h-[50vh] bg-ginkgo-2 bg-contain bg-center px-5 py-10 md:py-14 lg:py-20">
         <div className="faq-content-wrapper m-auto max-w-screen-lg">
           <h1 className="mb-5 text-4xl font-bold text-tsdarkgreen">Common FAQ</h1>
+
+          <div className="px-5 py-5 md:py-7 xl:py-10">
+            <div className="m-auto max-w-screen-lg">
+              <h1 className="mb-5 text-left text-4xl font-bold text-tsdarkgreen md:text-5xl">How To’s</h1>
+
+              <div className="">
+                {[
+                  {
+                    id: 1,
+                    question: "How to Register",
+                    answer: "Sign up with either your email or mobile number",
+                    screens: [
+                      {
+                        url: "/videos/1-1.mp4",
+                        caption: "Press Sign Up",
+                      },
+                      {
+                        url: "/videos/1-2.mp4",
+                        caption: "Use Email / Mobile Number",
+                      },
+                      {
+                        url: "/videos/1-3.mp4",
+                        caption: "Fill in your Info",
+                      },
+                    ],
+                  },
+                  {
+                    id: 2,
+                    question: "How to Submit Receipts",
+                    answer: "",
+                    screens: [
+                      {
+                        url: "/videos/2-1.mp4",
+                        caption: "Submit Receipt",
+                      },
+                    ],
+                  },
+                  {
+                    id: 3,
+                    question: "Share Your Thomson Experience",
+                    answer: "Share your testimonial to receive more points",
+                    screens: [
+                      {
+                        url: "/videos/2-2.mp4",
+                        caption: "Share Your Experience",
+                      },
+                    ],
+                  },
+
+                  {
+                    id: 4,
+                    question: "How to Refer a Friend!",
+                    answer: "Refer a friend and you both can enjoy referral points after their first Thomson purchase",
+                    screens: [
+                      {
+                        url: "/videos/2-3.mp4",
+                        caption: "Refer a Friend",
+                      },
+                    ],
+                  },
+                ].map(({ id, question, answer, screens }, index) => (
+                  <details className="group mb-6 [&_summary::-webkit-details-marker]:hidden" key={id} open={index === 0} id={"howto" + id}>
+                    <summary className="flex cursor-pointer items-center justify-between p-0 text-2xl font-medium text-[#195729] xl:text-3xl">
+                      <h2 className="text-tsdarkgreen">{question}</h2>
+                      <div className="rounded-full p-1 text-[#195729] shadow-md">
+                        <svg className="h-6 w-6 rotate-180 text-[#195729] transition-transform duration-300 group-open:rotate-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
+                        </svg>
+                      </div>
+                    </summary>
+                    <p className="mt-2 text-lg font-bold text-[#195729]">{answer}</p>
+
+                    {/* screens */}
+                    <div className="my-14 grid gap-6 sm:grid-cols-3 xl:grid-cols-4">
+                      {screens.map((screen, index) => (
+                        <div key={index} className="m-auto h-[550px] max-w-[250px]">
+                          <div className="relative w-full">
+                            <video className="rounded-[14px] border-[4px] border-black object-cover" src={screen.url} autoPlay loop muted playsInline></video>
+                          </div>
+                          <h3 className="my-3 text-center text-xl text-tsdarkgreen">{screen.caption}</h3>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </div>
 
           <div className="general-section">
             <h3 className="mb-3 text-2xl text-tsdarkgreen">General Questions</h3>
