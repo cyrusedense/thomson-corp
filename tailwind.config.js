@@ -18,7 +18,7 @@ module.exports = {
         ginkgo: "url(/images/bg-ginkgo.png)",
         "loyalty-banner": "url(/images/loyalty-banner.webp)",
         "ginkgo-2": "url(/images/bg-ginkgo-2.webp)",
-        "leadership-hero": "url(/images/leadership-new.png)",
+        "leadership-hero": "url(/images/leadereship-banner-01.png)",
         "careers-hero": "url(/images/careers.webp)",
         "facilities-hero": "url(/images/hero-bgs/hero-bg-facilities.webp)",
 

@@ -36,7 +36,7 @@ function LocaleSwitcher() {
   const otherLocales = Object.keys(locales).filter((code) => code !== currentLocale);
 
   return (
-    <div className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-full bg-tsdarkgreen px-4 py-2 text-white">
+    <div className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 rounded-full bg-tsdarkgreen px-3 py-1 text-white">
       <p> You are currently browsing in:</p>
       <div className="relative inline-block text-white">
         <div onClick={toggleMenu} className="flex cursor-pointer items-center gap-2 rounded p-2 hover:bg-tsyellow">

@@ -273,7 +273,7 @@ export default function ProductSlider() {
               <Image className="product-circular absolute right-0 top-0 z-[24] w-1/6 -translate-x-[180%] translate-y-1/2 scale-75" src={scene.images.circular} alt="circular" width={601} height={588} />
 
               {/* Product Image */}
-              <Image src={scene.images.product} alt="product" width={1000} height={1000} className="product-image absolute top-0 z-[22] w-1/3 translate-x-full translate-y-1/2 scale-90" />
+              {locale === "en-sg" ? <Image src={scene.images.product} alt="product" width={1000} height={1000} className="product-image absolute top-0 z-[22] w-1/3 translate-x-full translate-y-1/2 scale-90" /> : <Image src={scene.images.product} alt="product" width={1000} height={1000} className="product-image absolute top-0 z-[22] w-1/3 translate-x-full translate-y-[25%] scale-[.7]" />}
 
               {/* Background Image */}
               <Image width={2691} height={2485} alt="background" src={scene.images.bg} className="bg-image absolute z-[14] w-full object-cover" />

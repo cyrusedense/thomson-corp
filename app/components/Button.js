@@ -11,15 +11,7 @@ function Button({ color, text, intLink, extLink }) {
     <Link href="/">{text}</Link>
   );
 
-  return (
-    <button
-      className={`rounded-full transition-transform hover:scale-105 ${
-        color === "yellow" ? "bg-tsyellow" : "bg-white"
-      } px-3 py-2 text-black`}
-    >
-      {linkComponent}
-    </button>
-  );
+  return <button className={`rounded-full font-semibold transition-transform hover:scale-105 ${color === "yellow" ? "bg-tsyellow" : "bg-white"} px-3 py-2 text-black`}>{linkComponent}</button>;
 }
 
 export default Button;
